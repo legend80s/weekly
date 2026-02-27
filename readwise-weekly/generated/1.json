@@ -27,5 +27,64 @@
         "author": "David Marchese · 10 mins"
       }
     ]
+  },
+  {
+    "category": "Most highlighted YouTube Video of the week",
+    "subArticles": [
+      {
+        "title": "How AI Could Save (Not Destroy) Education",
+        "url": "https://www.youtube.com/watch?v=hJP5GqnTrNo",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-ai-could-save-not-destroy-education/cover_image.jpeg",
+        "summary": "In his latest TED Talk, the inimitable Sal Khan (of Khan Academy) shows us how AI is poised to revolutionize education. “I think we're at the cusp of using AI for probably the biggest positive transformation that education has ever seen. And the way we're going to do that is by giving every student on the planet an artificially intelligent but amazing personal tutor.”",
+        "author": "Sal Khan · 16 mins"
+      }
+    ]
+  },
+  {
+    "category": "Most highlighted Twitter Thread of the week",
+    "subArticles": [
+      {
+        "title": "One storytelling tip: Make it timeless.",
+        "url": "https://twitter.com/nathanbaugh27/status/1695104211237917089/?rw_tt_thread=True",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/one-storytelling-tip-make-it-timeless/cover_image.jpeg",
+        "summary": "Did Harry Potter pilfer the plot of Star Wars? Did Star Wars steal its storyline from the Japanese film The Hidden Fortress? Or is every great story just a new melody sung to the rhythm of an age-old drum? “[The Hero’s Journey is] a structure as old as time. That does not mean it’s boring. Quite the opposite. That means it’s timeless.”",
+        "author": "Nathan Baugh · 2 mins"
+      }
+    ]
+  },
+  {
+    "category": "Most highlighted PDF of the week",
+    "subArticles": [
+      {
+        "title": "The Eleven Laws of Showrunning",
+        "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-eleven-laws-of-showrunning/The_Eleven_Laws_of_Showrunning_-_Javie_emScvyK.pdf",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-eleven-laws-of-showrunning/cover_image.jpg",
+        "summary": "Consistent creative output is hard, especially in a team setting. This essay by the television writer and producer Javier Grillo-Marxuach (of Charmed, Lost, Law & Order, and The Witcher) is packed with practical advice no matter what your creative pursuit. “Are you strong and secure enough in your talent and accomplishment to accept the possibility that other people — properly empowered by you — can actually enhance your genius... or will you cling to the idea that only you can be the source of that genius?”",
+        "author": "Javier Grillo-Marxuach · 38 mins"
+      }
+    ]
+  },
+  {
+    "category": "Hand-picked EPUB of the week",
+    "subArticles": [
+      {
+        "title": "The Pathless Path",
+        "url": null,
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-pathless-path/cover_image.jpeg",
+        "summary": "Has the trajectory of your life been set more by the expectations of others than your own passions? In The Pathless Path, Paul Millerd shares the story of how he stepped off the “default path” to blaze a trail of his own, and how you might do the same. “Helping people live courageously so that they can thrive is one of the most important things in the world. I want to see people live the lives they are capable of, not just the ones they think they are allowed to live.”\n\nEditor Note: Paul not only flipped the script on life, but also on publishing. He rejected a lucrative offer from the most prestigious publishing house in the world (Penguin Random House) in favor of self-publishing. Since then, The Pathless Path has exceeded all expectations. Despite this success, Paul is generously gifting exclusive access to his full ebook to the Readwise community.\n\nWe invite you to show thanks — if you wish — by following Paul on Twitter, subscribing to his newsletter, and buying a copy of the physical book 🙏",
+        "author": "Paul Millerd"
+      }
+    ]
+  },
+  {
+    "category": "Handpicked RSS feed of the week",
+    "subArticles": [
+      {
+        "title": "Andrew Taggart, Practical Philosopher, Ph.D.",
+        "url": "https://andrewjtaggart.com/",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/andrew-taggart-practical-philosopher-ph-d/cover_image.png",
+        "summary": "“If work dominated your every moment, would life be worth living?” was the question posed by Andrew Taggart that set Paul Millerd on the proverbial pathless path. While Andrew once contemplated the idea of Total Work, his philosophical practice and writing now focuses on the more direct question of how to wake up. “The point is to get to the trailhead. Everything else is beside the point.”"
+      }
+    ]
   }
 ]
