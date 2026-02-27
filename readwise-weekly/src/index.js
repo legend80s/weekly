@@ -89,4 +89,6 @@ ${articlesMd}`;
 console.log("markdown:", md);
 
 // @ts-expect-error
-copy(md);
+copy(`采用“意译”法翻译以下 readwise weekly，无需翻译作者和平台，中文和英文以及中文和数字之间必须有空格：
+
+${md}`);
