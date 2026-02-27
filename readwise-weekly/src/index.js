@@ -3,14 +3,12 @@
 
 /** @type {HTMLDivElement[]} */
 // @ts-expect-error
-const $articles = tampermonkeyUtils
-	.$$(".qmbox img[src*=icon-help]")
-	// @ts-expect-error
-	.map((x) => x.closest("div[class*=shadow_]"));
+const $articles = tampermonkeyUtils.$$(
+	"div[class*=shadow_]:has(img[src*=cover_image])",
+);
 
 const articles = $articles.map((group) => {
 	// @ts-expect-error
-
 	const category = group.querySelector("span").textContent;
 
 	const $subArticles = Array.from(

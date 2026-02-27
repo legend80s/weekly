@@ -1,0 +1,31 @@
+[
+  {
+    "category": "Most highlighted Articles of the week",
+    "subArticles": [
+      {
+        "title": "Why note-taking apps don’t make us smarter",
+        "url": "https://www.theverge.com/2023/8/25/23845590/note-taking-apps-ai-chat-distractions-notion-roam-mem-obsidian",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/why-note-taking-apps-dont-make-us-smarter/cover_image.webp",
+        "summary": "Worrying is like a rocking chair: it gives you something to do, but it gets you nowhere. Tech journalist-cum-Substack writer Casey Newton is the latest to consider whether digital note-taking might be the same. “Thinking is an active pursuit — one that often happens when you are spending long stretches of time staring into space, then writing a bit, and then staring into space a bit more. It’s here that the connections are made and the insights are formed. And it is a process that stubbornly resists automation.”",
+        "media": "The Verge",
+        "author": "Casey Newton · 9 mins"
+      },
+      {
+        "title": "Interoceptive Journaling",
+        "url": "https://nesslabs.com/interoceptive-journaling",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/interoceptive-journaling/cover_image.png",
+        "summary": "While most of us regard journaling as an exercise for the mind, Anne-Laure Le Cunff introduces a form of journaling that might benefit the physical self. “By helping you recognize and understand your bodily signals, this method can help you enhance your emotional regulation, self-awareness, and overall well-being.”",
+        "media": "Ness Labs",
+        "author": "Anne-Laure Le Cunff · 2 mins"
+      },
+      {
+        "title": "How to Live a Happy Life, From a Leading Atheist",
+        "url": "https://www.nytimes.com/interactive/2023/08/27/magazine/daniel-dennett-interview.html",
+        "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-to-live-a-happy-life-from-a-leading-atheist/cover_image.jpeg",
+        "summary": "On the heels of his new memoir I’ve Been Thinking, philosopher Daniel Dennett explores the objectivity of truth, the danger of taking common knowledge for granted, and how to seek meaning in this precarious world in this interview with the New York Times. “Absolute truth, off the table. But practical truth? That’s real, and that’s what we’re striving for. … You don’t need miracles. You just need to understand the world the way it really is, and it’s unbelievably wonderful.”",
+        "media": "The New York Times",
+        "author": "David Marchese · 10 mins"
+      }
+    ]
+  }
+]
