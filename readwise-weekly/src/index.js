@@ -94,13 +94,12 @@ ${articlesMd}`;
 // console.log("markdown:", md);
 
 // @ts-expect-error
-copy(`请翻译以下每周热门文章推荐，无需翻译作者名、书名或媒体平台，中文和英文以及中文和数字之间必须有空格：
+copy(`请通俗易懂翻译以下每周热门文章推荐：
+1. 无需翻译作者名、书名或媒体平台，
+2. 无需翻译 img 的 alt 比如 "![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)" 的 "This is Water"，
+3. 中文和英文以及中文和数字之间必须有空格：
 
 ${md}
-
-* * *
-
-**分享最值得被看见的文章。如果本期对您有启发，请关注公众号并分享给更多人，让周刊继续。**
 `);
 
 /**
