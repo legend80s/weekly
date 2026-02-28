@@ -55,21 +55,26 @@ const articles = $articles.map((group) => {
 	};
 });
 
-console.log("articles:", articles);
+// console.log("articles:", articles);
 
 // to markdown
 
 const md = articles
 	.map((article, i) => {
-		const articlesMd = article.subArticles
+		const { subArticles } = article;
+		// 如果只有一个子文章，则不需要显示标题
+		const onlyOneArticle = subArticles.length === 1;
+
+		const articlesMd = subArticles
 			.map((sub, j) => {
 				const source = [sub.author, sub.media && `**${sub.media}**`]
 					.filter(Boolean)
 					.join(" | ");
 				const title = sub.url ? `[${sub.title}](${sub.url})` : sub.title;
+				const indexPrefix = onlyOneArticle ? "" : `${i + 1}.${j + 1} `;
 
 				return `
-### ${i + 1}.${j + 1} ${title}
+### ${indexPrefix}${title}
 
 ![${sub.title}](${sub.img})
 
@@ -80,15 +85,42 @@ ${source}`.trim();
 			.join("\n");
 
 		return `
-## ${i + 1}. ${article.category}
+## ${indexToChinese(i + 1)}、${article.category}
 
 ${articlesMd}`;
 	})
 	.join("\n");
 
-console.log("markdown:", md);
+// console.log("markdown:", md);
 
 // @ts-expect-error
-copy(`采用“意译”法翻译以下 readwise weekly，无需翻译作者和平台，中文和英文以及中文和数字之间必须有空格：
+copy(`请翻译以下每周热门文章推荐，无需翻译作者名、书名或媒体平台，中文和英文以及中文和数字之间必须有空格：
 
-${md}`);
+${md}
+
+* * *
+
+**分享最值得被看见的文章。如果本期对您有启发，请关注公众号并分享给更多人，让周刊继续。**
+`);
+
+/**
+ *
+ * @param {string | number} index
+ * @returns {string}
+ */
+function indexToChinese(index) {
+	return (
+		{
+			1: "一",
+			2: "二",
+			3: "三",
+			4: "四",
+			5: "五",
+			6: "六",
+			7: "七",
+			8: "八",
+			9: "九",
+			10: "十",
+		}[index] || String(index)
+	);
+}
