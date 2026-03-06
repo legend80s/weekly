@@ -18,7 +18,8 @@ metadata: email, imap, parsing, markdown, chinese, article
 
 1. 
 读取文章结构参考 [5.zh.md](../../../readwise-weekly/generated/5.zh.md)
-2. 如果用户没有提供期号，询问要生成哪一期的 Wiseread Weekly，期号必须，假设用户输入 132
+2. 如果用户没有提供期号，询问要生成哪一期的 Wiseread Weekly，期号必须，假设用户输入 `132`
 3. 调用 `imap-smtp-email` skill 搜索主题为 “Wisereads Vol 132” 的邮件，提取完整邮件内容
-4. 生成结构和第 1 步中相同的中文文章，放入 `readwise-weekly/generated/{index}.zh.md` 文件中
-5. 注意期号和生成的文件名里面的序号不是一个，因为期号是用户输入点，文件名序号是递增的。
+4. 生成一篇**通俗易懂**中文文章，结构和第 1 步中的相同，放入 `readwise-weekly/generated/{index}.zh.md` 文件中
+5. 注意期号和生成的文件名里面的序号没有任何关系，因为期号由用户输入，而文件名序号是递增的。
+6. 关于图片地址：应该严格使用邮件中的图片地址不要做任何修改，且需要检查图片链接的可访问性，防止出现图片无法展示问题。
