@@ -1,0 +1,82 @@
+{
+  "articles": [
+    {
+      "category": "article",
+      "subArticles": [
+        {
+          "title": "Child’s Play",
+          "url": "https://wise.readwise.io/save?url=https%3A//harpers.org/archive/2026/03/childs-play-sam-kriss-ai-startup-roy-lee/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/childs-play/cover_image.jpg",
+          "summary": "Essayist and critic Sam Kriss shadows hyper-agentic Zoomer founders and an online folk hero to investigate the cult of \"agency\" and what AI-age hustle culture is doing to ambition and humanity. \"Agency is now the most valuable commodity in Silicon Valley. In tech interviews, it’s common for candidates to be asked whether they’re 'mimetic' or 'agentic.' You do not want to say mimetic. Once, San Francisco drew in runaway children, artists, and freaks; today it’s an enormous magnet for highly agentic young men.\""
+        },
+        {
+          "title": "The 2028 Global Intelligence Crisis",
+          "url": "https://wise.readwise.io/save?url=https%3A//www.citriniresearch.com/p/2028gic",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-2028-global-intelligence-c/cover_image.jpg",
+          "summary": "In this speculative financial history, macro researchers CitriniResearch and Alap Shah of LOTUS imagine an AI-fueled productivity boom curdling into a self-reinforcing demand shock and systemic crisis by 2028. Despite its fictional nature, the scenario proved unsettlingly persuasive, enough to cause a sudden drop in the real markets as investors fled the exact stocks mentioned in the memo. \"AI got better and cheaper. Companies laid off workers, then used the savings to buy more AI capability, which let them lay off more workers.\""
+        },
+        {
+          "title": "Stop Thinking of AI as a Coworker. It's an Exoskeleton.",
+          "url": "https://wise.readwise.io/save?url=https%3A//kasava.dev/blog/ai-as-exoskeleton/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/stop-thinking-of-ai-as-a-cowor/cover_image_YsShfbG.jpeg",
+          "summary": "Ben Gregory, founder of AI-powered workflow platform Kasava, argues that using AI to amplify human effort gets better results than chasing fully autonomous agents. \"The enduring value won't come from autonomous systems that work independently of humans. It will come from AI tools that are so well-integrated into human workflows that they feel like natural extensions of human capability.\""
+        }
+      ]
+    },
+    {
+      "category": "twitter",
+      "subArticles": [
+        {
+          "title": "The File System Is the New Database: How I Built a Personal OS for AI Agents",
+          "url": "https://wise.readwise.io/save?url=https%3A//x.com/koylanai/status/2025286163641118915/%3Frw_tt_thread%3DTrue",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-file-system-is-the-new-dat/cover_image.jpg",
+          "summary": "Muratcan Koylan, context engineer at Sully.ai, shows how a file-first Personal OS makes agents more useful and offers guidance on building one that works for you. \"The specific modules, the file schemas, the skill definitions will look different for your work. But the patterns transfer. The principles for structuring information for AI agents are universal. Take what fits, ignore what doesn't, and ship something that makes your AI actually useful instead of generically helpful.\""
+        }
+      ]
+    },
+    {
+      "category": "pdf",
+      "subArticles": [
+        {
+          "title": "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
+          "url": "https://wise.readwise.io/save?url=https%3A//arxiv.org/pdf/2602.11988",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/evaluating-agents-md-are-repos/cover_image.png",
+          "summary": "ETH Zurich and LogicStar.ai researchers rigorously test AGENTS.md-style repository guides for coding agents, finding that the files might actually reduce the output quality. \"Across multiple coding agents and LLMs, we find that context files tend to reduce task success rates compared to providing no repository context, while also increasing inference cost by over 20%.\""
+        }
+      ]
+    },
+    {
+      "category": "book",
+      "subArticles": [
+        {
+          "title": "The Story of Doctor Dolittle",
+          "url": "https://wise.readwise.io/save?url=https%3A//readwise.io/reader/fd/426291999",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-story-of-doctor-dolittle/cover_image.png",
+          "summary": "In this first installment of his reknowned Doctor Dolittle series, Hugh Lofting introduces a kindly physician who learns to speak to animals and sails into a world of mischief and globe-trotting rescue missions. A whimsical adventure with a big heart, Lofting's beloved classic champions curiosity, compassion, and the belief that listening can change the world. \"But animals don’t always speak with their mouths,\" said the parrot in a high voice, raising her eyebrows. \"They talk with their ears, with their feet, with their tails—with everything. Sometimes they don’t want to make a noise.\" This edition of The Story of Doctor Dolittle is available through Standard Ebooks. You can explore their collection of high quality, carefully formatted, and free public domain ebooks here."
+        }
+      ]
+    },
+    {
+      "category": "video",
+      "subArticles": [
+        {
+          "title": "30 Years of Business Advice in 13 Minutes (from a Billionaire)",
+          "url": "https://wise.readwise.io/save?url=https%3A//youtube.com/watch/%3Fv%3D0-LAT4HjWPo",
+          "img": "",
+          "summary": "Billionaire investor and Social Capital founder Chamath Palihapitiya distills decades of company-building and investing into hard-won principles on process, humility, optionality, and avoiding traps like debt and status. \"If you're going to live a life without objectives and you're actually going to live a life of process, you have to create some really good boundary conditions.\""
+        }
+      ]
+    },
+    {
+      "category": "feed",
+      "subArticles": [
+        {
+          "title": "Scale-Smart",
+          "url": "https://wise.readwise.io/save?url=https%3A//www.fractalproductivity.club/feed",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/scale-smart/cover_image.webp",
+          "summary": "Dennis Nehrenheim M.Sc., author of Scale-Smart, writes practical systems guides on protocols, workflows, and compounding productivity. From Progressive Efforts: \"There’s something deeper happening when you work on the same thing for one hour every morning: the slow burn. Over time, your brain starts to process your effort between sessions. Ideas keep simmering in the background. Creative problems begin to solve themselves as your subconscious works through them, all because you kept the relationship with the effort alive.\""
+        }
+      ]
+    }
+  ]
+}
