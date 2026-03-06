@@ -23,7 +23,7 @@ function extractArticles(text, html) {
     { name: 'twitter', pattern: 'h-twitter', text: 'Tweet of the Week' },
     { name: 'pdf', pattern: 'h-pdf', text: 'PDF of the Week' },
     { name: 'book', pattern: 'h-book', text: 'Book of the Week' },
-    { name: 'video', pattern: 'h-video', text: 'Video of the Week' },
+    { name: 'video', pattern: 'h-yt', text: 'Video of the Week' },
     { name: 'feed', pattern: 'h-rss', text: 'Feed of the Week' }
   ];
   
