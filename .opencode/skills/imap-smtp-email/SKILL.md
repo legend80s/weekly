@@ -185,7 +185,7 @@ node scripts/smtp.js test
 ## Dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Security Notes
