@@ -66,5 +66,5 @@ setTimeout(() => {
 })
 ```
 
-5. 等待回复完成：等页面出现『This response is AI-generated, for reference only.』说明回复已完成
+5. 等待回复完成（一般耗时 50s）：**每隔 10s 轮询**，当页面出现『This response is AI-generated, for reference only.』说明回复已完成
 6. 提取翻译结果并将**完整**的 markdown 回复存放到 `<root>/readwise-weekly/generated/` 目录下，文件名为 `<volNum>.zh.md`
