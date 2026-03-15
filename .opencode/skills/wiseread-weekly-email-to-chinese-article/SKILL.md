@@ -28,6 +28,7 @@ Options:
 
 将 Step1 生成的每周热门文章推荐 markdown 翻译成中文文章，注意事项：
 
+- 翻译后的文章放到 `<root>/readwise-weekly/generated/` 目录下，文件名格式为 `<volNum>.zh.md`
 - 通俗易懂，多用短句，避免长句
 - 中文和英文以及中文和数字之间必须有空格
 - 无需翻译作者名、书名和媒体平台
