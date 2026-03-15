@@ -82,7 +82,7 @@ const articles = [...$articles].map((group) => {
   }
 })
 
-console.log("articles:", JSON.stringify(articles, null, 2))
+// console.log("articles:", JSON.stringify(articles, null, 2))
 
 // to markdown
 
@@ -118,7 +118,7 @@ ${articlesMd}`
   })
   .join("\n")
 
-// console.log("markdown:", md)
+console.log("markdown:", md)
 
 // @ts-expect-error
 // copy(`请通俗易懂翻译以下每周热门文章推荐：

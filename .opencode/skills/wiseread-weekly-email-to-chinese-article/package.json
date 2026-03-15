@@ -1,0 +1,18 @@
+{
+  "name": "wiseread-weekly-email-to-chinese-article",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "imap": "^0.8.19",
+    "mailparser": "^3.9.4"
+  }
+}
