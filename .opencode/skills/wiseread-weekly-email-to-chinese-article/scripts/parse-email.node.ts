@@ -1,6 +1,6 @@
 import * as cheerio from "cheerio"
 
-type IArticle = {
+export type IArticle = {
   category: string
   subArticles: {
     title: string
@@ -12,7 +12,7 @@ type IArticle = {
   }[]
 }
 
-export function parseEmail(html: string): IArticle[] {
+export function extractArticles(html: string): IArticle[] {
   // const htmlPath = path.join(process.cwd(), "./readwise-weekly/src/vol-132.html")
   // console.log("htmlPath:", htmlPath)
   // const html = readFileSync(htmlPath, "utf-8")
@@ -91,11 +91,8 @@ export function parseEmail(html: string): IArticle[] {
   return articles
 }
 
-export function articlesToMarkdown(articles: IArticle[]) {
+export function articlesToMarkdown(articles: IArticle[]): string {
   // console.log("articles:", JSON.stringify(articles, null, 2))
-
-  // to markdown
-
   const md = articles
     .map((article, i) => {
       const { subArticles } = article
@@ -128,7 +125,9 @@ ${articlesMd}`
     })
     .join("\n")
 
-  console.log("markdown:", md)
+  // console.log("markdown:", md)
+
+  return md
 }
 
 // copy(`请通俗易懂翻译以下每周热门文章推荐：
