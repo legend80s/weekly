@@ -9,15 +9,15 @@ import {
   articlesToMarkdown,
   extractArticles,
   type IArticle,
-} from "./parse-email.node"
+} from "./parse-email.node.ts"
 
 function printCliUsage() {
   console.log("Extract articles from Wisereads weekly email.\n")
   console.log(
-    "Usage: node --env-file ../imap-smtp-email/.env extract-articles --vol=<volNum>",
+    "Usage: node --env-file ../imap-smtp-email/.env extract-articles.ts --vol=<volNum>",
   )
   console.log(
-    "Example: node --env-file ../imap-smtp-email/.env extract-articles --vol=6",
+    "Example: node --env-file ../imap-smtp-email/.env extract-articles.ts --vol=6",
   )
 }
 
@@ -88,6 +88,7 @@ async function main() {
 }
 
 function saveArticles(volNum: string, articles: IArticle[]) {
+  const __dirname = import.meta.dirname
   const outputPath = _resolve(
     __dirname,
     `../../../readwise-weekly/generated/${volNum}.json`,
@@ -121,7 +122,7 @@ async function run(volNum: string): Promise<IArticle[]> {
     },
   }
 
-  console.log("imapConfig:", imapConfig)
+  // console.log("imapConfig:", imapConfig)
 
   // throw new Error("Not implemented")
 

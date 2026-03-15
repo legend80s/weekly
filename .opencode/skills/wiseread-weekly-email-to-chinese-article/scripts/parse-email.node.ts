@@ -16,7 +16,7 @@ export function extractArticles(html: string): IArticle[] {
   // const htmlPath = path.join(process.cwd(), "./readwise-weekly/src/vol-132.html")
   // console.log("htmlPath:", htmlPath)
   // const html = readFileSync(htmlPath, "utf-8")
-  console.log("html:", html.length)
+  // console.log("html:", html.length)
 
   const $ = cheerio.load(html)
 
@@ -25,7 +25,7 @@ export function extractArticles(html: string): IArticle[] {
 
   const $articles = $("div[class*=shadow]:has(img[src*=cover_image])")
 
-  console.log("$articles.length:", $articles.length)
+  console.log("$articles count:", $articles.length)
 
   const articles = [...$articles].map((group) => {
     // console.log("group:", group)
@@ -39,7 +39,7 @@ export function extractArticles(html: string): IArticle[] {
     const $subArticles = Array.from(
       $group.find("div[class*=mj-column-per]:has(img[src*=cover])"),
     )
-    console.log("$subArticles:", $subArticles.length)
+    console.log("$subArticles count:", $subArticles.length, "\n")
 
     const subArticles = $subArticles.map((article) => {
       const $subArticle = $(article)
