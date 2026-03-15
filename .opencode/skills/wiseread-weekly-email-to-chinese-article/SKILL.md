@@ -32,12 +32,15 @@ Options:
 2. 构建翻译 prompt：将 Step1 生成的 markdown 文件内容结合下面的翻译要求，生成 `content` 格式如下：
 
 ```md
-翻译成中文文章，注意事项：
-- 通俗易懂，多用短句，避免长句
-- 中文和英文以及中文和数字之间必须有空格
-- 无需翻译作者名、媒体平台
-- `Twitter Thread` 翻译成 `Twitter` 即可
-- 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译
+将英语每周阅读推荐翻译成中文，注意事项：
+- 通俗易懂，多用短句，避免长句。
+- 中文和英文以及中文和数字之间必须有空格。
+- 无需翻译作者名、媒体平台。
+- `Twitter Thread` 翻译成 `Twitter` 即可。
+- 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译。
+- 需翻译 `link` 里面的 `text` 比如 `[This is Water](https://example.com)` 的 `This is Water` 需翻译。
+
+需翻译的内容如下：
 
 {**完整**的 `[volNum].md` 文件内容}
 ```
