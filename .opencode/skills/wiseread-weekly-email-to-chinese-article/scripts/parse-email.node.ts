@@ -118,8 +118,7 @@ ${source}`.trim()
         })
         .join("\n")
 
-      return `
-## ${indexToChinese(i + 1)}、${article.category}
+      return `## ${indexToChinese(i + 1)}、${article.category}
 
 ${articlesMd}`
     })

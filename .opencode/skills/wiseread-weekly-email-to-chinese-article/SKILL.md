@@ -32,4 +32,5 @@ Options:
 - 通俗易懂，多用短句，避免长句
 - 中文和英文以及中文和数字之间必须有空格
 - 无需翻译作者名、书名和媒体平台
+- `Twitter Thread` 翻译成 `Twitter` 即可。
 - 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译，但是 `h3 (###)` 标题需要翻译。
