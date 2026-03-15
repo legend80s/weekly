@@ -7,6 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "extract-articles": "./scripts/extract-articles.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

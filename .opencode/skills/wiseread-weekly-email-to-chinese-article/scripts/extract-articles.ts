@@ -12,12 +12,14 @@ import {
 } from "./parse-email.node.ts"
 
 function printCliUsage() {
-  console.log("Extract articles from Wisereads weekly email.\n")
   console.log(
-    "Usage: node --env-file ../imap-smtp-email/.env extract-articles.ts --vol=<volNum>",
+    "Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
   )
   console.log(
-    "Example: node --env-file ../imap-smtp-email/.env extract-articles.ts --vol=6",
+    "Usage: node --env-file ../imap-smtp-email/.env scripts/extract-articles.ts --vol=<volNum>",
+  )
+  console.log(
+    "Example: node --env-file ../imap-smtp-email/.env scripts/extract-articles.ts --vol=6",
   )
 }
 
@@ -91,7 +93,7 @@ function saveArticles(volNum: string, articles: IArticle[]) {
   const __dirname = import.meta.dirname
   const outputPath = _resolve(
     __dirname,
-    `../../../readwise-weekly/generated/${volNum}.json`,
+    `../../../../readwise-weekly/generated/${volNum}.json`,
   )
   const dir = dirname(outputPath)
   if (!existsSync(dir)) {
