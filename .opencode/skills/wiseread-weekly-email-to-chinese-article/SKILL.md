@@ -26,11 +26,12 @@ Options:
 
 ### Step2: 生成中文文章
 
-将 Step1 生成的每周热门文章推荐 markdown 翻译成中文文章，注意事项：
+Translate the weekly popular article recommendations markdown generated in Step 1 into Chinese articles. Notes:
 
-- 翻译后的文章放到 `<root>/readwise-weekly/generated/` 目录下，文件名格式为 `<volNum>.zh.md`
-- 通俗易懂，多用短句，避免长句
-- 中文和英文以及中文和数字之间必须有空格
-- 无需翻译作者名、书名和媒体平台
-- `Twitter Thread` 翻译成 `Twitter` 即可。
-- 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译，但是 `h3 (###)` 标题需要翻译。
+- Place the translated articles in the `<root>/readwise-weekly/generated/` directory with the filename format `<volNum>.zh.md`
+- Make them easy to understand, use simple short sentences, avoid long and complex sentences
+- There must be spaces between Chinese and English, as well as between Chinese and numbers
+- No need to translate author names, book titles, and media platforms
+- Translate `Twitter Thread` to `Twitter` only.
+- No need to translate the `alt` of `img`, for example, `This is Water` in `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` does not need translation
+- However, `h3 (###)` titles need translation. Example: `### 1.2 [The Musk Algorithm](https://world.hey.com/dhh/the-musk-algorithm-977bf312/)` should be translated to `### 1.2 [马斯克算法](https://world.hey.com/dhh/the-musk-algorithm-977bf312/)`.
