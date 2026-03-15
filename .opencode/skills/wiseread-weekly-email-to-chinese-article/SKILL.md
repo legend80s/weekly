@@ -34,4 +34,9 @@ Translate the weekly popular article recommendations markdown generated in Step 
 - No need to translate author names, book titles, and media platforms
 - Translate `Twitter Thread` to `Twitter` only.
 - No need to translate the `alt` of `img`, for example, `This is Water` in `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` does not need translation
-- However, `h3 (###)` titles need translation. Example: `### 1.2 [The Musk Algorithm](https://world.hey.com/dhh/the-musk-algorithm-977bf312/)` should be translated to `### 1.2 [马斯克算法](https://world.hey.com/dhh/the-musk-algorithm-977bf312/)`.
+- However, the text of link `[text](link)` need translation. Example: `[The Musk Algorithm](https://world.hey.com/dhh/the-musk-algorithm-977bf312/)` should be translated to `[马斯克算法](https://world.hey.com/dhh/the-musk-algorithm-977bf312/)`.
+
+
+### Step3: 检查文章翻译是否符合要求
+
+按照 Step 2 的要求，逐条检查翻译后的文章是否符合要求。
