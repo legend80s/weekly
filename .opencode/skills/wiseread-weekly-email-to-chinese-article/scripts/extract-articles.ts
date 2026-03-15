@@ -144,8 +144,12 @@ function extractArticles(text, html) {
 
 function printCliUsage() {
   console.log("Extract articles from Wisereads weekly email.\n")
-  console.log("Usage: node extract-articles.js --vol=<volNum>")
-  console.log("Example: node extract-articles.js --vol=6")
+  console.log(
+    "Usage: node --env-file ../imap-smtp-email/.env extract-articles --vol=<volNum>",
+  )
+  console.log(
+    "Example: node --env-file ../imap-smtp-email/.env extract-articles --vol=6",
+  )
 }
 
 function parseCliArg() {
@@ -170,6 +174,7 @@ function parseCliArg() {
 
     return values
   } catch (parseError) {
+    // @ts-expect-error
     console.error("❌ 参数校验失败:", parseError.message)
     console.log("")
     printCliUsage()
@@ -180,11 +185,22 @@ function parseCliArg() {
 main()
 
 function main() {
-  const { vol: volNum, help } = parseCliArg()
+  const { vol: volNum = "", help } = parseCliArg()
 
   if (help) {
     printCliUsage()
     process.exit(0)
+  }
+
+  // if not a number string or less than 1, throw error
+  if (!/^\d+$/.test(volNum) || Number(volNum) < 1) {
+    console.error(
+      `Invalid volume number (${volNum}). Please provide a positive integer as the first argument.`,
+    )
+    console.log("")
+    printCliUsage()
+
+    process.exit(1)
   }
 
   run(volNum).catch(console.error)
@@ -195,13 +211,6 @@ function main() {
  * @returns {Promise<void>}
  */
 async function run(volNum) {
-  // if not a number string or less than 1, throw error
-  if (!/^\d+$/.test(volNum) || Number(volNum) < 1) {
-    throw new Error(
-      `Invalid volume number (${volNum}). Please provide a positive integer as the first argument.`,
-    )
-  }
-
   const emailSubject = `Wisereads Vol. ${volNum}`
 
   const imapConfig = {
@@ -217,7 +226,7 @@ async function run(volNum) {
 
   console.log("imapConfig:", imapConfig)
 
-  throw new Error("Not implemented")
+  // throw new Error("Not implemented")
 
   const imap = new Imap(imapConfig)
 
@@ -252,13 +261,14 @@ async function run(volNum) {
                   return
                 }
 
-                const text = parsed.text || ""
                 const html = parsed.html || ""
-                console.log("text:", text)
-                console.log("text length:", text.length)
-                console.log("html length:", html.length)
+                console.log("html email length:", html.length)
 
-                throw new Error("stop")
+                // 如果 html 为空，则报错提醒
+                if (!html) {
+                  reject(new Error(`email vol ${volNum}'s html is empty`))
+                  return
+                }
 
                 const articles = extractArticles(text, html)
 
