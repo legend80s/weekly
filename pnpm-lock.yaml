@@ -11,6 +11,9 @@ importers:
       cheerio:
         specifier: ^1.2.0
         version: 1.2.0
+      chrome-devtools-mcp:
+        specifier: ^0.20.0
+        version: 0.20.0
 
 packages:
 
@@ -23,6 +26,11 @@ packages:
   cheerio@1.2.0:
     resolution: {integrity: sha512-WDrybc/gKFpTYQutKIK6UvfcuxijIZfMfXaYm8NMsPQxSYvf+13fXUJ4rztGGbJcBQ/GF55gvrZ0Bc0bj/mqvg==}
     engines: {node: '>=20.18.1'}
+
+  chrome-devtools-mcp@0.20.0:
+    resolution: {integrity: sha512-wBnt8901lAXdac3AB7WdONYTAXGW+YqqIVVg7PztxYVNPs3VVgM2UZnZT/ICYPIofKTuRBOkRdEE/VYm90ZgYA==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=23}
+    hasBin: true
 
   css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
@@ -119,6 +127,8 @@ snapshots:
       parse5-parser-stream: 7.1.2
       undici: 7.24.2
       whatwg-mimetype: 4.0.0
+
+  chrome-devtools-mcp@0.20.0: {}
 
   css-select@5.2.2:
     dependencies:

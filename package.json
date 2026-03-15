@@ -12,6 +12,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "chrome-devtools-mcp": "^0.20.0"
   }
 }

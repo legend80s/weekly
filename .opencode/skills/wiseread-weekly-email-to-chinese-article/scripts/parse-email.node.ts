@@ -124,6 +124,7 @@ ${source}`.trim()
 ${articlesMd}`
     })
     .join("\n")
+    .trim()
 
   // console.log("markdown:", md)
 

@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "They Studied Dishonesty. Was Their Work a Lie?",
+          "url": "https://newyorker.com/magazine/2023/10/09/they-studied-dishonesty-was-their-work-a-lie/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/they-studied-dishonesty-was-th/cover_image.webp",
+          "summary": "Dan Ariely and Francesca Gino built their careers studying how and when people cheat, but now they're the ones under scrutiny for fabricating data. \"'When you look at [Gino’s paper], it just makes no sense,' [one professor] said. But, he added, 'even in safe spaces in my world, to bring up that someone is a data fabricator—it's, like, 'Our friend John, do you think he might be a cannibal?'\"",
+          "media": "The New Yorker",
+          "author": "Gideon Lewis-Kraus · 43 mins"
+        },
+        {
+          "title": "How To Actually Grow On Social Media (What They Don’t Tell You)",
+          "url": "https://thedankoe.com/letters/how-to-actually-grow-on-social-media-what-they-dont-tell-you/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-to-actually-grow-on-social/cover_image.webp",
+          "summary": "Dan Koe’s first attempt at making it on Instagram was cringeworthy in hindsight, but the failure helped him learn the rules of the game. Now he has an audience of over 1.6M followers. \"Social media growth is so straightforward that everyone overcomplicates it, or they don’t pay attention to it at all.\"",
+          "media": "thedankoe.com",
+          "author": "Dan Koe · 12 mins"
+        },
+        {
+          "title": "Career Advice",
+          "url": "https://moxie.org/2013/01/07/career-advice.html",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/career-advice/cover_image.jpg",
+          "summary": "If Signal founder and privacy advocate Moxie Marlinspike had his druthers, young people seeking career advice would first explore life outside supporting structures altogether. But he has tips for those not willing to hitchhike to Alaska too. \"As a young person, I think the best thing you can do is to ignore all [the selling points of the job] and simply observe the older people working there. They are the future you.\"",
+          "media": "moxie.org",
+          "author": "Moxie Marlinspike · 7 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "How I remember everything I read with Readwise",
+          "url": "https://youtu.be/OlWomVta4DU?si=dYjAlsJI4TnlePOm",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-i-remember-everything-i-re/cover_image.jpeg",
+          "summary": "Tiago Forte is well-known within our community for his cohort-based courses on building a second brain. Now he's writing bestselling books and filming YouTube videos. We're biased, but this latest video is perhaps the best primer on Readwise yet. \"Readwise gives you almost the 80/20 value of an entire second brain with [an] extremely small amount of effort.\"",
+          "media": "",
+          "author": "Tiago Forte · 22 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "10 concepts that explain the modern world",
+          "url": "https://twitter.com/oldbooksguy/status/1707421852128469147/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/10-concepts-that-explain-the-m/cover_image.jpeg",
+          "summary": "Everyone's heard of mental models such as Occam's Razor or the Pareto Principle. Jash Dholani distills some lesser known concepts such as The Centipede's Dilemma on overthinking: \"Ask a centipede which one of its hundred legs moves the fastest and it forgets how to move.\" Or the Zebra Effect on conformity: \"Scientists once put a big red dot on one zebra so he could be tracked & studied. Lions zeroed in on him and hunted him with ease.\"",
+          "media": "",
+          "author": "Jash Dholani · 2 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "Tao Te Ching",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/tao-te-ching/Accurate-Translation-of-the-Tao-Te-Ching.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/tao-te-ching/cover_image.webp",
+          "summary": "Derek Lin shares with us his translation of the Tao Te Ching, in which a mysterious sage known as Lao Tzu, Laozi, or simply \"The Old Master\", uses paradox to show us The Way. \"The Tao that can be spoken is not the eternal Tao. The name that can be named is not the eternal name.\"",
+          "media": "",
+          "author": "Lao Tzu · 26 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Impromptu: Amplifying Our Humanity Through AI",
+          "url": "https://readwise.io/reader/fd/97925136",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/impromptu-amplifying-our-human/cover_image.jpeg",
+          "summary": "PayPal alumnus, LinkedIn cofounder, and Greylock partner Reid Hoffman teams up with GPT-4 in his newest book: Impromptu: Amplifying our Humanity Through AI. Together, they share an optimistic vision where AI amplifies human abilities rather than replaces agency and labor.\n\"There will be other missteps. Detours. Important course corrections. But how could there not be? Human progress has always required risk, planning, daring, resolve, and especially, hope. That's why I'm writing this travelog: to add my voice to those counseling all these things, hope most of all.\"",
+          "media": "",
+          "author": "Reid Hoffman with GPT-4 · 3 hrs and 35 mins"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "Maggie Appleton's Garden",
+          "url": "https://maggieappleton.com/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/maggie-appleton-s-garden/cover_image.webp",
+          "summary": "Designer, anthropologist, and self-described \"mediocre\" developer Maggie Appleton gently tends to her blog as if it were a garden with beautifully illustrated, longform essays on software interfaces, note-taking, and more. From Squish Meets Structure: Designing with Language Models: \"We politely call this phenomenon 'hallucination.' Which is when language models say things that don’t reflect reality. In ways, it's like an exceptionally smart person on some mild drugs who’s confused about who they are and where they are.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}
