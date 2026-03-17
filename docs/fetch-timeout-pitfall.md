@@ -1,5 +1,11 @@
 # 解决 fetch 请求超时的一个常见误区
 
+文章核心观点：
+
+1. 问题：setTimeout + AbortController 只中断 fetch 的网络请求阶段，不中断响应体读取阶段
+2. 解决：用 AbortSignal.timeout() 可以覆盖全流程
+3. 原因：fetch 完成后 abort 信号已失效，响应体读取是独立阶段
+
 ## 背景
 
 在 Node.js 或 Bun 中实现网络请求超时是一件看似简单却暗藏陷阱的事情。最近在开发图片下载工具时，我遇到了一个有趣的问题：设置了 30 秒超时，但请求经常"假死"，直到整个进程结束都没有触发超时。
@@ -94,6 +100,7 @@ async function downloadImage(url: string, destPath: string) {
 | AbortSignal.timeout() | ✅ | ✅ | **推荐** |
 
 这个问题很隐蔽，因为：
+
 1. 小文件通常在几秒内完成，看不出问题
 2. 网络环境好时，响应体传输快，也不会触发
 3. 只有下载大文件或网络慢时才会暴露
