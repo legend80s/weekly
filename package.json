@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "//$ bun readwise --vol=10": "",
+    "readwise": "node --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts",
     "test": "node --env-file .opencode/skills/imap-smtp-email/.env --test '.opencode/**/*.test.*' '**/*.test.ts' "
   },
   "keywords": [],

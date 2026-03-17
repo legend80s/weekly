@@ -1,15 +1,9 @@
 #!/usr/bin/env node
 
-import {
-  createWriteStream,
-  existsSync,
-  mkdirSync,
-  writeFileSync,
-} from "node:fs"
-import { resolve as _resolve, basename, dirname } from "node:path"
-import { pipeline } from "node:stream"
-import { parseArgs, promisify } from "node:util"
-
+import { existsSync, mkdirSync, writeFileSync } from "node:fs"
+import { resolve as _resolve, dirname } from "node:path"
+import { parseArgs } from "node:util"
+import { downloadImage, extractImageFilename } from "./image-downloader.ts"
 import {
   articlesToMarkdown,
   extractArticles,
@@ -17,8 +11,6 @@ import {
   type IArticle,
   searchWisereadsEmail,
 } from "./parse-email.node.ts"
-
-const streamPipeline = promisify(pipeline)
 
 function printCliUsage() {
   console.log(
@@ -116,17 +108,6 @@ async function saveArticles(volNum: string, articles: IArticle[]) {
     "Downloads/a配图",
     volNum,
   )
-  downloadImages(articles, imgDir).then((result) => {
-    console.log(`Download dir`, imgDir)
-    const successList = result.filter((item) => item.success)
-    const failedList = result
-      .filter((item) => !item.success)
-      .map((item) => item.url)
-
-    console.log(`✅ success count ${successList.length}`)
-    console.log(`❌ Failed count ${failedList.length}:`)
-    console.log(`  ${failedList}`)
-  })
 
   // 2. save json
   writeFileSync(outputPath, JSON.stringify({ articles }, null, 2))
@@ -144,6 +125,20 @@ async function saveArticles(volNum: string, articles: IArticle[]) {
 
   writeFileSync(linksPath, linksMd)
   console.log(`✅ articles links saved to ${linksPath}`)
+
+  console.log(`Images download dir`, imgDir)
+  console.time("images download")
+  const result = await downloadImages(articles, imgDir)
+
+  const successList = result.filter((item) => item.success)
+  const failedList = result
+    .filter((item) => !item.success)
+    .map((item) => item.url)
+
+  console.log(`✅ success count ${successList.length}`)
+  console.log(`❌ Failed count ${failedList.length}:`)
+  console.log(`  ${failedList}`)
+  console.timeEnd("images download")
 }
 
 type IDownloadResult = {
@@ -163,10 +158,9 @@ async function downloadImages(
 
   for (const article of articles) {
     for (const sub of article.subArticles) {
-      if (sub.img && sub.img.startsWith("http")) {
+      if (sub.img?.startsWith("http")) {
         const imgUrl = sub.img
-        const ext = basename(new URL(imgUrl).pathname).split(".").pop() || "jpg"
-        const filename = `${Buffer.from(sub.title).toString("base64url").slice(0, 50)}.${ext}`
+        const filename = extractImageFilename(imgUrl)
         const localPath = _resolve(imgDir, filename)
 
         if (existsSync(localPath)) {
@@ -179,26 +173,11 @@ async function downloadImages(
           url: imgUrl,
         }))
         fetchPromises.push(promise)
+      } else {
+        console.error("img url not starts with http")
       }
     }
   }
 
   return Promise.all(fetchPromises)
-}
-
-async function downloadImage(url: string, destPath: string): Promise<boolean> {
-  try {
-    const response = await fetch(url)
-    if (!response.ok) {
-      console.warn(`❌ failed to download ${url}: ${response.status}`)
-      return false
-    }
-    await streamPipeline(response.body!, createWriteStream(destPath))
-    console.log(`📥 downloaded: ${basename(destPath)}`)
-    return true
-  } catch (err) {
-    console.warn(`❌ failed to download ${url}:`, err)
-
-    return false
-  }
 }
