@@ -1,7 +1,9 @@
-import { createWriteStream, existsSync, mkdirSync } from "node:fs"
+import { existsSync, mkdirSync, statSync } from "node:fs"
 import { basename, resolve } from "node:path"
 import { parseArgs } from "node:util"
 import type { IArticle } from "./parse-email.node"
+
+const SIZE_THRESHOLD = 2 * 1024 * 1024 // 2MB
 
 export function extractImageFilename(imgUrl: string): string {
   const pathname = new URL(imgUrl).pathname
@@ -26,11 +28,14 @@ async function downloadImage(url: string, destPath: string): Promise<boolean> {
       console.warn(`❌ failed to download ${url}: ${response.status}`)
       return false
     }
-    // const arrayBuffer = await response.arrayBuffer()
-    // const buffer = Buffer.from(arrayBuffer)
     // @ts-expect-error
     await Bun.write(destPath, response)
-    console.log(`📥 downloaded: ${basename(destPath)}`)
+    const stats = statSync(destPath)
+    if (stats.size > SIZE_THRESHOLD) {
+      console.warn(`⚠️ large file (${(stats.size / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`)
+    } else {
+      console.log(`📥 downloaded: ${basename(destPath)}`)
+    }
     return true
   } catch (err) {
     console.warn(`❌ failed to download ${url}:`, err)
