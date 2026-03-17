@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --env-file .opencode/skills/imap-smtp-email/.env --test '.opencode/**/*.test.*' '**/*.test.ts' "
   },
   "keywords": [],
   "author": "",

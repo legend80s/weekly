@@ -1,4 +1,6 @@
 import * as cheerio from "cheerio"
+import Imap from "imap"
+import { simpleParser } from "mailparser"
 
 export type IArticle = {
   category: string
@@ -10,6 +12,96 @@ export type IArticle = {
     media: string
     author: string | undefined
   }[]
+}
+
+type IHTML = string
+
+export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
+  if (!volNum) {
+    throw new RangeError(
+      `volNum should be a positive integer but got (${volNum})`,
+    )
+  }
+
+  const emailSubject = `Wisereads Vol. ${volNum}`
+
+  const { IMAP_USER, IMAP_PASS } = process.env
+
+  if (!IMAP_USER || !IMAP_PASS) {
+    throw new Error(
+      `EnvError: empty IMAP_USER (${IMAP_USER}) or IMAP_PASS (${IMAP_PASS}. Maybe your forget to fill the .env file`,
+    )
+  }
+
+  const imapConfig = {
+    user: IMAP_USER!,
+    password: IMAP_PASS!,
+    host: process.env.IMAP_HOST,
+    port: Number(process.env.IMAP_PORT),
+    tls: process.env.IMAP_TLS === "true",
+    tlsOptions: {
+      rejectUnauthorized: process.env.IMAP_REJECT_UNAUTHORIZED !== "false",
+    },
+  }
+
+  // console.log("imapConfig:", imapConfig)
+
+  // throw new Error("Not implemented")
+
+  const imap = new Imap(imapConfig)
+
+  return new Promise((resolve, reject) => {
+    imap.once("ready", () => {
+      imap.openBox("INBOX", false, (err, box) => {
+        if (err) {
+          reject(err)
+          return
+        }
+
+        imap.search([["SUBJECT", emailSubject]], (err, results) => {
+          if (err) {
+            reject(err)
+            return
+          }
+          if (results.length === 0) {
+            imap.end()
+            reject(
+              new RangeError(`No emails found by subject: ${emailSubject}`),
+            )
+            return
+          }
+
+          const f = imap.fetch(results[0], { bodies: [""] })
+
+          f.on("message", (msg) => {
+            msg.on("body", (stream) => {
+              simpleParser(stream, (err, parsed) => {
+                if (err) {
+                  reject(err)
+                  return
+                }
+
+                const html = parsed.html || ""
+                console.log("html email length:", html.length)
+
+                // 如果 html 为空，则报错提醒
+                if (!html) {
+                  reject(new Error(`email vol ${volNum}'s html is empty`))
+                  return
+                }
+
+                imap.end()
+                resolve(html)
+              })
+            })
+          })
+        })
+      })
+    })
+
+    imap.on("error", reject)
+    imap.connect()
+  })
 }
 
 export function extractArticles(html: string): IArticle[] {

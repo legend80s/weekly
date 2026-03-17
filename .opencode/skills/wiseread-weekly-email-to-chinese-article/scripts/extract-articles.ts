@@ -3,12 +3,12 @@
 import { existsSync, writeFileSync } from "node:fs"
 import { resolve as _resolve, dirname } from "node:path"
 import { parseArgs } from "node:util"
-import Imap from "imap"
-import { simpleParser } from "mailparser"
+
 import {
   articlesToMarkdown,
   extractArticles,
   type IArticle,
+  searchWisereadsEmail,
 } from "./parse-email.node.ts"
 
 function printCliUsage() {
@@ -74,9 +74,10 @@ async function main() {
     process.exit(1)
   }
 
-  let articles: IArticle[] | undefined
   try {
-    articles = await run(volNum)
+    const html = await searchWisereadsEmail(Number(volNum))
+    const articles = extractArticles(html)
+
     if (!articles?.length) {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
@@ -108,80 +109,4 @@ function saveArticles(volNum: string, articles: IArticle[]) {
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
   console.log(`✅ articles markdown saved to ${mdPath}`)
-}
-
-async function run(volNum: string): Promise<IArticle[]> {
-  const emailSubject = `Wisereads Vol. ${volNum}`
-
-  const imapConfig = {
-    user: process.env.IMAP_USER!,
-    password: process.env.IMAP_PASS!,
-    host: process.env.IMAP_HOST,
-    port: Number(process.env.IMAP_PORT),
-    tls: process.env.IMAP_TLS === "true",
-    tlsOptions: {
-      rejectUnauthorized: process.env.IMAP_REJECT_UNAUTHORIZED !== "false",
-    },
-  }
-
-  // console.log("imapConfig:", imapConfig)
-
-  // throw new Error("Not implemented")
-
-  const imap = new Imap(imapConfig)
-
-  return new Promise((resolve, reject) => {
-    imap.once("ready", () => {
-      imap.openBox("INBOX", false, (err, box) => {
-        if (err) {
-          reject(err)
-          return
-        }
-
-        imap.search([["SUBJECT", emailSubject]], (err, results) => {
-          if (err) {
-            reject(err)
-            return
-          }
-          if (results.length === 0) {
-            imap.end()
-            reject(
-              new RangeError(`No emails found by subject: ${emailSubject}`),
-            )
-            return
-          }
-
-          const f = imap.fetch(results[0], { bodies: [""] })
-
-          f.on("message", (msg) => {
-            msg.on("body", (stream) => {
-              simpleParser(stream, (err, parsed) => {
-                if (err) {
-                  reject(err)
-                  return
-                }
-
-                const html = parsed.html || ""
-                console.log("html email length:", html.length)
-
-                // 如果 html 为空，则报错提醒
-                if (!html) {
-                  reject(new Error(`email vol ${volNum}'s html is empty`))
-                  return
-                }
-
-                const articles = extractArticles(html)
-
-                imap.end()
-                resolve(articles)
-              })
-            })
-          })
-        })
-      })
-    })
-
-    imap.on("error", reject)
-    imap.connect()
-  })
 }
