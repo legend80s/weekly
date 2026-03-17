@@ -107,7 +107,7 @@ async function saveArticles(volNum: string, articles: IArticle[]) {
   console.log(`✅ articles json saved to ${outputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles)
+  const md = articlesToMarkdown(articles, { titleWithUrl: false })
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
   console.log(`✅ articles saved to ${mdPath}`)

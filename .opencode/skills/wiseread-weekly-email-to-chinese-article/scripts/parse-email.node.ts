@@ -194,7 +194,14 @@ export function extractLinksToMarkdown(articles: IArticle[]): string {
   return linksMd
 }
 
-export function articlesToMarkdown(articles: IArticle[]): string {
+export function articlesToMarkdown(
+  articles: IArticle[],
+  {
+    titleWithUrl,
+  }: {
+    titleWithUrl: boolean
+  },
+): string {
   // console.log("articles:", JSON.stringify(articles, null, 2))
   const md = articles
     .map((article, i) => {
@@ -207,7 +214,8 @@ export function articlesToMarkdown(articles: IArticle[]): string {
           const source = [sub.author, sub.media && `**${sub.media}**`]
             .filter(Boolean)
             .join(" | ")
-          const title = sub.url ? `[${sub.title}](${sub.url})` : sub.title
+          const title =
+            titleWithUrl && sub.url ? `[${sub.title}](${sub.url})` : sub.title
           const indexPrefix = onlyOneArticle ? "" : `${i + 1}.${j + 1} `
 
           return `

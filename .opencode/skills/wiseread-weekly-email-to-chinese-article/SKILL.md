@@ -106,3 +106,11 @@ setTimeout(() => {
 6. 如果 console 没有输出 `send button clicked`，则需再次点击发送按钮：`[...document.querySelectorAll('[role="button"][aria-disabled=false]')].at(-1).click()`
 7. 等待回复完成（一般耗时 50s）：**每隔 10s 轮询截图一次**，当页面出现『This response is AI-generated, for reference only.』说明回复已完成
 8. 提取翻译结果并将**完整**的 markdown 回复存放到 `<root>/readwise-weekly/generated/` 目录下，文件名为 `<volNum>.zh.md`
+
+---
+
+来一个吸引读者兴趣继续阅读的导读：开头是『**欢迎打开本期国外技术周刊**：』
+
+记住导读只需要做到推荐**三篇**读者最可能感兴趣的即可，无需『老规矩，PDF、RSS 源都给你备好了，翻着看。』
+
+起个标题，开头『国外技术周刊 #7：』

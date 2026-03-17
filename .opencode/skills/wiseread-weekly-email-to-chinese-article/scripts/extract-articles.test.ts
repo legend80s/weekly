@@ -13,7 +13,7 @@ describe("E2E", () => {
     const html = await searchWisereadsEmail(8)
     const articles = extractArticles(html)
 
-    const md = articlesToMarkdown(articles)
+    const md = articlesToMarkdown(articles, { titleWithUrl: false })
 
     const expected = readFileSync("./readwise-weekly/generated/8.json", "utf-8")
     const actual = JSON.stringify(
