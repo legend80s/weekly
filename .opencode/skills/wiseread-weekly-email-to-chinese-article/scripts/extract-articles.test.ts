@@ -4,6 +4,7 @@ import test, { describe } from "node:test"
 import {
   articlesToMarkdown,
   extractArticles,
+  extractLinksToMarkdown,
   searchWisereadsEmail,
 } from "./parse-email.node.ts"
 
@@ -28,5 +29,16 @@ describe("E2E", () => {
     const expectedMd = readFileSync("./readwise-weekly/generated/8.md", "utf-8")
 
     assert.deepEqual(md, expectedMd)
+
+    // 3. test links md
+    const linksMd = extractLinksToMarkdown(articles)
+
+    // console.log("linksMd:", linksMd)
+    const expectedLinksMd = readFileSync(
+      "./readwise-weekly/generated/8.links.md",
+      "utf-8",
+    ).trim()
+
+    assert.deepEqual(linksMd, expectedLinksMd)
   })
 })

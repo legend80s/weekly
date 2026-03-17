@@ -183,6 +183,17 @@ export function extractArticles(html: string): IArticle[] {
   return articles
 }
 
+export function extractLinksToMarkdown(articles: IArticle[]): string {
+  const linksMd: string = articles
+    .flatMap((item) =>
+      item.subArticles.map((sub) => sub.url && `- [${sub.title}](${sub.url})`),
+    )
+    .filter(Boolean)
+    .join("\n")
+
+  return linksMd
+}
+
 export function articlesToMarkdown(articles: IArticle[]): string {
   // console.log("articles:", JSON.stringify(articles, null, 2))
   const md = articles

@@ -7,6 +7,7 @@ import { parseArgs } from "node:util"
 import {
   articlesToMarkdown,
   extractArticles,
+  extractLinksToMarkdown,
   type IArticle,
   searchWisereadsEmail,
 } from "./parse-email.node.ts"
@@ -101,12 +102,21 @@ function saveArticles(volNum: string, articles: IArticle[]) {
     throw new Error(`dir (${dir}) not exits`)
   }
 
+  // 1. save json
   writeFileSync(outputPath, JSON.stringify({ articles }, null, 2))
   console.log(`✅ articles json saved to ${outputPath}`)
   // console.log(JSON.stringify({ articles }, null, 2))
-  // save markdown
+
+  // 2. save markdown
   const md = articlesToMarkdown(articles)
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
-  console.log(`✅ articles markdown saved to ${mdPath}`)
+  console.log(`✅ articles saved to ${mdPath}`)
+
+  // 3. save links
+  const linksPath = outputPath.replace(".json", ".links.md")
+  const linksMd = extractLinksToMarkdown(articles)
+
+  writeFileSync(linksPath, linksMd)
+  console.log(`✅ articles links saved to ${linksPath}`)
 }
