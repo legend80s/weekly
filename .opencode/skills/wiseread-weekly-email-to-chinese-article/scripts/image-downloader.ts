@@ -4,7 +4,7 @@ import { parseArgs } from "node:util"
 import type { IArticle } from "./parse-email.node"
 
 const SIZE_THRESHOLD = 2 * 1024 * 1024 // 2MB
-const TIMEOUT_MS = 30_000 as const // 30s
+const TIMEOUT_MS = 30_000 // 30s
 
 export function extractImageFilename(imgUrl: string): string {
   const pathname = new URL(imgUrl).pathname
@@ -24,16 +24,9 @@ export function extractImageFilename(imgUrl: string): string {
 
 async function downloadImage(url: string, destPath: string): Promise<boolean> {
   try {
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS)
-
-    const response = await fetch(url, { signal: controller.signal })
-    clearTimeout(timeout)
-
-    if (!response.ok) {
-      console.warn(`❌ failed to download ${url}: ${response.status}`)
-      return false
-    }
+    const response = await fetch(url, { 
+      signal: AbortSignal.timeout(TIMEOUT_MS) 
+    })
     // @ts-expect-error
     await Bun.write(destPath, response)
     const stats = statSync(destPath)
@@ -46,7 +39,7 @@ async function downloadImage(url: string, destPath: string): Promise<boolean> {
     }
     return true
   } catch (err: any) {
-    if (err.name === "AbortError") {
+    if (err.name === "TimeoutError" || err.code === "ETIMEDOUT") {
       console.warn(`⏱️ timeout (${TIMEOUT_MS / 1000}s): ${url}`)
     } else {
       console.warn(`❌ failed to download ${url}:`, err)
