@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "Superlinear Returns",
+          "url": "http://paulgraham.com/superlinear.html#:~:text=One%20of%20the%20most%20important,%22what%20you%20put%20in.%22",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/superlinear-returns/cover_image.jpeg",
+          "summary": "In his latest longform essay, the founder of Y Combinator Paul Graham discusses how ambition and curiosity can lead to exponential growth, creating new frontiers at pivotal thresholds. \"Now the emperors of ideas can design bombs that defeat the emperors of territory.\"",
+          "media": "paulgraham.com",
+          "author": "Paul Graham · 17 mins"
+        },
+        {
+          "title": "The Essential Skills for Being Human",
+          "url": "https://nytimes.com/2023/10/19/opinion/social-skills-connection.html/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-essential-skills-for-being/cover_image.png",
+          "summary": "On the heels of his new book, How to Know a Person, bestselling author and columnist David Brooks explores how illuminators share the spotlight, highlighting how we're each a hero on our own journey. \"The illuminators offer the privilege of witness. They take the anecdotes, rationalizations and episodes we tell and see us in a noble struggle. They see the way we’re navigating the dialectics of life — intimacy versus independence, control versus freedom — and understand that our current selves are just where we are right now on our long continuum of growth.\"",
+          "media": "New York Times",
+          "author": "David Brooks · 15 mins"
+        },
+        {
+          "title": "You’re not lacking creativity, you’re overwhelmed",
+          "url": "https://newsletter.thejorgemedina.com/p/youre-not-lacking-creativity-youre/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/youre-not-lacking-creativity-y/cover_image.png",
+          "summary": "If you're reading this, you're probably adept at balancing content overload with curation. But Jorge Medina suggests we might be skipping a crucial next step. \"After learning to be selective, you need to learn to let go… Your brain will still be subject to FOMO (fear of missing out), so you’ll need to counter act regularly, and archive what’s not needed.\"",
+          "media": "thejorgemedina.com",
+          "author": "Jorge Medina · 5 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "How to Learn Anything Fast with AI | Full Study Guide With ChatGPT",
+          "url": "https://www.youtube.com/watch?v=p9PK4zQE0Ak",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-to-learn-anything-fast-wit/cover_image.jpeg",
+          "summary": "Whether you're a veteran prompt whisperer or you're trying ChatGPT for the first time, the tool can help you pick up new topics faster than ever. Tiff in Tech demonstrates her learning technique of leveraging ChatGPT's speech functionality with interview-style dialogues. \"The ones that are really going to excel [will do so] by finding different ways to embrace AI to learn quickly. We cannot continue learning the same way we used to.\"",
+          "media": "",
+          "author": "Tiff in Tech · 11 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "40 things Rockefeller wrote to his son",
+          "url": "https://twitter.com/founderspodcast/status/1715830107758043235/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/40-things-rockefeller-wrote-to/cover_image.jpeg",
+          "summary": "David Senra extracts wisdom from history's greatest entrepreneurs on his weekly Founders Podcast. This week's episode (a must-listen 👈) and corresponding tweet unearth gems from Rockefeller's letters to his son such as: \"Our destiny is determined by our actions and not by our origins\" and \"Enthusiasm is a force multiplier to everything.\"",
+          "media": "",
+          "author": "David Senra · 3 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "Improving Image Generation with Better Captions",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/improving-image-generation-wit/Dalle3_DkCZRcG.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/improving-image-generation-wit/cover_image_r0lIlqT.png",
+          "summary": "Until recently, text-to-image models would often ignore important parts of their instructions. In this new research paper, the OpenAI team reveals how they improved prompt following by training DALL-E 3 on LLM-generated rather human-generated captions. \"Human authors who focus on simple descriptions… omit background details or common sense relationships portrayed in image… like the colors and sizes of objects in a scene.\"",
+          "media": "",
+          "author": "James Betker, Gabriel Goh, Li Jing, et al. · 26 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "The Anthology of Balaji",
+          "url": "https://readwise.io/reader/fd/104368666",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-anthology-of-balaji/cover_image.jpg",
+          "summary": "The multi-faceted Balaji Srinivasan — investor, founder, engineer, author, and self-described 'id of technology' — is known for his irreverent, mindbending takes. But this wisdom has been scattered across tweets, essays, podcasts, and elsewhere. In newly-released The Anthology of Balaji, Eric Jorgenson guides us through Balaji's pivotal pieces on tech, truth, and building the future.\n\"To influence the direction of tech, pick up a keyboard or put capital at risk. You can build something. Those who won’t build will just preach. That keyboard is increasingly available to billions of people around the world. They have no illusions about the relative utility of preaching versus building.\"\nEric is graciously sharing his full ebook with the Readwise community. If you’d like to show your thanks, you can do so by following Eric on Twitter, buying a copy of the physical book, and retweeting Dan's giveaway of a signed edition. ",
+          "media": "",
+          "author": "Eric Jorgenson · 3 hrs and 1 mins"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "Neuro Athletics by Louisa Nicola",
+          "url": "https://neuroathletics.substack.com/p/lowtestosterone",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/neuro-athletics-by-louisa-nico/cover_image.png",
+          "summary": "In her Neuro Athletics newsletter, triathlete and neurophysiologist Louisa Nicola gives her no-nonsense takes on factors affecting peak performance. From The Silent Killer of Executive Success: \"Many execs are holed up in boardrooms and offices, missing out on natural sunlight. Sun exposure is crucial for vitamin D synthesis, which, in turn, plays a role in testosterone production.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}
