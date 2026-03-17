@@ -1,6 +1,8 @@
-import { createWriteStream } from "node:fs"
-import { basename } from "node:path"
+import { createWriteStream, existsSync, mkdirSync } from "node:fs"
+import { basename, resolve } from "node:path"
 import { pipeline } from "node:stream/promises"
+import { parseArgs } from "node:util"
+import type { IArticle } from "./parse-email.node"
 // import { promisify } from "node:util"
 
 // const streamPipeline = promisify(pipeline)
@@ -27,10 +29,7 @@ export function extractImageFilename(imgUrl: string): string {
   return filename
 }
 
-export async function downloadImage(
-  url: string,
-  destPath: string,
-): Promise<boolean> {
+async function downloadImage(url: string, destPath: string): Promise<boolean> {
   try {
     const response = await fetch(url)
     if (!response.ok) {
@@ -45,4 +44,116 @@ export async function downloadImage(
 
     return false
   }
+}
+
+type IDownloadResult = {
+  url: string
+  success: boolean
+}
+
+async function downloadImagesCore(
+  articles: IArticle[],
+  imgDir: string,
+): Promise<IDownloadResult[]> {
+  if (!existsSync(imgDir)) {
+    mkdirSync(imgDir, { recursive: true })
+    console.log(`📁 created directory: ${imgDir}`)
+  }
+
+  const fetchPromises: Promise<IDownloadResult>[] = []
+
+  for (const article of articles) {
+    for (const sub of article.subArticles) {
+      if (sub.img?.startsWith("http")) {
+        const imgUrl = sub.img
+        const filename = extractImageFilename(imgUrl)
+        const localPath = resolve(imgDir, filename)
+
+        if (existsSync(localPath)) {
+          console.log(`⏭️  skip existing: ${filename}`)
+          continue
+        }
+
+        const promise = downloadImage(imgUrl, localPath).then((success) => ({
+          success,
+          url: imgUrl,
+        }))
+        fetchPromises.push(promise)
+      } else {
+        console.error("img url not starts with http")
+      }
+    }
+  }
+
+  return Promise.all(fetchPromises)
+}
+
+// if run as main
+if (import.meta.main) {
+  const { values } = parseArgs({
+    options: {
+      vol: {
+        type: "string",
+      },
+    },
+  })
+
+  // console.log(values)
+
+  const { vol: volNum = "" } = values
+
+  // if not a number string or less than 1, throw error
+  if (!/^\d+$/.test(volNum) || Number(volNum) < 1) {
+    console.error(
+      `Invalid volume number (${volNum}). Please provide a positive integer as the first argument.`,
+    )
+    console.log("")
+    // printCliUsage()
+
+    process.exit(1)
+  }
+
+  const result = await import(
+    `../../../../readwise-weekly/generated/${volNum}.json`,
+    {
+      with: { type: "json" },
+    }
+  )
+
+  const articles = result.default.articles
+
+  if (!articles.length) {
+    console.error("❌ import result:", result)
+    throw new Error(
+      `❌ 如果该文件本单独调用，只需要先有 ${volNum}.json 文件，且非空`,
+    )
+  }
+
+  await downloadImages(Number(volNum), articles)
+}
+
+export async function downloadImages(
+  volNum: number,
+  articles: IArticle[],
+): Promise<void> {
+  // 1. download images first
+  const imgDir = resolve(
+    process.env.HOME || process.env.USERPROFILE || "",
+    "Downloads/a配图",
+    String(volNum),
+  )
+
+  console.log(`Images download dir`, imgDir)
+  console.time("images download")
+  const result = await downloadImagesCore(articles, imgDir)
+
+  const successList = result.filter((item) => item.success)
+  const failedList = result
+    .filter((item) => !item.success)
+    .map((item) => item.url)
+
+  console.log(`✅ success count ${successList.length}`)
+  console.log(`❌ Failed count ${failedList.length}:`)
+  console.log(`  ${failedList}`)
+  console.timeEnd("images download")
 }

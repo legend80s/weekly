@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "//$ bun readwise --vol=10": "",
+    "dowload-imgs": "node --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/image-downloader.ts",
+    "// $ npm run readwise -- --vol=10": "",
+    "// $ bun readwise --vol=10": "",
     "readwise": "node --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts",
     "test": "node --env-file .opencode/skills/imap-smtp-email/.env --test '.opencode/**/*.test.*' '**/*.test.ts' "
   },

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, writeFileSync } from "node:fs"
+import { existsSync, writeFileSync } from "node:fs"
 import { resolve as _resolve, dirname } from "node:path"
 import { parseArgs } from "node:util"
-import { downloadImage, extractImageFilename } from "./image-downloader.ts"
+import { downloadImages } from "./image-downloader.ts"
 import {
   articlesToMarkdown,
   extractArticles,
@@ -102,82 +102,23 @@ async function saveArticles(volNum: string, articles: IArticle[]) {
     throw new Error(`dir (${dir}) not exits`)
   }
 
-  // 1. download images first
-  const imgDir = _resolve(
-    process.env.HOME || process.env.USERPROFILE || "",
-    "Downloads/a配图",
-    volNum,
-  )
-
-  // 2. save json
+  // 1. save json
   writeFileSync(outputPath, JSON.stringify({ articles }, null, 2))
   console.log(`✅ articles json saved to ${outputPath}`)
 
-  // 3. save markdown
+  // 2. save markdown
   const md = articlesToMarkdown(articles)
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
   console.log(`✅ articles saved to ${mdPath}`)
 
-  // 4. save links
+  // 3. save links
   const linksPath = outputPath.replace(".json", ".links.md")
   const linksMd = extractLinksToMarkdown(articles)
 
   writeFileSync(linksPath, linksMd)
   console.log(`✅ articles links saved to ${linksPath}`)
 
-  console.log(`Images download dir`, imgDir)
-  console.time("images download")
-  const result = await downloadImages(articles, imgDir)
-
-  const successList = result.filter((item) => item.success)
-  const failedList = result
-    .filter((item) => !item.success)
-    .map((item) => item.url)
-
-  console.log(`✅ success count ${successList.length}`)
-  console.log(`❌ Failed count ${failedList.length}:`)
-  console.log(`  ${failedList}`)
-  console.timeEnd("images download")
-}
-
-type IDownloadResult = {
-  url: string
-  success: boolean
-}
-async function downloadImages(
-  articles: IArticle[],
-  imgDir: string,
-): Promise<IDownloadResult[]> {
-  if (!existsSync(imgDir)) {
-    mkdirSync(imgDir, { recursive: true })
-    console.log(`📁 created directory: ${imgDir}`)
-  }
-
-  const fetchPromises: Promise<IDownloadResult>[] = []
-
-  for (const article of articles) {
-    for (const sub of article.subArticles) {
-      if (sub.img?.startsWith("http")) {
-        const imgUrl = sub.img
-        const filename = extractImageFilename(imgUrl)
-        const localPath = _resolve(imgDir, filename)
-
-        if (existsSync(localPath)) {
-          console.log(`⏭️  skip existing: ${filename}`)
-          continue
-        }
-
-        const promise = downloadImage(imgUrl, localPath).then((success) => ({
-          success,
-          url: imgUrl,
-        }))
-        fetchPromises.push(promise)
-      } else {
-        console.error("img url not starts with http")
-      }
-    }
-  }
-
-  return Promise.all(fetchPromises)
+  // 4. Save images
+  await downloadImages(Number(volNum), articles)
 }
