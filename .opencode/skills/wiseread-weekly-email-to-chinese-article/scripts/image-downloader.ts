@@ -4,7 +4,7 @@ import { parseArgs } from "node:util"
 import type { IArticle } from "./parse-email.node"
 
 const SIZE_THRESHOLD = 2 * 1024 * 1024 // 2MB
-const TIMEOUT_MS = 30 * 1000 // 30s
+const TIMEOUT_MS = 30_000 as const // 30s
 
 export function extractImageFilename(imgUrl: string): string {
   const pathname = new URL(imgUrl).pathname
@@ -38,7 +38,9 @@ async function downloadImage(url: string, destPath: string): Promise<boolean> {
     await Bun.write(destPath, response)
     const stats = statSync(destPath)
     if (stats.size > SIZE_THRESHOLD) {
-      console.warn(`⚠️ large file (${(stats.size / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`)
+      console.warn(
+        `⚠️ large file (${(stats.size / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`,
+      )
     } else {
       console.log(`📥 downloaded: ${basename(destPath)}`)
     }
