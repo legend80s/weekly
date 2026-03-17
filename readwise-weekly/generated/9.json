@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "Avoiding Stupidity is Easier than Seeking Brilliance",
+          "url": "https://fs.blog/avoiding-stupidity/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/avoiding-stupidity-is-easier-t/cover_image.png",
+          "summary": "Shane Parrish unpacks Simon Ramo's counterintuitive strategy for amateur success taken from his obscure book Extraordinary Tennis Ordinary Players: \"The strategy for winning is to avoid mistakes. The way to avoid mistakes is to be conservative and keep the ball in play, letting the other fellow have plenty of room in which to blunder his way to defeat, because he, being an amateur will play a losing game and not know it.\"",
+          "media": "Farnam Street",
+          "author": "Shane Parrish · 4 mins"
+        },
+        {
+          "title": "The Techno-Optimist Manifesto",
+          "url": "https://a16z.com/the-techno-optimist-manifesto/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-techno-optimist-manifesto/cover_image.jpeg",
+          "summary": "Marc Andreesen is known for his takes on the virtues of technology: Software is eating the world. It’s time to build. AI will save the world. His latest manifesto is a rallying cry for accelerationism. \"Techno-Optimists believe that societies, like sharks, grow or die… We believe in the romance of technology, of industry. The eros of the train, the car, the electric light, the skyscraper. And the microchip, the neural network, the rocket, the split atom.\"",
+          "media": "a16z.com",
+          "author": "Marc Andreesen · 22 mins"
+        },
+        {
+          "title": "Why the Culture Wins: An Appreciation of Iain M. Banks",
+          "url": "https://www.sciphijournal.org/index.php/2017/11/12/why-the-culture-wins-an-appreciation-of-iain-m-banks/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/why-the-culture-wins-an-apprec/cover_image.webp",
+          "summary": "Sci-fi classics such as Asimov's Foundations and Herbert's Dune tend to pair futuristic technologies with atavistic social dynamics (think: fall of the Roman Empire). Professor Joseph Heath shows us how the work of Iain M. Banks instead \"imagines a scenario in which technological development has freed culture from all functional constraints – and thus… has become purely memetic.\"",
+          "media": "Sci Phi Journal",
+          "author": "Prof. Joseph Heath · 24 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "My Notion Setup as a Software Engineer",
+          "url": "https://www.youtube.com/watch?v=7z0HYLZX8Xg",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/my-notion-setup-as-a-software-/cover_image.jpeg",
+          "summary": "You wouldn't normally think of Notion as a tool for software engineers, but YouTuber slash developer Marko has crafted a \"Focus\" page that helps maximize his productivity. \"[In Focus mode,] I have my quick notes and a list of tasks that are scheduled for the week... this reduces the clutter and allows me to focus better.\"",
+          "media": "",
+          "author": "Marko · 8 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "10 things I learned from 50 multimillionaire entrepreneurs",
+          "url": "https://twitter.com/SahilBloom/status/1712820665118498947/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/10-things-i-learned-from-50-mu/cover_image.jpeg",
+          "summary": "Sahil Bloom just returned from a Texas boondoggle with some of Twitter's other gurus. He got himself a custom cowboy hat and (of course) translated the experience into a viral Twitter thread. \"Hunt antelope, not field mice. Stop wasting your time and energy on small decisions with small rewards. Your energy is limited, use it to hunt the antelope.\"",
+          "media": "",
+          "author": "Sahil Bloom · 2 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "MemGPT: Towards LLMs as Operating Systems",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/memgpt-towards-llms-as-operati/MEMGPT.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/memgpt-towards-llms-as-operati/cover_image.png",
+          "summary": "Anyone who's played with LLMs has hit the dead-end of short context windows. Some Berkeley students just introduced a novel workaround called MemGPT, which applies the concept of hierarchical memory systems from traditional operating systems to LLMs. \"MemGPT is able to analyze large documents that far exceed the underlying LLM's context window, and... create conversational agents that remember, reflect, and evolve dynamically through long-term interactions with their users.\"",
+          "media": "",
+          "author": "Charles Packer, Vivian Fang, Shishir G. Patil, et al. · 31 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Scarcity Brain",
+          "url": "https://readwise.io/reader/fd/102424729",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/scarcity-brain/cover_image.png",
+          "summary": "For his latest book Scarcity Brain, author Michael Easter embarked on a forty-thousand mile journey — from Bolivia's jungles to Iraq's narcotic underbelly — to examine why harmful habits persist in a world of abundance.\n\"We now have an abundance, yet we're still programmed to think and act as if we don't have enough. As if we're still in those ancient times of scarcity. That three-­pound bundle of nerves in our skull is always scanning the background, picking up and prioritizing scarcity cues and pushing us to consume more. There's some larger behavior pattern at play… almost like a scarcity loop. And it seemed to be the serial killer of moderation.\"\nMichael and his publisher were kind enough to share the introductory chapter of Scarcity Brain with the Readwise community. If his story-driven analysis of how we struggle to thrive with enough leaves you craving more (as it did with us), we encourage you to purchase a full copy of Scarcity Brain here.",
+          "media": "",
+          "author": "Michael Easter"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "2% by Michael Easter",
+          "url": "https://eastermichael.com/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/2-by-michael-easter/cover_image.png",
+          "summary": "In his 2% project newsletter, Michael Easter (author of Scarcity Brain above) shares life pro tips on fitness, nutrition, gear, books (!), and more. From How to Save Money on Healthy Food: \"To supplement my diet, I drove to Costco, a place that, along with democracy, I consider one of America’s great institutions. Today we're going down a Costco rabbit hole. It's a place that can help you: Eat healthier. Save money. Save time.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}
