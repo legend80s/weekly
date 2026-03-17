@@ -1,16 +1,8 @@
 import { createWriteStream, existsSync, mkdirSync } from "node:fs"
 import { basename, resolve } from "node:path"
-import { pipeline } from "node:stream/promises"
 import { parseArgs } from "node:util"
 import type { IArticle } from "./parse-email.node"
-// import { promisify } from "node:util"
 
-// const streamPipeline = promisify(pipeline)
-
-/**
- * `https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/avoiding-stupidity-is-easier-t/cover_image.png` =>
- * `avoiding-stupidity-is-easier-t.png`
- */
 export function extractImageFilename(imgUrl: string): string {
   const pathname = new URL(imgUrl).pathname
   const ext = basename(pathname).split(".").pop()
@@ -24,9 +16,7 @@ export function extractImageFilename(imgUrl: string): string {
     throw new Error(`cannot extract name from ${imgUrl}`)
   }
 
-  const filename = `${name}.${ext}`
-
-  return filename
+  return `${name}.${ext}`
 }
 
 async function downloadImage(url: string, destPath: string): Promise<boolean> {
@@ -36,12 +26,14 @@ async function downloadImage(url: string, destPath: string): Promise<boolean> {
       console.warn(`❌ failed to download ${url}: ${response.status}`)
       return false
     }
-    await pipeline(response.body!, createWriteStream(destPath))
+    // const arrayBuffer = await response.arrayBuffer()
+    // const buffer = Buffer.from(arrayBuffer)
+    // @ts-expect-error
+    await Bun.write(destPath, response)
     console.log(`📥 downloaded: ${basename(destPath)}`)
     return true
   } catch (err) {
     console.warn(`❌ failed to download ${url}:`, err)
-
     return false
   }
 }
@@ -88,7 +80,6 @@ async function downloadImagesCore(
   return Promise.all(fetchPromises)
 }
 
-// if run as main
 if (import.meta.main) {
   const { values } = parseArgs({
     options: {
@@ -98,18 +89,13 @@ if (import.meta.main) {
     },
   })
 
-  // console.log(values)
-
   const { vol: volNum = "" } = values
 
-  // if not a number string or less than 1, throw error
   if (!/^\d+$/.test(volNum) || Number(volNum) < 1) {
     console.error(
       `Invalid volume number (${volNum}). Please provide a positive integer as the first argument.`,
     )
     console.log("")
-    // printCliUsage()
-
     process.exit(1)
   }
 
@@ -136,7 +122,6 @@ export async function downloadImages(
   volNum: number,
   articles: IArticle[],
 ): Promise<void> {
-  // 1. download images first
   const imgDir = resolve(
     process.env.HOME || process.env.USERPROFILE || "",
     "Downloads/a配图",
