@@ -45,7 +45,7 @@ Options:
 {**完整**的 `[volNum].md` 文件内容}
 ```
 
-3. 使用 chrome-devtools_evaluate_script 执行 JavaScript 代码，将 `content` 设置到 textarea 中，并触发 input 事件，代码如下：
+3. 使用 chrome-devtools_evaluate_script 执行 JavaScript 代码（**须严格按照以下代码执行**），将 `content` 设置到 textarea 中，并触发 input 事件以及点击发送，代码如下：
 
 ```js
 const textarea = document.querySelector('textarea');
@@ -63,8 +63,10 @@ textarea.dispatchEvent(new Event('input', { bubbles: true }));
 // 点击发送按钮
 setTimeout(() => {
   sendButton.click();
-})
+  console.log('send button clicked')
+}, 32)
 ```
 
-5. 等待回复完成（一般耗时 50s）：**每隔 10s 轮询**，当页面出现『This response is AI-generated, for reference only.』说明回复已完成
-6. 提取翻译结果并将**完整**的 markdown 回复存放到 `<root>/readwise-weekly/generated/` 目录下，文件名为 `<volNum>.zh.md`
+6. 如果 console 没有输出 `send button clicked`，则需再次点击发送按钮：`[...document.querySelectorAll('[role="button"][aria-disabled=false]')].at(-1).click()`
+7. 等待回复完成（一般耗时 50s）：**每隔 10s 轮询截图一次**，当页面出现『This response is AI-generated, for reference only.』说明回复已完成
+8. 提取翻译结果并将**完整**的 markdown 回复存放到 `<root>/readwise-weekly/generated/` 目录下，文件名为 `<volNum>.zh.md`

@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "Unbundling AI",
+          "url": "https://www.ben-evans.com/benedictevans/2023/10/5/unbundling-ai/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/unbundling-ai/cover_image.png",
+          "summary": "Tech analyst Benedict Evans likens asking questions of LLMs to playing the game of battleship: will you get a hit? \"It's a general purpose technology, there's a command line, and some stuff that's theoretically magic…for a lot of other people it looks a bit like those PCs ads of the late 1970s that promised you could use it to organise recipes or balance your cheque book - it can do anything, but what?\"",
+          "media": "ben-evans.com",
+          "author": "Benedict Evans · 11 mins"
+        },
+        {
+          "title": "Grow the Puzzle Around You",
+          "url": "https://foundersatwork.posthaven.com/grow-the-puzzle-around-you/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/grow-the-puzzle-around-you/cover_image.jpeg",
+          "summary": "You might know Jessica Livingston as Paul Graham's wife, but make no mistake — she was integral to the success of Y Combinator. Her 'social radar', empathy, and candor supported founders in what was an even more cutthroat environment of startups and venture capital. \"Maternal? Since when was that an important quality in a startup founder? Let alone the founder of an investment firm. And yet it was critical to making YC what it is.\"",
+          "media": "foundersatwork.posthaven.com",
+          "author": "Jessica Livingston · 14 mins"
+        },
+        {
+          "title": "Your Project Management Software Can't Save You",
+          "url": "https://www.wired.com/story/project-management-software-productivity/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/your-project-management-softwa/cover_image.webp",
+          "summary": "Gantt charts, kanban boards, and now relational databases. Wired delves into why project management tools might create more new tasks than they help get done. \"When we line up the Trellos, Asanas, Wrikes, Airtables, and endless clones of the same inherent project-management misses, their differences matter less than their end results—to paraphrase Anna Karenina's line about families, each project management app promises the same happiness, but each creates unhappy users in its own way.\"",
+          "media": "Wired",
+          "author": "Matt Alston · 10 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "How the Economic Machine Works by Ray Dalio",
+          "url": "https://www.youtube.com/watch?v=PHe0bXAIuk0",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-the-economic-machine-works/cover_image.png",
+          "summary": "Ray Dalio — founder of Bridgewater Associates, the largest hedge fund in the world — wants to leave a legacy of worldviews. In this video, he animates the principles of macroeconomic framework. \"In a beautiful deleveraging, debts decline relative to income, real economic growth is positive, and inflation isn't a problem. It is achieved by having the right balance. The right balance requires a certain mix of cutting spending, reducing debt, transferring wealth and printing money so that economic and social stability can be maintained.\"",
+          "media": "",
+          "author": "Ray Dalio · 31 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "Quality Without a Name",
+          "url": "https://twitter.com/karrisaarinen/status/1710331542369914903/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/quality-without-a-name/cover_image.jpeg",
+          "summary": "Karri Saarinen — founder & CEO of the modern project management software Linear — shares his philosophy of product quality. A trait which can only be felt, not measured. \"Usually the quality doors happen because someone took the care to first build the door and all of its parts, and then install the frame and the door correctly, and kept it maintained over the years. Measurement like number of doors installed or times the door is used never gives you anything about how good it is.\"",
+          "media": "",
+          "author": "Karri Saarinen · 2 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "The Road to Self-Renewal",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-road-to-self-renewal/The_Road_to_Self-Renewal.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-road-to-self-renewal/cover_image_U3XGhcw.jpeg",
+          "summary": "In the twilight of his career, John W. Gardner, former Secretary of Health, Education, and Welfare, mused on the perpetual journey of self-discovery during a speech in Hawaii. \"Young people run around searching for identity, but it isn’t handed out free anymore — not in this transient, rootless, pluralistic society. Your identity is what you’ve committed yourself to.\"",
+          "media": "",
+          "author": "John W. Gardner · 10 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Foundry",
+          "url": "https://readwise.io/reader/fd/98995727",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/foundry/cover_image.jpg",
+          "summary": "We're thrilled (literally) to present our first piece of fiction in these Wisereads — an excerpt from Eliot Peper's newest novel Foundry. Foundry isn't just a spy thriller where semiconductors reshape geopolitics; it's a carefully crafted trap designed to shatter your assumptions.\n\"What I'm dealing with here is all about subtext, not thumbscrews. Psychological prestidigitation. A pro of Caroline's caliber doesn't just get under your skin or into your head. She spelunks into the dark center of your beating heart and snatches your juiciest secrets like Indiana Jones.\"\nFoundry was offically released this past Wednesday, but we've teamed up with Eliot to bring Readwise users an exclusive preview of the first three chapters. If you enjoy the sneak peek, we invite you to support Eliot by buying a copy here.",
+          "media": "",
+          "author": "Eliot Peper"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "bookbear express by Ava",
+          "url": "https://www.avabear.xyz/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/bookbear-express-by-ava/cover_image_qPFVNSJ.jpeg",
+          "summary": "In bookbear express, San Francisco's Ava shares literary insights through her \"help-self\" lens of psychology, focused on fostering nourishing choices for herself and her loved ones. From back to school: \"You got a therapist because you wanted to explain everything about your life to someone and have them tell you what it means. Again, bad logic. All anyone can ever do for you is help you live with yourself a little better.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}
