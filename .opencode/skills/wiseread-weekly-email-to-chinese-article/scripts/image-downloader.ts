@@ -144,7 +144,7 @@ export async function downloadImages(
   )
 
   console.log(`Images download dir`, imgDir)
-  console.time("images download")
+  const start = Date.now()
   const result = await downloadImagesCore(articles, imgDir)
 
   const successList = result.filter((item) => item.success)
@@ -153,7 +153,10 @@ export async function downloadImages(
     .map((item) => item.url)
 
   console.log(`✅ success count ${successList.length}`)
-  console.log(`❌ Failed count ${failedList.length}:`)
-  console.log(`  ${failedList}`)
-  console.timeEnd("images download")
+  if (failedList.length) {
+    console.log(`❌ Failed count ${failedList.length}:`)
+    console.log(`  ${failedList}`)
+  }
+  const duration = `${((Date.now() - start) / 1000).toFixed(2)}s`
+  console.log(`${result.length} images download:`, duration)
 }
