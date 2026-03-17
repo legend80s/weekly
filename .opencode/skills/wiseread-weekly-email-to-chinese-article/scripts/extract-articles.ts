@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, writeFileSync } from "node:fs"
+import {
+  createWriteStream,
+  existsSync,
+  mkdirSync,
+  writeFileSync,
+} from "node:fs"
 import { resolve as _resolve, basename, dirname } from "node:path"
 import { pipeline } from "node:stream"
 import { parseArgs, promisify } from "node:util"
@@ -182,7 +187,6 @@ async function downloadImages(
 }
 
 async function downloadImage(url: string, destPath: string): Promise<boolean> {
-  const { createWriteStream } = require("node:fs")
   try {
     const response = await fetch(url)
     if (!response.ok) {
