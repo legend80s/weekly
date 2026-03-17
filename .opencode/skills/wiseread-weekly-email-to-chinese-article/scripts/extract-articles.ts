@@ -110,7 +110,10 @@ async function saveArticles(volNum: string, articles: IArticle[]) {
   const md = articlesToMarkdown(articles, { titleWithUrl: false })
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
-  console.log(`✅ articles saved to ${mdPath}`)
+
+  const zhMdPath = outputPath.replace(".json", ".zh.md")
+  writeFileSync(zhMdPath, "等待翻译")
+  console.log(`✅ articles saved to ${zhMdPath}`)
 
   // 3. save links
   const linksPath = outputPath.replace(".json", ".links.md")
