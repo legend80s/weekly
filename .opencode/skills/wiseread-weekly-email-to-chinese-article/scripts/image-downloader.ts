@@ -1,10 +1,15 @@
+import { spawnSync } from "node:child_process"
 import { existsSync, mkdirSync, statSync } from "node:fs"
 import { basename, resolve } from "node:path"
 import { parseArgs } from "node:util"
+import sharp from "sharp"
 import type { IArticle } from "./parse-email.node"
 
 const SIZE_THRESHOLD = 2 * 1024 * 1024 // 2MB
 const TIMEOUT_MS = 30_000 // 30s
+
+// const debugging = false
+// const debug = debugging ? console.log : () => {}
 
 export function extractImageFilename(imgUrl: string): string {
   const pathname = new URL(imgUrl).pathname
@@ -23,26 +28,78 @@ export function extractImageFilename(imgUrl: string): string {
 }
 
 async function downloadImage(url: string, destPath: string): Promise<boolean> {
+  const start = Date.now()
+
+  console.time(`fetch ${url}`)
   try {
-    const response = await fetch(url, { 
-      signal: AbortSignal.timeout(TIMEOUT_MS) 
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(TIMEOUT_MS),
     })
-    // @ts-expect-error
-    await Bun.write(destPath, response)
+    console.timeEnd(`fetch ${url}`)
+
+    console.time(`Bun.write ${url}`)
+    await Bun.write(destPath, await response.blob())
+    console.timeEnd(`Bun.write ${url}`)
+
     const stats = statSync(destPath)
     if (stats.size > SIZE_THRESHOLD) {
-      console.warn(
-        `⚠️ large file (${(stats.size / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`,
-      )
+      const originalSize = stats.size
+      const ext = basename(destPath).split(".").pop()?.toLowerCase()
+
+      try {
+        console.time("Bun.file costs")
+        const buffer = await Bun.file(destPath).arrayBuffer()
+        console.timeEnd("Bun.file costs")
+
+        let compressed: Buffer<ArrayBufferLike>
+
+        console.time(`compress ${ext} destPath`)
+        if (ext === "png") {
+          compressed = await sharp(buffer)
+            .png({ compressionLevel: 9 })
+            .toBuffer()
+        } else if (ext === "jpg" || ext === "jpeg") {
+          compressed = await sharp(buffer).jpeg({ quality: 80 }).toBuffer()
+        } else if (ext === "webp") {
+          compressed = await sharp(buffer).webp({ quality: 80 }).toBuffer()
+        } else {
+          compressed = await sharp(buffer).jpeg({ quality: 80 }).toBuffer()
+        }
+        console.timeEnd(`compress ${ext} destPath`)
+
+        if (compressed.length < originalSize) {
+          await Bun.write(destPath, compressed)
+          const saved = ((1 - compressed.length / originalSize) * 100).toFixed(
+            1,
+          )
+          console.log(
+            `📦 compressed ${saved}%: ${(originalSize / 1024).toFixed(0)}KB → ${(compressed.length / 1024).toFixed(0)}KB - ${basename(destPath)}`,
+          )
+        } else {
+          console.warn(
+            `⚠️ large file (${(originalSize / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`,
+          )
+        }
+      } catch (err: any) {
+        console.warn(`⚠️ compression failed, keep original: ${err.message}`)
+        console.warn(
+          `⚠️ large file (${(originalSize / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`,
+        )
+      }
     } else {
       console.log(`📥 downloaded: ${basename(destPath)}`)
     }
     return true
   } catch (err: any) {
-    if (err.name === "TimeoutError" || err.code === "ETIMEDOUT") {
-      console.warn(`⏱️ timeout (${TIMEOUT_MS / 1000}s): ${url}`)
+    const elapsed = Date.now() - start
+    if (err.name === "TimeoutError") {
+      console.warn(
+        `[${new Date().toISOString()}] ⏱️❌ timeout after ${elapsed}ms: ${url}`,
+      )
     } else {
-      console.warn(`❌ failed to download ${url}:`, err)
+      console.warn(
+        `[${new Date().toISOString()}] ❌ error after ${elapsed}ms: ${err.message}`,
+      )
     }
     return false
   }
@@ -150,8 +207,12 @@ export async function downloadImages(
   console.log(`✅ success count ${successList.length}`)
   if (failedList.length) {
     console.log(`❌ Failed count ${failedList.length}:`)
-    console.log(`  ${failedList}`)
+    console.log(failedList)
+    console.log("You can open them in browser and save them yourself")
+    failedList.forEach((url) => {
+      spawnSync("open", [url])
+    })
   }
   const duration = `${((Date.now() - start) / 1000).toFixed(2)}s`
-  console.log(`${result.length} images download:`, duration)
+  console.log(`${result.length} images finished:`, duration)
 }

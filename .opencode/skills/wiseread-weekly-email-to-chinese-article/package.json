@@ -16,7 +16,8 @@
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
     "imap": "^0.8.19",
-    "mailparser": "^3.9.4"
+    "mailparser": "^3.9.4",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/imap": "^0.8.43",
