@@ -5,11 +5,11 @@ import { parseArgs } from "node:util"
 import sharp from "sharp"
 import type { IArticle } from "./parse-email.node"
 
+// const SIZE_THRESHOLD = 300 * 1024 // 2MB
 const SIZE_THRESHOLD = 2 * 1024 * 1024 // 2MB
 const TIMEOUT_MS = 30_000 // 30s
 
-// const debugging = false
-// const debug = debugging ? console.log : () => {}
+const debugging = false
 
 export function extractImageFilename(imgUrl: string): string {
   const pathname = new URL(imgUrl).pathname
@@ -30,56 +30,25 @@ export function extractImageFilename(imgUrl: string): string {
 async function downloadImage(url: string, destPath: string): Promise<boolean> {
   const start = Date.now()
 
-  console.time(`fetch ${url}`)
+  console.time(`download ${basename(destPath)}`)
+  debugging && console.time(`fetch ${url}`)
   try {
     const response = await fetch(url, {
       signal: AbortSignal.timeout(TIMEOUT_MS),
     })
-    console.timeEnd(`fetch ${url}`)
+    debugging && console.timeEnd(`fetch ${url}`)
 
-    console.time(`Bun.write ${url}`)
+    debugging && console.time(`Bun.write ${url}`)
     await Bun.write(destPath, await response.blob())
-    console.timeEnd(`Bun.write ${url}`)
+    debugging && console.timeEnd(`Bun.write ${url}`)
+    console.timeEnd(`download ${basename(destPath)}`)
 
     const stats = statSync(destPath)
     if (stats.size > SIZE_THRESHOLD) {
       const originalSize = stats.size
-      const ext = basename(destPath).split(".").pop()?.toLowerCase()
 
       try {
-        console.time("Bun.file costs")
-        const buffer = await Bun.file(destPath).arrayBuffer()
-        console.timeEnd("Bun.file costs")
-
-        let compressed: Buffer<ArrayBufferLike>
-
-        console.time(`compress ${ext} destPath`)
-        if (ext === "png") {
-          compressed = await sharp(buffer)
-            .png({ compressionLevel: 9 })
-            .toBuffer()
-        } else if (ext === "jpg" || ext === "jpeg") {
-          compressed = await sharp(buffer).jpeg({ quality: 80 }).toBuffer()
-        } else if (ext === "webp") {
-          compressed = await sharp(buffer).webp({ quality: 80 }).toBuffer()
-        } else {
-          compressed = await sharp(buffer).jpeg({ quality: 80 }).toBuffer()
-        }
-        console.timeEnd(`compress ${ext} destPath`)
-
-        if (compressed.length < originalSize) {
-          await Bun.write(destPath, compressed)
-          const saved = ((1 - compressed.length / originalSize) * 100).toFixed(
-            1,
-          )
-          console.log(
-            `📦 compressed ${saved}%: ${(originalSize / 1024).toFixed(0)}KB → ${(compressed.length / 1024).toFixed(0)}KB - ${basename(destPath)}`,
-          )
-        } else {
-          console.warn(
-            `⚠️ large file (${(originalSize / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`,
-          )
-        }
+        await compress(destPath)
       } catch (err: any) {
         console.warn(`⚠️ compression failed, keep original: ${err.message}`)
         console.warn(
@@ -87,14 +56,14 @@ async function downloadImage(url: string, destPath: string): Promise<boolean> {
         )
       }
     } else {
-      console.log(`📥 downloaded: ${basename(destPath)}`)
+      // console.log(`📥 downloaded: ${basename(destPath)}`)
     }
     return true
   } catch (err: any) {
     const elapsed = Date.now() - start
     if (err.name === "TimeoutError") {
       console.warn(
-        `[${new Date().toISOString()}] ⏱️❌ timeout after ${elapsed}ms: ${url}`,
+        `[${new Date().toISOString()}] ❌ timeout after ${elapsed}ms: ${url}`,
       )
     } else {
       console.warn(
@@ -215,4 +184,45 @@ export async function downloadImages(
   }
   const duration = `${((Date.now() - start) / 1000).toFixed(2)}s`
   console.log(`${result.length} images finished:`, duration)
+}
+
+export async function compress(destPath: string) {
+  const stats = statSync(destPath)
+  const originalSize = stats.size
+
+  debugging && console.time("Bun.file costs")
+  const buffer = await Bun.file(destPath).arrayBuffer()
+  debugging && console.timeEnd("Bun.file costs")
+
+  let compressed: Buffer<ArrayBufferLike>
+  const ext = basename(destPath).split(".").pop()?.toLowerCase()
+
+  // console.time(`compress ${destPath}`) // 60.78ms
+  if (ext === "png") {
+    compressed = await sharp(buffer).webp().toBuffer()
+  } else if (ext === "jpg" || ext === "jpeg") {
+    compressed = await sharp(buffer).jpeg({ quality: 80 }).toBuffer()
+  } else if (ext === "webp") {
+    compressed = await sharp(buffer).webp({ quality: 80 }).toBuffer()
+  } else {
+    compressed = await sharp(buffer).jpeg({ quality: 80 }).toBuffer()
+  }
+  // console.timeEnd(`compress ${destPath}`)
+  console.log(originalSize, `=>`, compressed.length)
+
+  if (compressed.length < originalSize) {
+    // a.png => a-compress.png
+    const [head, ext] = destPath.split(".")
+    const destCompressedPath = `${head}-compressed.${ext}`
+
+    await Bun.write(destCompressedPath, compressed)
+    const saved = ((1 - compressed.length / originalSize) * 100).toFixed(1)
+    console.log(
+      `📦 compressed ${saved}%: ${(originalSize / 1024).toFixed(0)}KB → ${(compressed.length / 1024).toFixed(0)}KB - ${basename(destPath)}`,
+    )
+  } else {
+    console.warn(
+      `⚠️ large file (${(originalSize / 1024 / 1024).toFixed(2)}MB): ${basename(destPath)}`,
+    )
+  }
 }
