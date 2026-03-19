@@ -1,7 +1,7 @@
 import { strict as assert } from "node:assert"
 import test from "node:test"
-
-import { compress, extractImageFilename } from "./image-downloader.ts"
+import { compress } from "./image-compress.ts"
+import { extractImageFilename } from "./image-downloader.ts"
 
 test("success", () => {
   const actual = extractImageFilename(
