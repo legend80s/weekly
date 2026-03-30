@@ -1,3 +1,6 @@
+#!/usr/bin/env bun
+// import { Bun } from 'bun';
+
 import { spawnSync } from "node:child_process"
 import { existsSync, mkdirSync, statSync } from "node:fs"
 import { basename, resolve } from "node:path"
