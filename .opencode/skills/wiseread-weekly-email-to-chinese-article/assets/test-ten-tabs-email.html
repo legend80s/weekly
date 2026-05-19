@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html style="color-scheme: light dark; supported-color-schemes: light dark;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>body {
+-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+img {
+border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;
+}
+body {
+height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;
+}
+@media screen and (max-width: 640px) {
+  .full-width {
+    max-width: 100% !important; width: 100% !important; display: block !important;
+  }
+  .width-50 {
+    max-width: 50% !important; width: 50% !important;
+  }
+  .mobile-wrapper {
+    width: 100% !important; max-width: 100% !important;
+  }
+  .mobile-padding {
+    padding-left: 5% !important; padding-right: 5% !important;
+  }
+  .inner-padding-fixed-10-not-mobile {
+    padding: 0px 0px 0px 0px !important;
+  }
+  .inner-padding-fixed-15-not-mobile {
+    padding: 0px 0px 0px 0px !important;
+  }
+  .inner-padding-fixed-10-mobile-only {
+    padding: 10px 10px 10px 10px !important;
+  }
+  .inner-padding-fixed-10-mobile-only2 {
+    padding: 10px 10px 10px 10px !important;
+  }
+  .desktop-show {
+    display: none !important;
+  }
+  .mobile-show {
+    display: block !important;
+  }
+  .mobile-header-padding {
+    padding-left: 12% !important; padding-right: 12% !important;
+  }
+  .outer-padding {
+    padding: 0% 5% 5% 5% !important;
+  }
+  .outer-padding-fixed {
+    padding: 0% 5% 5% 5% !important;
+  }
+  .outer-padding-top {
+    padding: 5% 5% 5% 5% !important;
+  }
+  .mobile-padding-top {
+    padding-top: 12px !important;
+  }
+  .get-your-phone {
+    font-size: 16px !important;
+  }
+  .text-align-left {
+    text-align: left !important;
+  }
+  .padding-left-12 {
+    padding-left: 12px !important;
+  }
+  .padding-left-0 {
+    padding-left: 0px !important;
+  }
+  .mobile-padding-1 {
+    padding: 0px 0px 20px 0px !important;
+  }
+  .mobile-padding-2 {
+    padding: 0px 0px 0px 0px !important;
+  }
+  .round-all-corners {
+    border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+  }
+  .full-width-50-mobile {
+    max-width: 50% !important; width: 50% !important; display: inline-block !important;
+  }
+  .full-width-26-mobile {
+    max-width: 26% !important; width: 26% !important; display: inline-block !important;
+  }
+  .full-width-74-mobile {
+    max-width: 74% !important; width: 74% !important; display: inline-block !important;
+  }
+  .full-width-19-mobile {
+    max-width: 19% !important; width: 19% !important; display: inline-block !important;
+  }
+  .full-width-81-mobile {
+    max-width: 81% !important; width: 81% !important; display: inline-block !important;
+  }
+  .inner-padding-fixed-10-alter {
+    padding: 0px 0px 0px 10px !important;
+  }
+}
+@media (prefers-color-scheme: dark ) {
+  .dark-img {
+    display: block !important; width: auto !important; overflow: visible !important; float: none !important; max-height: inherit !important; max-width: inherit !important; line-height: auto !important; margin-top: 0px !important; visibility: inherit !important;
+  }
+  .light-img {
+    display: none !important;
+  }
+  .dark-bg {
+    background-color: #000000 !important;
+  }
+  .dark-img-social {
+    display: block !important; width: 55px !important; overflow: visible !important; float: none !important; max-height: inherit !important; max-width: inherit !important; line-height: auto !important; margin-top: 0px !important; visibility: inherit !important;
+  }
+  table {
+    background-color: #000000; color: white;
+  }
+  .dm-black-text {
+    color: #1a1a1a !important;
+  }
+  .dm-white-text {
+    color: #ffffff !important;
+  }
+  .dm-light1-text {
+    color: #f0d0f7 !important;
+  }
+  .dm-light2-text {
+    color: #e3d8f8 !important;
+  }
+  .dm-light3-text {
+    color: #ecb8ab !important;
+  }
+  .dm-light4-text {
+    color: #acfbf7 !important;
+  }
+  .dm-white-bg {
+    background-color: #fefefe !important;
+  }
+  .dm-red-bg {
+    background-color: #EF4056 !important;
+  }
+}
+</style>
+</head>
+<body style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; height: 100% !important; width: 100% !important; margin: 0; padding: 0;">
+<div style="color:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;display:none!important;line-height:0px!important;"><img border="0" width="1" height="1" src="https://clicks.mozilla.org/q/23GagKTxMX-99t3xqHS0xQ~~/AAQRxRA~/N9HXYeL-EF6Y8cXpIrngwetFv1btdyMLOr4mZhwjkTyKENaGkj-RoZSe0-i_r-rbgsCeB8S0w6dOTkfwWHZSLg~~" alt=""/></div>
+
+<div style="display:none !important;visibility:hidden;mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Plus: An Essential Oil That Can Effectively Ward Off Mosquitoes</div>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+ 
+ <meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark only">
+
+
+
+
+
+
+
+
+<title></title>
+
+
+
+
+
+
+
+ 
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+  <tr>
+    <td align="center" valign="top" width="100%" bgcolor="#ffffff" class="dark-bg" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+            
+
+
+
+
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="640">
+            <tr>
+            <td align="center" valign="top" width="640">
+            <![endif]-->
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+              <tr>
+                <td align="center" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+
+ 
+
+                  <!-- start: top nav-->
+                  <table align="center" bgcolor="#f8f6f4" border="0" cellpadding="50" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                    <tr>
+                      <td width="100%" align="center" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<a href="https://clicks.mozilla.org/f/a/25TPUT94Pw__ktB4cAXzyw~~/AAQRxRA~/00yBCch6B8ZfZBvamIgx7SsCMlXjltWz00IP-zNqdquPe4Z_3N_g97NKJIh1hSTYX6Kti3k_Ah3LQ4vrU6GKni3CWMG0VxNiob-3tmgynfnl0Z5dA2NfSLXfn5gPWoiBiJZv8VtLjlgPdc-BARAnDg~~">
+                        <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68eff50a7f42cc0063e8cfdb/original.png?1760556298" width="206" alt="Ten Tabs from Firefox" border="0" style="display: block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;" class="light-img"></a>
+                        
+
+
+ 
+
+
+                          <!--[if !mso]><! -->
+                          <div class="dark-img" style="display: none; overflow: hidden; float: left; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visibility: hidden;" align="center">
+                                <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68eff50a7f42cc0063e8cfdb/original.png?1760556298" width="206" alt="Ten Tabs from Firefox" style="display: block; padding-top: 20px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;" border="0">
+                          </div>
+                          <!--<![endif]-->
+
+                        
+                      </td>
+                   
+
+                  </tr>
+</table>
+
+
+                  
+                  
+
+
+
+      
+      
+      
+  
+          
+          
+            
+           
+              
+          
+          
+            
+           
+           
+          
+          
+
+        
+          
+          
+                                                  
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+<tr> 
+<td width="100%" align="left" valign="top" class="outer-padding-top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 3%;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+
+<!--start: article 1 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 20px 0px 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/0SI4v0HBIimtHZlZZlH6JQ~~/AAQRxRA~/WF0nvhUit4KHu1cUMB-7BHPwkxmZlTRlIabtatUWPsOEBdcyyypp-3EAuC8P4rgJpcDpEf4SmQVZfS0qTYoIpHLFnBbiAfA1wVJoVQxfeEBw7l3T1vwKU_3g_zUYnnAxkHHxN2YZAPXjgboBa4r45WLsPAdUA3CgmLbWAe1BobPnIgTB2JtzqOG1XeTFocJvJjCksEzR2wOkFkv0ta1K-Exy-j1FSf6SBiuU42MGulIoqF-ZQ2qigWx3aIxL6ae5l229shIY7dX7JQzFHajdZh3fjscO6K9M6SZ8OaUKHDMHOhmCLtaBMh1SC0MTFFnGuK-tYW4noi_AS13slaQnlFdhpHC08WInxcHsaf9k5Om9MPeXF6Cd0rpoCcaeXxeSVAzOgeQfmc2s6jgg8O0EoxqpDWpI4Q2Qtc4_W6ykQ7zElbjiZSI7n5jv66S9VhtVHt2tmYM6LlE3FDZ-p9NCAMtAGlJPI4-mCAwzGR3l_J0YpEZvNKOptKMzCjnYsEOuEZ0m9IEetIfsWq4R15sWpg~~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ffab264a9-a34e-48b7-a465-f450ab46b159.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #4C0883; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> In the News 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/0SI4v0HBIimtHZlZZlH6JQ~~/AAQRxRA~/WF0nvhUit4KHu1cUMB-7BHPwkxmZlTRlIabtatUWPsOEBdcyyypp-3EAuC8P4rgJpcDpEf4SmQVZfS0qTYoIpHLFnBbiAfA1wVJoVQxfeEBw7l3T1vwKU_3g_zUYnnAxkHHxN2YZAPXjgboBa4r45WLsPAdUA3CgmLbWAe1BobPnIgTB2JtzqOG1XeTFocJvJjCksEzR2wOkFkv0ta1K-Exy-j1FSf6SBiuU42MGulIoqF-ZQ2qigWx3aIxL6ae5l229shIY7dX7JQzFHajdZh3fjscO6K9M6SZ8OaUKHDMHOhmCLtaBMh1SC0MTFFnGuK-tYW4noi_AS13slaQnlFdhpHC08WInxcHsaf9k5Om9MPeXF6Cd0rpoCcaeXxeSVAzOgeQfmc2s6jgg8O0EoxqpDWpI4Q2Qtc4_W6ykQ7zElbjiZSI7n5jv66S9VhtVHt2tmYM6LlE3FDZ-p9NCAMtAGlJPI4-mCAwzGR3l_J0YpEZvNKOptKMzCjnYsEOuEZ0m9IEetIfsWq4R15sWpg~~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">What to know about the Ebola outbreak that the WHO has declared a global health emergency</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/0SI4v0HBIimtHZlZZlH6JQ~~/AAQRxRA~/WF0nvhUit4KHu1cUMB-7BHPwkxmZlTRlIabtatUWPsOEBdcyyypp-3EAuC8P4rgJpcDpEf4SmQVZfS0qTYoIpHLFnBbiAfA1wVJoVQxfeEBw7l3T1vwKU_3g_zUYnnAxkHHxN2YZAPXjgboBa4r45WLsPAdUA3CgmLbWAe1BobPnIgTB2JtzqOG1XeTFocJvJjCksEzR2wOkFkv0ta1K-Exy-j1FSf6SBiuU42MGulIoqF-ZQ2qigWx3aIxL6ae5l229shIY7dX7JQzFHajdZh3fjscO6K9M6SZ8OaUKHDMHOhmCLtaBMh1SC0MTFFnGuK-tYW4noi_AS13slaQnlFdhpHC08WInxcHsaf9k5Om9MPeXF6Cd0rpoCcaeXxeSVAzOgeQfmc2s6jgg8O0EoxqpDWpI4Q2Qtc4_W6ykQ7zElbjiZSI7n5jv66S9VhtVHt2tmYM6LlE3FDZ-p9NCAMtAGlJPI4-mCAwzGR3l_J0YpEZvNKOptKMzCjnYsEOuEZ0m9IEetIfsWq4R15sWpg~~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">The World Health Organization has declared the Ebola disease outbreak in Congo and Uganda a public health emergency of international concern.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">The Associated Press
+</span> 
+<br> Chinedu Asadu 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20What to know about the Ebola outbreak that the WHO has declared a global health emergency&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20that%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://apnews.com/article/ebola-congo-ituri-africa-virus-d59a194e6032e1783b6085b56d84b0f0?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=1&category=fascinating_stories&scheduled_corpus_item_id=d7f11102-17cd-43c3-8592-9e723e13aebf&url=https%3A%2F%2Fapnews.com%2Farticle%2Febola-congo-ituri-africa-virus-d59a194e6032e1783b6085b56d84b0f0" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+<!--start: article 2 --> 
+
+</tr>
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/qqO26hjDAqHtOX9RwyN5ng~~/AAQRxRA~/iofyrlU_vgWuzesIDeHKPVPzTn5KWnZcrwsssP728dY4wvR8mpD07IPdKDsoPRV9AO6lFD29IldKqUjlw1UkHdBsE1uQRWRA4NPkRsI_TuGB4UbGVLC8reZNseSPwg4UO2P1UwgnUjg9bxe3z4_Pi6IrJyHKWmmCiF8QE5sDkBfzzBXR9zgEC-qqiIfm8F1qeN_OgSS00KeQLaHFWaZRMByQNSgPNJUhYglgoYL79wEiSMIkujju9SecNPdS16wBKIrzjwk1Jv153kTWmIcI6bqNB4G3ah-ddzFOnoyhBpZbic7qMPheY9PIjlkgU4HaivXBDBJFE3hNcSCEHbfd0yH7lZjbfQFSw6Zjkcf8EHKIkSKexnEbOp1yI98m8dV_osN9ETGTWVK0UhLrE48O7Cw_yY8h8MYKl-ZXgQGXdvfUh0qdUwVc2fshEZrUvjbyG1PvufNOLhPysXLksVB6GxfszO5LL6phm7iRlJSNwDDDUVvvbA1Po-Cq84VybQkB2WU49pmKYPU2TH24HHRjsw~~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fb952acfc-e01f-4bb5-ad9e-f5ec834d59ac.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #905AFF; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Long Read 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/qqO26hjDAqHtOX9RwyN5ng~~/AAQRxRA~/iofyrlU_vgWuzesIDeHKPVPzTn5KWnZcrwsssP728dY4wvR8mpD07IPdKDsoPRV9AO6lFD29IldKqUjlw1UkHdBsE1uQRWRA4NPkRsI_TuGB4UbGVLC8reZNseSPwg4UO2P1UwgnUjg9bxe3z4_Pi6IrJyHKWmmCiF8QE5sDkBfzzBXR9zgEC-qqiIfm8F1qeN_OgSS00KeQLaHFWaZRMByQNSgPNJUhYglgoYL79wEiSMIkujju9SecNPdS16wBKIrzjwk1Jv153kTWmIcI6bqNB4G3ah-ddzFOnoyhBpZbic7qMPheY9PIjlkgU4HaivXBDBJFE3hNcSCEHbfd0yH7lZjbfQFSw6Zjkcf8EHKIkSKexnEbOp1yI98m8dV_osN9ETGTWVK0UhLrE48O7Cw_yY8h8MYKl-ZXgQGXdvfUh0qdUwVc2fshEZrUvjbyG1PvufNOLhPysXLksVB6GxfszO5LL6phm7iRlJSNwDDDUVvvbA1Po-Cq84VybQkB2WU49pmKYPU2TH24HHRjsw~~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">Bad, Bad, Bad, Bad Roommate</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/qqO26hjDAqHtOX9RwyN5ng~~/AAQRxRA~/iofyrlU_vgWuzesIDeHKPVPzTn5KWnZcrwsssP728dY4wvR8mpD07IPdKDsoPRV9AO6lFD29IldKqUjlw1UkHdBsE1uQRWRA4NPkRsI_TuGB4UbGVLC8reZNseSPwg4UO2P1UwgnUjg9bxe3z4_Pi6IrJyHKWmmCiF8QE5sDkBfzzBXR9zgEC-qqiIfm8F1qeN_OgSS00KeQLaHFWaZRMByQNSgPNJUhYglgoYL79wEiSMIkujju9SecNPdS16wBKIrzjwk1Jv153kTWmIcI6bqNB4G3ah-ddzFOnoyhBpZbic7qMPheY9PIjlkgU4HaivXBDBJFE3hNcSCEHbfd0yH7lZjbfQFSw6Zjkcf8EHKIkSKexnEbOp1yI98m8dV_osN9ETGTWVK0UhLrE48O7Cw_yY8h8MYKl-ZXgQGXdvfUh0qdUwVc2fshEZrUvjbyG1PvufNOLhPysXLksVB6GxfszO5LL6phm7iRlJSNwDDDUVvvbA1Po-Cq84VybQkB2WU49pmKYPU2TH24HHRjsw~~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">How a nightmare housing situation drove a bleeding-heart progressive to home surveillance, eviction law, and calling in law enforcement.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">The Verge
+</span> 
+<br> Ian Frisch 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20Bad, Bad, Bad, Bad Roommate&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.theverge.com/cs/features/919365/bad-roommate-housing-los-angeles-eviction?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=2&category=fascinating_stories&scheduled_corpus_item_id=9acd6c4f-dffc-4626-9c4a-89c8a58c99a1&url=https%3A%2F%2Fwww.theverge.com%2Fcs%2Ffeatures%2F919365%2Fbad-roommate-housing-los-angeles-eviction" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr> 
+<!--start: article 3 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/Wv4PB4UVpslCmrZupJlW8w~~/AAQRxRA~/uXWou5rpKXbkT1CRNVwAEsctl7iElebVeenA8S2pJQJyRfTTStNHMWyc0Qb1RX_4GoT1rEK9-R832D0EFwBZ3L8ZV-kxgLRLohD8nLYpPR0ejnHX7w1roi6LOGACva6P8UenKUAuMeUtj5mot8Z95hEZEkFuGOAUzEQrzdsvXb3m_bCMecJ0MhtTlAeSwAMGm4bDAzmQuD8fmz_5664EDL_TAwH0VTxRFJSW5Z9S_9pnVNS2s3dGV1TLrjXVmwKurFl1fAAW5Yua6LERd_7IFBmNtYnA7qTq8PhnX7yHoVoaYO-rTcfy9h0wrEJlRaIkQBGW_w3Y_ATHH0AOpwXnWIe2VRVm8yIbADVvhO8fEYg980AAjPjxvCNEBxsByUh0BFpbqB__V7fHK8--w2oAG6oNmZ06Hdh8dDuUcORF0AOi7EVpIqK-UZxe-mgiUlpWuQBKEK77e5xNXZa13_AbgxZQvXp7D3wuRhH4JDu7eHLRdsQ19-JhbAxoiryl9Fjw"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F58d35413-5c03-4f43-b075-e409dfd89579.png" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #003C6E; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Politics 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/Wv4PB4UVpslCmrZupJlW8w~~/AAQRxRA~/uXWou5rpKXbkT1CRNVwAEsctl7iElebVeenA8S2pJQJyRfTTStNHMWyc0Qb1RX_4GoT1rEK9-R832D0EFwBZ3L8ZV-kxgLRLohD8nLYpPR0ejnHX7w1roi6LOGACva6P8UenKUAuMeUtj5mot8Z95hEZEkFuGOAUzEQrzdsvXb3m_bCMecJ0MhtTlAeSwAMGm4bDAzmQuD8fmz_5664EDL_TAwH0VTxRFJSW5Z9S_9pnVNS2s3dGV1TLrjXVmwKurFl1fAAW5Yua6LERd_7IFBmNtYnA7qTq8PhnX7yHoVoaYO-rTcfy9h0wrEJlRaIkQBGW_w3Y_ATHH0AOpwXnWIe2VRVm8yIbADVvhO8fEYg980AAjPjxvCNEBxsByUh0BFpbqB__V7fHK8--w2oAG6oNmZ06Hdh8dDuUcORF0AOi7EVpIqK-UZxe-mgiUlpWuQBKEK77e5xNXZa13_AbgxZQvXp7D3wuRhH4JDu7eHLRdsQ19-JhbAxoiryl9Fjw" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">Why running Britain is so hard, no matter who does it</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/Wv4PB4UVpslCmrZupJlW8w~~/AAQRxRA~/uXWou5rpKXbkT1CRNVwAEsctl7iElebVeenA8S2pJQJyRfTTStNHMWyc0Qb1RX_4GoT1rEK9-R832D0EFwBZ3L8ZV-kxgLRLohD8nLYpPR0ejnHX7w1roi6LOGACva6P8UenKUAuMeUtj5mot8Z95hEZEkFuGOAUzEQrzdsvXb3m_bCMecJ0MhtTlAeSwAMGm4bDAzmQuD8fmz_5664EDL_TAwH0VTxRFJSW5Z9S_9pnVNS2s3dGV1TLrjXVmwKurFl1fAAW5Yua6LERd_7IFBmNtYnA7qTq8PhnX7yHoVoaYO-rTcfy9h0wrEJlRaIkQBGW_w3Y_ATHH0AOpwXnWIe2VRVm8yIbADVvhO8fEYg980AAjPjxvCNEBxsByUh0BFpbqB__V7fHK8--w2oAG6oNmZ06Hdh8dDuUcORF0AOi7EVpIqK-UZxe-mgiUlpWuQBKEK77e5xNXZa13_AbgxZQvXp7D3wuRhH4JDu7eHLRdsQ19-JhbAxoiryl9Fjw" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">In the past 10 years, six people have had the job of running the United Kingdom. All failed to turn the country around. Good luck Wes, Andy, or Angela — you’re going to need it.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">POLITICO Europe
+</span> 
+<br> Charlie Cooper 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20Why running Britain is so hard, no matter who does it&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.politico.eu/article/why-running-britain-hard-no-matter-who-does-it/?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=3&category=fascinating_stories&scheduled_corpus_item_id=9e15259a-7884-4d83-be57-2a2783d8c97d&url=https%3A%2F%2Fwww.politico.eu%2Farticle%2Fwhy-running-britain-hard-no-matter-who-does-it%2F" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr> 
+<!--start: article 4 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/LG6JfT8VB7ODikgBrHpqEA~~/AAQRxRA~/zLs0qwC8J_LpiI7PpvofelMrDgQdPzPdq0d8WT9Udzi2sEZwpnUp2-e1B5ipEP3m4olWshflTQMXpxFCjSc7NYl5knwMLOcqbbaAVu2hdZoQXdHOOuKqw5Nfy6-Ahc6wvKg6nWuRLKH-G-qpGIZQydbpc8aVV_3h9bj-iOhMPj5EtDNQ0pROPIAJAlJzXqO3ovPGmHlHIIsTq_U9w9VJ0MO_0gz9oDgwL3SED1r2CmzBoDZy_vmEUJRTboG1Bz9MRxMn9BlzhAhAALnRa6hSslkCZnAwvUVuyfY6-K3XWHfY0j83eNLkIo5-0aqcxfOpb_yekH8azq8EqFmffv0BKutSPMXCtjdnvcfrqipaUv_X97L05yT4FAuCDEymKuF2hxhEuigmM9djet6e2imRfSOlMwflz9ZU4bdBZCmjxiCvQWkv_ykM6-6KvfMDMOkYBC_bWn-LxzmHSPAZvAqRXgrbLwudI4mczO4X9j0K388~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3f3fb9c-31bc-460e-8e4d-1d9d7f87447e.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #00A6F9; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Health 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/LG6JfT8VB7ODikgBrHpqEA~~/AAQRxRA~/zLs0qwC8J_LpiI7PpvofelMrDgQdPzPdq0d8WT9Udzi2sEZwpnUp2-e1B5ipEP3m4olWshflTQMXpxFCjSc7NYl5knwMLOcqbbaAVu2hdZoQXdHOOuKqw5Nfy6-Ahc6wvKg6nWuRLKH-G-qpGIZQydbpc8aVV_3h9bj-iOhMPj5EtDNQ0pROPIAJAlJzXqO3ovPGmHlHIIsTq_U9w9VJ0MO_0gz9oDgwL3SED1r2CmzBoDZy_vmEUJRTboG1Bz9MRxMn9BlzhAhAALnRa6hSslkCZnAwvUVuyfY6-K3XWHfY0j83eNLkIo5-0aqcxfOpb_yekH8azq8EqFmffv0BKutSPMXCtjdnvcfrqipaUv_X97L05yT4FAuCDEymKuF2hxhEuigmM9djet6e2imRfSOlMwflz9ZU4bdBZCmjxiCvQWkv_ykM6-6KvfMDMOkYBC_bWn-LxzmHSPAZvAqRXgrbLwudI4mczO4X9j0K388~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">An HIV-free generation is closer than you think</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/LG6JfT8VB7ODikgBrHpqEA~~/AAQRxRA~/zLs0qwC8J_LpiI7PpvofelMrDgQdPzPdq0d8WT9Udzi2sEZwpnUp2-e1B5ipEP3m4olWshflTQMXpxFCjSc7NYl5knwMLOcqbbaAVu2hdZoQXdHOOuKqw5Nfy6-Ahc6wvKg6nWuRLKH-G-qpGIZQydbpc8aVV_3h9bj-iOhMPj5EtDNQ0pROPIAJAlJzXqO3ovPGmHlHIIsTq_U9w9VJ0MO_0gz9oDgwL3SED1r2CmzBoDZy_vmEUJRTboG1Bz9MRxMn9BlzhAhAALnRa6hSslkCZnAwvUVuyfY6-K3XWHfY0j83eNLkIo5-0aqcxfOpb_yekH8azq8EqFmffv0BKutSPMXCtjdnvcfrqipaUv_X97L05yT4FAuCDEymKuF2hxhEuigmM9djet6e2imRfSOlMwflz9ZU4bdBZCmjxiCvQWkv_ykM6-6KvfMDMOkYBC_bWn-LxzmHSPAZvAqRXgrbLwudI4mczO4X9j0K388~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">The effort to protect babies from HIV is working. It’s also in danger.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">Vox
+</span> 
+<br> Sara Herschander 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20An HIV-free generation is closer than you think&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.vox.com/future-perfect/488805/hiv-free-generation-babies?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=4&category=fascinating_stories&scheduled_corpus_item_id=69732cbc-8d57-4ca0-8339-047eacb55a37&url=https%3A%2F%2Fwww.vox.com%2Ffuture-perfect%2F488805%2Fhiv-free-generation-babies" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr> 
+ <!--start: article 5 -->
+<tr>
+
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+
+<tr>
+
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+
+<tr>
+
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/ONqFCkcX7Y5iw8ucLV1UKA~~/AAQRxRA~/4LI58cN91er2OC5uzRykAT44nok1ggCjBEJm_esrtEogCyDAVNWgaLQKRGLXX-v837YtXvbtarz1hqyK6grsA0AfTQ0wZuTX_0tzHmDmpezQg_bnELkqk33spKeTEIxDLXdpN47h1tsdAlXLOiuTL0OW6syhaPdsvpBxxVqmtpU3j5JXgtM_QrOBhGnBLE9t0-fBb0vk21I6UMYTReUjzn23fHWeKMwr6Q-ZyOoqN8iVTAe8BzzfGPzENy11st9PGM_v38Jqi5pasXreJfT1ygmQ9riWESdCkQdFmqpBKqvAYcs_Lrbi3gGMebFjXnqQlbHC7lyncoTS1NnNXn3dxdQyRWXLLIO9EgdBSCQaVzFRgxkBDRZZ_2AxmdAoh4_y_ZMr4R1pzGj5UvgqDY5vzR8yySIB4-3yv0IrODGLOQRr7CSOZiysDZhJ9wMKr4XaV3WoeKPk9fnSRdUp9dBDA8LLSHUT7Oh1G1VXFEdtSd4~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff0ec863a-addc-4727-bef2-c17b4ea6ba3a.webp" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a>
+
+</td>
+
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+
+</td>
+
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;">
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody>
+
+<tr>
+
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #FFBD4F; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Entertainment
+
+</td>
+
+</tr>
+
+<tr>
+
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/ONqFCkcX7Y5iw8ucLV1UKA~~/AAQRxRA~/4LI58cN91er2OC5uzRykAT44nok1ggCjBEJm_esrtEogCyDAVNWgaLQKRGLXX-v837YtXvbtarz1hqyK6grsA0AfTQ0wZuTX_0tzHmDmpezQg_bnELkqk33spKeTEIxDLXdpN47h1tsdAlXLOiuTL0OW6syhaPdsvpBxxVqmtpU3j5JXgtM_QrOBhGnBLE9t0-fBb0vk21I6UMYTReUjzn23fHWeKMwr6Q-ZyOoqN8iVTAe8BzzfGPzENy11st9PGM_v38Jqi5pasXreJfT1ygmQ9riWESdCkQdFmqpBKqvAYcs_Lrbi3gGMebFjXnqQlbHC7lyncoTS1NnNXn3dxdQyRWXLLIO9EgdBSCQaVzFRgxkBDRZZ_2AxmdAoh4_y_ZMr4R1pzGj5UvgqDY5vzR8yySIB4-3yv0IrODGLOQRr7CSOZiysDZhJ9wMKr4XaV3WoeKPk9fnSRdUp9dBDA8LLSHUT7Oh1G1VXFEdtSd4~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">‘It’s felt like homework’: Why Star Wars went so wrong</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/ONqFCkcX7Y5iw8ucLV1UKA~~/AAQRxRA~/4LI58cN91er2OC5uzRykAT44nok1ggCjBEJm_esrtEogCyDAVNWgaLQKRGLXX-v837YtXvbtarz1hqyK6grsA0AfTQ0wZuTX_0tzHmDmpezQg_bnELkqk33spKeTEIxDLXdpN47h1tsdAlXLOiuTL0OW6syhaPdsvpBxxVqmtpU3j5JXgtM_QrOBhGnBLE9t0-fBb0vk21I6UMYTReUjzn23fHWeKMwr6Q-ZyOoqN8iVTAe8BzzfGPzENy11st9PGM_v38Jqi5pasXreJfT1ygmQ9riWESdCkQdFmqpBKqvAYcs_Lrbi3gGMebFjXnqQlbHC7lyncoTS1NnNXn3dxdQyRWXLLIO9EgdBSCQaVzFRgxkBDRZZ_2AxmdAoh4_y_ZMr4R1pzGj5UvgqDY5vzR8yySIB4-3yv0IrODGLOQRr7CSOZiysDZhJ9wMKr4XaV3WoeKPk9fnSRdUp9dBDA8LLSHUT7Oh1G1VXFEdtSd4~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">The Mandalorian & Grogu is released this week and is set for the lowest opening weekend of any Star Wars film ever. With the TV shows also struggling, here’s why interest is waning.</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;">
+
+  
+
+<span style="font-weight: 700;">BBC
+
+</span>
+
+<br> Hanna Flint
+
+</td>
+
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;">
+
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody>
+
+<tr>
+
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20‘It’s felt like homework’: Why Star Wars went so wrong&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.bbc.com/culture/article/20260515-why-star-wars-went-so-wrong?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=5&category=fascinating_stories&scheduled_corpus_item_id=f0f3cce3-a1a1-4e70-8166-8884bf48972e&url=https%3A%2F%2Fwww.bbc.com%2Fculture%2Farticle%2F20260515-why-star-wars-went-so-wrong" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a>
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr>  
+
+<!--start: article 6 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/8ko3Kh-xsayp8YG6_SCObA~~/AAQRxRA~/EUJ_M-Ty8FUE5N1640Hrdw7G7IscXAuPCZRwNsFP1soLoMZjfRHXsh8TI4qHK5UIK35brvgqjVhnBFQeE7wFUKaUi1N0KhdZ0wlNosHnY1vDCMPjGODcQ-8BDpiU_jU6WmalkuMlsE2MQQAAwwbdc2WIIPYggrxXD2C-xHOH8hNVNA6PSJ66KS3g2bDl4Q8EgYFIuK-2CGvjwzWD9HquFJD23j9aUeDWxmjljfS3rjHd84IaSyidjvf2_gZAWsNkmCEVcNAnNNbephhIlwUIpDZElPif7GDBFynCcV1mN6jldznerOE8WCAIwUfdtulQ6H1GgNmmdClUq05KARY_t1ET5MOJCVfE_BOj317uuALB-a-WVXL6ykIMEBAMXUYHrccVes6R0PbkogO6hrw_ury5tiZ6Q5Uc3OHQ9702AR-S5viuIsXGdSqscY6aemAL-5o_tWS3aK57LcyX2_vSkjEvr9EA81jlsPh6fhhVKvE~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F93b9964b-79a5-4b93-b850-2a1fd3000027.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #4C0883; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Sports 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/8ko3Kh-xsayp8YG6_SCObA~~/AAQRxRA~/EUJ_M-Ty8FUE5N1640Hrdw7G7IscXAuPCZRwNsFP1soLoMZjfRHXsh8TI4qHK5UIK35brvgqjVhnBFQeE7wFUKaUi1N0KhdZ0wlNosHnY1vDCMPjGODcQ-8BDpiU_jU6WmalkuMlsE2MQQAAwwbdc2WIIPYggrxXD2C-xHOH8hNVNA6PSJ66KS3g2bDl4Q8EgYFIuK-2CGvjwzWD9HquFJD23j9aUeDWxmjljfS3rjHd84IaSyidjvf2_gZAWsNkmCEVcNAnNNbephhIlwUIpDZElPif7GDBFynCcV1mN6jldznerOE8WCAIwUfdtulQ6H1GgNmmdClUq05KARY_t1ET5MOJCVfE_BOj317uuALB-a-WVXL6ykIMEBAMXUYHrccVes6R0PbkogO6hrw_ury5tiZ6Q5Uc3OHQ9702AR-S5viuIsXGdSqscY6aemAL-5o_tWS3aK57LcyX2_vSkjEvr9EA81jlsPh6fhhVKvE~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">Patriots hit with bizarre scheduling quirk the NFL hasn't seen in 40 years, plus 21 other schedule oddities</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/8ko3Kh-xsayp8YG6_SCObA~~/AAQRxRA~/EUJ_M-Ty8FUE5N1640Hrdw7G7IscXAuPCZRwNsFP1soLoMZjfRHXsh8TI4qHK5UIK35brvgqjVhnBFQeE7wFUKaUi1N0KhdZ0wlNosHnY1vDCMPjGODcQ-8BDpiU_jU6WmalkuMlsE2MQQAAwwbdc2WIIPYggrxXD2C-xHOH8hNVNA6PSJ66KS3g2bDl4Q8EgYFIuK-2CGvjwzWD9HquFJD23j9aUeDWxmjljfS3rjHd84IaSyidjvf2_gZAWsNkmCEVcNAnNNbephhIlwUIpDZElPif7GDBFynCcV1mN6jldznerOE8WCAIwUfdtulQ6H1GgNmmdClUq05KARY_t1ET5MOJCVfE_BOj317uuALB-a-WVXL6ykIMEBAMXUYHrccVes6R0PbkogO6hrw_ury5tiZ6Q5Uc3OHQ9702AR-S5viuIsXGdSqscY6aemAL-5o_tWS3aK57LcyX2_vSkjEvr9EA81jlsPh6fhhVKvE~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">Some teams were given a pretty crazy schedule by the NFL</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">CBS Sports
+</span> 
+<br> John Breech 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20Patriots hit with bizarre scheduling quirk the NFL hasn't seen in 40 years, plus 21 other schedule oddities&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.cbssports.com/nfl/news/nfl-2026-scheduling-quirks-oddities/?utm_medium=email&utm_source=ten_tabs&utm_campaign=position=6&category=fascinating_stories&scheduled_corpus_item_id=639f1cf9-2905-4169-8585-ea221f054cb4&url=https%3A%2F%2Fwww.cbssports.com%2Fnfl%2Fnews%2Fnfl-2026-scheduling-quirks-oddities%2F" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr>  
+<!--start: article 7 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/H2t-nW4B7PhWS4zPEJsUmw~~/AAQRxRA~/ZpJQyydrb-REHVMpeui1Hmvj0x2dN04APA5LWP8v2MCQLRGU3yo1UHFj5cxST0rDXw26VZfJxUeMVi5UILGHOFN1BfWV-zuyE1h6FrXLJU5dp8q6R8z2CoWisQwNKv-ePSXLo-jGS1NWzVZVDy04nkNBKR4NTDCOJS3mqPxbwdpAW7zUiHOt4iub0zBO6DDPY146C6JfvmqMGlyRaGnjhwe5mZvDsP029StCWqEPwPW0B-H449HhHrheKGApLK8L-WtFgvQQ0y-aBXSNSbQIWk66bzMkzWY9NHhXftZJNzQN47BVOGSzSxI1BQ5_6T0vwiurkfZAAiI3Q1TXq2pcXrHZsB7_PjPGKzEOkiganKa6pAAwJthLRsN42VnwEYrrcOafFhq_kWvxHzViP8rq9_XEK6Ez926ADLrW4OAkI28bKJveIe3rp3MPeHt72LYMR_G9jKKDKHa6_hgG39VT5DPNuX-7uycbYNmj5ksmoHSbVdQXLZy6WxkXzb5j-OzAjx5YZ82YJqny5BU2JRUGKw~~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe4769be0-d6cc-4217-b88d-7d80460b715e.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #905AFF; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Technology 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/H2t-nW4B7PhWS4zPEJsUmw~~/AAQRxRA~/ZpJQyydrb-REHVMpeui1Hmvj0x2dN04APA5LWP8v2MCQLRGU3yo1UHFj5cxST0rDXw26VZfJxUeMVi5UILGHOFN1BfWV-zuyE1h6FrXLJU5dp8q6R8z2CoWisQwNKv-ePSXLo-jGS1NWzVZVDy04nkNBKR4NTDCOJS3mqPxbwdpAW7zUiHOt4iub0zBO6DDPY146C6JfvmqMGlyRaGnjhwe5mZvDsP029StCWqEPwPW0B-H449HhHrheKGApLK8L-WtFgvQQ0y-aBXSNSbQIWk66bzMkzWY9NHhXftZJNzQN47BVOGSzSxI1BQ5_6T0vwiurkfZAAiI3Q1TXq2pcXrHZsB7_PjPGKzEOkiganKa6pAAwJthLRsN42VnwEYrrcOafFhq_kWvxHzViP8rq9_XEK6Ez926ADLrW4OAkI28bKJveIe3rp3MPeHt72LYMR_G9jKKDKHa6_hgG39VT5DPNuX-7uycbYNmj5ksmoHSbVdQXLZy6WxkXzb5j-OzAjx5YZ82YJqny5BU2JRUGKw~~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">Phone Batteries Keep Getting Better. So Why Are We Always Charging?</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/H2t-nW4B7PhWS4zPEJsUmw~~/AAQRxRA~/ZpJQyydrb-REHVMpeui1Hmvj0x2dN04APA5LWP8v2MCQLRGU3yo1UHFj5cxST0rDXw26VZfJxUeMVi5UILGHOFN1BfWV-zuyE1h6FrXLJU5dp8q6R8z2CoWisQwNKv-ePSXLo-jGS1NWzVZVDy04nkNBKR4NTDCOJS3mqPxbwdpAW7zUiHOt4iub0zBO6DDPY146C6JfvmqMGlyRaGnjhwe5mZvDsP029StCWqEPwPW0B-H449HhHrheKGApLK8L-WtFgvQQ0y-aBXSNSbQIWk66bzMkzWY9NHhXftZJNzQN47BVOGSzSxI1BQ5_6T0vwiurkfZAAiI3Q1TXq2pcXrHZsB7_PjPGKzEOkiganKa6pAAwJthLRsN42VnwEYrrcOafFhq_kWvxHzViP8rq9_XEK6Ez926ADLrW4OAkI28bKJveIe3rp3MPeHt72LYMR_G9jKKDKHa6_hgG39VT5DPNuX-7uycbYNmj5ksmoHSbVdQXLZy6WxkXzb5j-OzAjx5YZ82YJqny5BU2JRUGKw~~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">As our phones become more advanced, batteries are feeling the strain. But technology improvements and shifts in our habits could help close the gap.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">CNET
+</span> 
+<br> Abrar Al-Heeti 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20Phone Batteries Keep Getting Better. So Why Are We Always Charging?&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.cnet.com/tech/mobile/features/phone-battery-life-silicon-carbon-what-next/?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=7&category=fascinating_stories&scheduled_corpus_item_id=46d0b0db-5497-4b25-bf4a-af4fbbe1c2b7&url=https%3A%2F%2Fwww.cnet.com%2Ftech%2Fmobile%2Ffeatures%2Fphone-battery-life-silicon-carbon-what-next%2F" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr> 
+<!--start: article 8 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/0TXhlPvAcexMBtoRS6-NEg~~/AAQRxRA~/PI1QouXOQymumSRqWloiA1Yc0oII1W4FcjZTy3F3DJ8dpVHRRbJIqbzEMocnnznFE8urq30NLoJFdR3ORO6oAkosD35DEMsXq1wUODjS26W-axA0xYS7TjActKP1bZUNGtVrgNPTArGx7W3kxfljo6TgtpfnjrMBam8jdnCfkbbBLn1rbtLcPtI1FqmY_KEkJl-G2bXpDrr4TIGE2_oWs2fgnsWUWIuZKLjjiv2djSYFV8zvp3N9SyZk-XC0pkb0FgpTD7BeDJL_Km-asF4MEsAe0vT_04we8vjYn_4laIeLHb3UpD89d9xBCIky8-MkXN9nS-dZz_5eptm-eCUdZ-jQ_mtZpqrmUyvaGjNDWJxDToZt2sm0lUbZAvlY_-RKdNijbrhcBA2HWLW9Hl6_QUQRxg-LEHfd4_ZHnh6vPOysU1vEohOcpX2SBg4s_b58s4KM-jc6rQMcFMIfxDX__V93O6Vb50bxA57W_a7bW4PfeVKpUzyaIqlFzqMPDGxI"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fda8e13d5-bd02-4080-813f-aae2bd5b8d91.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #003C6E; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Science 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/0TXhlPvAcexMBtoRS6-NEg~~/AAQRxRA~/PI1QouXOQymumSRqWloiA1Yc0oII1W4FcjZTy3F3DJ8dpVHRRbJIqbzEMocnnznFE8urq30NLoJFdR3ORO6oAkosD35DEMsXq1wUODjS26W-axA0xYS7TjActKP1bZUNGtVrgNPTArGx7W3kxfljo6TgtpfnjrMBam8jdnCfkbbBLn1rbtLcPtI1FqmY_KEkJl-G2bXpDrr4TIGE2_oWs2fgnsWUWIuZKLjjiv2djSYFV8zvp3N9SyZk-XC0pkb0FgpTD7BeDJL_Km-asF4MEsAe0vT_04we8vjYn_4laIeLHb3UpD89d9xBCIky8-MkXN9nS-dZz_5eptm-eCUdZ-jQ_mtZpqrmUyvaGjNDWJxDToZt2sm0lUbZAvlY_-RKdNijbrhcBA2HWLW9Hl6_QUQRxg-LEHfd4_ZHnh6vPOysU1vEohOcpX2SBg4s_b58s4KM-jc6rQMcFMIfxDX__V93O6Vb50bxA57W_a7bW4PfeVKpUzyaIqlFzqMPDGxI" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">New Study Finds That an Essential Oil Can Effectively Ward Off Mosquitoes. Here’s What to Know.</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/0TXhlPvAcexMBtoRS6-NEg~~/AAQRxRA~/PI1QouXOQymumSRqWloiA1Yc0oII1W4FcjZTy3F3DJ8dpVHRRbJIqbzEMocnnznFE8urq30NLoJFdR3ORO6oAkosD35DEMsXq1wUODjS26W-axA0xYS7TjActKP1bZUNGtVrgNPTArGx7W3kxfljo6TgtpfnjrMBam8jdnCfkbbBLn1rbtLcPtI1FqmY_KEkJl-G2bXpDrr4TIGE2_oWs2fgnsWUWIuZKLjjiv2djSYFV8zvp3N9SyZk-XC0pkb0FgpTD7BeDJL_Km-asF4MEsAe0vT_04we8vjYn_4laIeLHb3UpD89d9xBCIky8-MkXN9nS-dZz_5eptm-eCUdZ-jQ_mtZpqrmUyvaGjNDWJxDToZt2sm0lUbZAvlY_-RKdNijbrhcBA2HWLW9Hl6_QUQRxg-LEHfd4_ZHnh6vPOysU1vEohOcpX2SBg4s_b58s4KM-jc6rQMcFMIfxDX__V93O6Vb50bxA57W_a7bW4PfeVKpUzyaIqlFzqMPDGxI" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">To test it, study participants put their arms in mosquito-infested cages for three hours. Dermatologists and bug experts weigh in.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;"> 
+
+<span style="font-weight: 700;">Outside
+</span> 
+<br> Korin Miller 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20New Study Finds That an Essential Oil Can Effectively Ward Off Mosquitoes. Here’s What to Know.&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.outsideonline.com/health/wellness/natural-mosquito-repellent/?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=8&category=fascinating_stories&scheduled_corpus_item_id=032d44ac-2a8b-4477-a4a5-97b580d71484&url=https%3A%2F%2Fwww.outsideonline.com%2Fhealth%2Fwellness%2Fnatural-mosquito-repellent%2F" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr> 
+<!--start: article 9 -->
+<tr>
+
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+
+<tr>
+
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+
+<tr>
+
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/H7CypF9VXvcv1QbGyqTeYQ~~/AAQRxRA~/qcM_rTVBxlKkCKTiHi7edYV5Bi51_MOopMMhg662l42AIV7LcZwPCDEf-f152GeQZ4mlwotvvJnFSPJBZpHPSlD8Zk3f8Yl12mabXlDoJ3aHxEtyilJgIGQYOXLhSWBoBnqXdu8xhf-iwaD9W-ANrXqKD8BKXldN-VNe6DUQXOsLuY7ark0zR_ygVhFYvojZnU8smcMCXVMPsDVwwufHvtd25DrycNHSjou2vXS01oZqxpJnL9IcFKa0Du_PgVbuLkJHzl_1bhA5aq8jE1NYtLY0Idn9EUNvQJvyQVGwBxJWAIWfZDYmXzjBBmvOnegulHiyauUL0bXBpaaRXt1tg25EZsNmMMrleVZ6g7RfBVCLDANEFr6zoz-Omu1tHuqARcPeJgccY76Libb1I4df4r-JXTRQpMOfNeopOzzxR0Kx-IwypA1Mz74AZf0gP4zkE_4Dwt7DqVTCJ27D5PHIvw3dqJxtUz7fz_GT1dLSpw-74oBoXdRjKR1yuJB1YJGPGdUzOG-SUuRM5GOOmObHaiJtne5NiPtlKL22CegQHSoeHsPbgLpHlj8mCCqEPoeudICgGC5k6GdWoGf8ydsjOa11d0cDcXRXoylNCCSZP0pyY9xEWiiVzt__eUY1W02m6L5gDDE-dFaCVQH8NZmrtA~~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F45d72c81-e719-4a21-8448-462f734d7ca5.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a>
+
+</td>
+
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+
+</td>
+
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;">
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody>
+
+<tr>
+
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #00A6F9; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Zeitgeist
+
+</td>
+
+</tr>
+
+<tr>
+
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/H7CypF9VXvcv1QbGyqTeYQ~~/AAQRxRA~/qcM_rTVBxlKkCKTiHi7edYV5Bi51_MOopMMhg662l42AIV7LcZwPCDEf-f152GeQZ4mlwotvvJnFSPJBZpHPSlD8Zk3f8Yl12mabXlDoJ3aHxEtyilJgIGQYOXLhSWBoBnqXdu8xhf-iwaD9W-ANrXqKD8BKXldN-VNe6DUQXOsLuY7ark0zR_ygVhFYvojZnU8smcMCXVMPsDVwwufHvtd25DrycNHSjou2vXS01oZqxpJnL9IcFKa0Du_PgVbuLkJHzl_1bhA5aq8jE1NYtLY0Idn9EUNvQJvyQVGwBxJWAIWfZDYmXzjBBmvOnegulHiyauUL0bXBpaaRXt1tg25EZsNmMMrleVZ6g7RfBVCLDANEFr6zoz-Omu1tHuqARcPeJgccY76Libb1I4df4r-JXTRQpMOfNeopOzzxR0Kx-IwypA1Mz74AZf0gP4zkE_4Dwt7DqVTCJ27D5PHIvw3dqJxtUz7fz_GT1dLSpw-74oBoXdRjKR1yuJB1YJGPGdUzOG-SUuRM5GOOmObHaiJtne5NiPtlKL22CegQHSoeHsPbgLpHlj8mCCqEPoeudICgGC5k6GdWoGf8ydsjOa11d0cDcXRXoylNCCSZP0pyY9xEWiiVzt__eUY1W02m6L5gDDE-dFaCVQH8NZmrtA~~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">How ‘bird’ became TikTok’s favourite new dating insult</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/H7CypF9VXvcv1QbGyqTeYQ~~/AAQRxRA~/qcM_rTVBxlKkCKTiHi7edYV5Bi51_MOopMMhg662l42AIV7LcZwPCDEf-f152GeQZ4mlwotvvJnFSPJBZpHPSlD8Zk3f8Yl12mabXlDoJ3aHxEtyilJgIGQYOXLhSWBoBnqXdu8xhf-iwaD9W-ANrXqKD8BKXldN-VNe6DUQXOsLuY7ark0zR_ygVhFYvojZnU8smcMCXVMPsDVwwufHvtd25DrycNHSjou2vXS01oZqxpJnL9IcFKa0Du_PgVbuLkJHzl_1bhA5aq8jE1NYtLY0Idn9EUNvQJvyQVGwBxJWAIWfZDYmXzjBBmvOnegulHiyauUL0bXBpaaRXt1tg25EZsNmMMrleVZ6g7RfBVCLDANEFr6zoz-Omu1tHuqARcPeJgccY76Libb1I4df4r-JXTRQpMOfNeopOzzxR0Kx-IwypA1Mz74AZf0gP4zkE_4Dwt7DqVTCJ27D5PHIvw3dqJxtUz7fz_GT1dLSpw-74oBoXdRjKR1yuJB1YJGPGdUzOG-SUuRM5GOOmObHaiJtne5NiPtlKL22CegQHSoeHsPbgLpHlj8mCCqEPoeudICgGC5k6GdWoGf8ydsjOa11d0cDcXRXoylNCCSZP0pyY9xEWiiVzt__eUY1W02m6L5gDDE-dFaCVQH8NZmrtA~~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">The word has become shorthand for being male-centred, prompting women to share their dating horror stories and unlearn their ‘bird’ behaviour before summertime</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 0px;">
+
+  
+
+<span style="font-weight: 700;">Dazed
+
+</span>
+
+<br> Isabel Bekele
+
+</td>
+
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;">
+
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody>
+
+<tr>
+
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20How ‘bird’ became TikTok’s favourite new dating insult&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.dazeddigital.com/life-culture/article/70268/1/bird-behaviour-tiktok-favourite-dating-insult-dating-deprogramming-women?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=9&category=fascinating_stories&scheduled_corpus_item_id=cbd7ba4c-b39b-418c-98c1-f06cdca2109b&url=https%3A%2F%2Fwww.dazeddigital.com%2Flife-culture%2Farticle%2F70268%2F1%2Fbird-behaviour-tiktok-favourite-dating-insult-dating-deprogramming-women" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a>
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+ <tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+</tr>  
+
+<!--start: article 10 --> 
+
+<tr> 
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> 
+<table align="center" border="0" callpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td width="100%" class="" align="left" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> 
+<tr> 
+<td align="left" width="30%" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://clicks.mozilla.org/f/a/A7H_VLC88oRgJ0LZRUPcRQ~~/AAQRxRA~/QKMP-PZme5I1gJyD7QDockMTSFmxlDaWmTbL6C3tKqd4U_lXB6WVciW6NE46waSSpbLTkQK4eFgU--zR6pzqyrQgIqvF5GpMnwM-t0mFardH7bbyFcGo9qvMJiE-sS4MTGAOW8DwJSBcZt4bNbve8lgdu0xphENWdpvMm6sEiF3tumc0HC27zl1OSmh3ubhtemR-NzO1G04AAGNsdH2N_cCK5vePg5CgUmtFC1EtdemUl2JNm7CKKrLyprQrujDPXXA0VhEq35XgmklCY5hmnVLsklwYhSEMNh8hF3kZ8fIjCICxg8ZTEVh05SKiZxMlwJ3HA2zYdFsm8HhcRtuLoZB1JeB5La0OmAm1clfC7twsv9o2ejg3ou8Yi2iybrQvar3LMiZa0rnSpONkPfCXToguTn_vNFZ28JnZbJB_5SWtKF0pbdPrmKX1rYI2jefCwq_2FqXEV7tyYaM0gQr1kw~~"><img alt="" src="https://pocket-image-cache.com/150x150/filters:format(jpeg):quality(100):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4c7ff71c-a74f-4dda-a402-a844da03a8c6.jpeg" border="0" width="100%" style="display: inline-block; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> 
+</td> 
+<td align="left" class="empty" width="7%" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; 
+</td> 
+<td width="78%" align="left" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0%;"> 
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="dm-light1-text" style="color: #FFBD4F; font-size: 14px; line-height: 20px; font-weight: 700; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;"> Food 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 5px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/A7H_VLC88oRgJ0LZRUPcRQ~~/AAQRxRA~/QKMP-PZme5I1gJyD7QDockMTSFmxlDaWmTbL6C3tKqd4U_lXB6WVciW6NE46waSSpbLTkQK4eFgU--zR6pzqyrQgIqvF5GpMnwM-t0mFardH7bbyFcGo9qvMJiE-sS4MTGAOW8DwJSBcZt4bNbve8lgdu0xphENWdpvMm6sEiF3tumc0HC27zl1OSmh3ubhtemR-NzO1G04AAGNsdH2N_cCK5vePg5CgUmtFC1EtdemUl2JNm7CKKrLyprQrujDPXXA0VhEq35XgmklCY5hmnVLsklwYhSEMNh8hF3kZ8fIjCICxg8ZTEVh05SKiZxMlwJ3HA2zYdFsm8HhcRtuLoZB1JeB5La0OmAm1clfC7twsv9o2ejg3ou8Yi2iybrQvar3LMiZa0rnSpONkPfCXToguTn_vNFZ28JnZbJB_5SWtKF0pbdPrmKX1rYI2jefCwq_2FqXEV7tyYaM0gQr1kw~~" class="dm-white-text" style="color: #1a1a1a; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;">Butter or Oil? 5 Professional Pastry Chefs Reveal the Best One for Better-Than-Bakery Cakes</a> 
+</td> 
+</tr> 
+<tr> 
+<td align="left" colspan="2" valign="top" class="" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/A7H_VLC88oRgJ0LZRUPcRQ~~/AAQRxRA~/QKMP-PZme5I1gJyD7QDockMTSFmxlDaWmTbL6C3tKqd4U_lXB6WVciW6NE46waSSpbLTkQK4eFgU--zR6pzqyrQgIqvF5GpMnwM-t0mFardH7bbyFcGo9qvMJiE-sS4MTGAOW8DwJSBcZt4bNbve8lgdu0xphENWdpvMm6sEiF3tumc0HC27zl1OSmh3ubhtemR-NzO1G04AAGNsdH2N_cCK5vePg5CgUmtFC1EtdemUl2JNm7CKKrLyprQrujDPXXA0VhEq35XgmklCY5hmnVLsklwYhSEMNh8hF3kZ8fIjCICxg8ZTEVh05SKiZxMlwJ3HA2zYdFsm8HhcRtuLoZB1JeB5La0OmAm1clfC7twsv9o2ejg3ou8Yi2iybrQvar3LMiZa0rnSpONkPfCXToguTn_vNFZ28JnZbJB_5SWtKF0pbdPrmKX1rYI2jefCwq_2FqXEV7tyYaM0gQr1kw~~" class="dm-white-text" style="color: #1a1a1a; font-size: 14px; line-height: 13px; font-weight: 300; text-decoration: none;">The debate is out.</a> 
+</td> 
+</tr> 
+<tr> 
+<td width="60%" class="" align="left" valign="middle" style="color: #717680; font-size: 14px; line-height: 18px; font-weight: 400; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px 57px;"> 
+
+<span style="font-weight: 700;">The Kitchn
+</span> 
+<br> Alexandra Foster 
+</td> 
+<td width="40%" class="" align="right" valign="top" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 8px 0px 0px;"> 
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tbody> 
+<tr> 
+<td align="center" style="border-radius: 28px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" bgcolor="#FF8A50"> <a href="mailto:?subject=Shared%20Via%20Firefox:%20Butter or Oil? 5 Professional Pastry Chefs Reveal the Best One for Better-Than-Bakery Cakes&body=I%20thought%20you%20might%20be%20interested%20in%20this%20article%20I%20saw%20in%20Firefox's%20Ten%20Tabs%20newsletter:%20https://www.thekitchn.com/butter-vs-oil-pastry-chefs-23783123?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=10&category=fascinating_stories&scheduled_corpus_item_id=eb5e54ee-ba3d-4209-99df-aabbc5cbf57e&url=https%3A%2F%2Fwww.thekitchn.com%2Fbutter-vs-oil-pastry-chefs-23783123" target="_blank" style="font-size: 14px; font-weight: 600; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #000000; text-decoration: none; border-radius: 6px; background-color: #FF8A50; display: block; padding: 8px 16px; border: 1px solid #FF8A50;">Share</a> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> </tbody> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr> 
+</table> 
+</td> 
+</tr>
+<tr>
+<td width="100%" align="center" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px;">
+                            <table align="center" bgcolor="#CDCDCD" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                              <tr>
+                                <td width="100%" height="1" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;">
+                                      &nbsp;
+                                </td>
+                              </tr>
+                            </table>
+                             </td>
+<!--end: articles --> 
+</tr>
+<tr>
+
+<td width="100%" align="center" class="dm-white-text" valign="middle" style="font-size: 16px; line-height: 140%; font-weight: 300; color: #1a1a1a; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 21px 0px;">
+
+<strong>Ten Tabs</strong> is a daily roundup of the most popular recommended stories on the Firefox New Tab page, plus curated picks from our editorial team. <a href="https://clicks.mozilla.org/f/a/DDZZTQB7_t1o17wc33LQRA~~/AAQRxRA~/1Dzmqo7WJ8-Pf75v3yG5AdL9Otc9CVKYFTcSFW6Huv2IQVcfE6mkKKqYpZrc7fpflcpug2JPya9_8vYzAyjF95PChihIsbud95sdUftpq2S0lEHwyH4dvHSmaNPpdg3mZkoZDQ63BJ-aiI7ZeUhcda21DiFqbRruQnPxbnv6XHk~" style="font-weight: 700; color: ##FF8A50; text-decoration: none;">Learn more.</a>
+  
+
+</td>
+
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table align="center" bgcolor="#f8f6f4" border="0" cellpadding="100" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">    <tr>
+<td style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 25px;"></td> </tr>               
+<tr> <td width="90%" align="center" valign="middle" class="inner-padding-fixed-20" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 20px;"> <a href="https://clicks.mozilla.org/f/a/vAb6xvU_XfKy27zsA3aIlg~~/AAQRxRA~/J1odlnyrHo-iGZaKrpQfkK01exsaxCXNCB7kThZFBnZQwa7pXIQVOyJ7sqxYxsb36AoEHdf8JL7v5obZJZU2fnfy1CVKwvV_39GnQ61OCR3VIT5U0Fd4vuFKb6RZ_9sa"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/685060e8a2eca90067c7d346/original.png?1750098151" alt="firefox" width="210" border="0" style="display: block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> </td> </tr> <tr> <td width="90%" align="center" class="dm-white-text" valign="middle" style="font-size: 14px; font-weight: 700; color: #1a1a1a; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px 0px 2px;"> Powered By Mozilla.</td> </tr> <tr><td width="90%" align="center" class="dm-white-text" valign="middle" style="font-size: 14px; font-weight: 400; color: #1a1a1a; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0px;">Putting people before profits since 1998.</td></tr>
+<tr> </tr>
+<td width="90%" align="center" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 20px 0px 100px;"> <a href="https://clicks.mozilla.org/f/a/ITUmiZiW2QrOOKXJPegueg~~/AAQRxRA~/psiaXEuXrimBoyrPYTLLb5Oas2yfx8k2oAo0zqtv46EYNjXcNXIJBYa4mGc_KLRthWW4MRg1bcPBxn6nvgwqJ5Nj7ebbgaAICXv7vw8JMknpJSdOcJ_zgJZZzxavuF7Q77hfZj9M0yxyGeSVyhcKTwOT-srdHuoTN1lVfdu99mY~" style="display: inline-block;"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6419fb003f048f005e1e4568/original.png?1679424256" alt="app store" border="0" width="150" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> <a href="https://clicks.mozilla.org/f/a/x_QIkFZXh4SuWnkg_CfiUA~~/AAQRxRA~/L7o3RZdoWaxvmaf1wEoXUnPi80jMmf1cOoas6U9Gt3cWI1oq64oot-Vz8GnKTlR-pFaEqMXEAru99j70wpbMZtQdg6BiY8yhfW32wMi6VXzVleVqQZrIWBhMGsDSDYYr0CsOqsIATSwnjcRCgPGstJZZ0Dhm50CX634BCiTHRiE~" style="display: inline-block;"><img alt="google play" src="https://braze-images.com/appboy/communication/assets/image_assets/images/6419fb015f27960076169fbd/original.png?1679424256" border="0" width="150" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a> </td> </table>
+<table align="center" bgcolor="#000000" border="0" cellpadding="50" cellspacing="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;"> <tr><td width="90%" align="center" valign="middle" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px 10px;"> <a href="https://clicks.mozilla.org/f/a/Q3rjOL3lVvTIyFbpX3jASw~~/AAQRxRA~/8GOSEjI-Chfb5hgqt4aL5U7vhKvIyzFHi38BzB3_7VTJADPEDq62pnfdF4SUOjcjC1gATFBnXGij_dl-lvt_hJZh04E6aT3fqB1TiqEM3ac~" style="display: inline-block;"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68478aaa54751f00644fd0df/original.png?1749519018" alt="x" border="0" width="35" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a><a href="https://clicks.mozilla.org/f/a/q_-0QC6WhYU3KxriknGYDg~~/AAQRxRA~/RLGY9omzIFqPNuykqcB1P0BZrue6DimylEHlJhGAKgUCDDiFr5EX8mCO_ZlHYq8-u0vO7JEkTxMG2cs5_OKSyyGPfDHd4qKaZVoNiIvU_dkl4P-Mrd2QuaZsGdxQwNAg" style="display: inline-block;"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68478a86eb62b70067bd8734/original.png?1749518982" alt="instagram" border="0" width="35" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a><a href="https://clicks.mozilla.org/f/a/TO1-4Xz015XpNWm_bsjuzg~~/AAQRxRA~/_y464P6cjGrpylpRvXXVxku1hfdqyvK27Yk5HdRZVaHVYDw8j7AUMYT7q-JK9L9qE_aV4s6oBf2gCKmUGVbemM9tr_U87tj46KS9WBc_Nk0dH3_vmirtqWe7yJNG3oJN" style="display: inline-block;"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68478a8663be330064d7f278/original.png?1749518982" alt="youtube" border="0" width="35" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a><a href="https://clicks.mozilla.org/f/a/SWfrfpUtoNoaHCjdV9KM-A~~/AAQRxRA~/GNzKkPTTOJxTGlOkDgaW-7n3ttyCFHcnja5M0HFcah0ZD2-LhKaLi8kEPOzwIY0RN4PCyxBk-V7ck5_z3P25q8ODVBx6-wXaxY_nAFEvlLQTcklhAg13Fjy7db0feZoI" style="display: inline-block;"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68478a862e8e3700750eaa23/original.png?1749518982" alt="threads" border="0" width="35" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a><a href="https://clicks.mozilla.org/f/a/pJoA2Y7kBpsQiwWoan1TWg~~/AAQRxRA~/HlnNezJuOPs9-fa0TDrnaSAiPoLvnPWQcdFaw92327qT-bxVvzWKyA5fiG-vMwk4Ip0_faulHYlox8cb9ds7OhGkJGrMnhy-GsEdI3Vf3Snidi17arkNtl2zOzlfNsg0" style="display: inline-block;"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/68478a86e57c4b00652300ae/original.png?1749518982" alt="threads" border="0" width="35" style="display: inline-block; -ms-interpolation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decoration: none; border-style: none; border-width: 0;"></a>
+</td></tr> <tr> <td width="90%" align="center" class="dm-white-text" valign="middle" style="font-size: 12px; font-weight: 400; color: #FFFFFF; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px 0px;"> You're receiving this email because you subscribed to Ten Tabs from Firefox. </td> </tr> <tr> <td width="90%" align="center" valign="middle" class="dm-white-text" style="font-size: 12px; font-weight: 400; color: #FFFFFF; line-height: 18px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 7px 0px 0px;"> <a href="https://clicks.mozilla.org/f/a/9MEUth1XsXlw9lExCGxs7Q~~/AAQRxRA~/vCA3CEKTdhRiOgk7uZW5mI_WQDj1jd0DUZYmJseJ5FxkKnQfFxlmrZAJ-RpEMNNRjjrnY2pmBcFrRHYs9SCtusjNFHUienapsbdwQfzPt3lvTwy-iXKefBp_8u7qqRyy" class="dm-white-text" style="font-size: 12px; font-weight: 400; color: #FFFFFF; text-decoration: underline;">Unsubscribe</a> • <a href="https://clicks.mozilla.org/f/a/9MEUth1XsXlw9lExCGxs7Q~~/AAQRxRA~/vCA3CEKTdhRiOgk7uZW5mI_WQDj1jd0DUZYmJseJ5FxkKnQfFxlmrZAJ-RpEMNNRjjrnY2pmBcFrRHYs9SCtusjNFHUienapsbdwQfzPt3lvTwy-iXKefBp_8u7qqRyy" class="dm-white-text" style="font-size: 12px; font-weight: 400; color: #FFFFFF; text-decoration: underline;">Manage Preferences</a> • <a href="https://clicks.mozilla.org/f/a/3GaH3962xoxmw7Xr_ULFVA~~/AAQRxRA~/_y464P6cjGrpylpRvXXVxiVJfBg6kdc23F6PtoduFgsJLSmHIHH04V7uPu8w6-o_bb3aIlLTOkd9XuTZo0BBszxc5GGRvhPFx-ZmK0fBYeFI9ai1jkti-fIA1dijHEe_" class="dm-white-text" style="font-size: 12px; font-weight: 400; color: #FFFFFF; text-decoration: underline;">Privacy Policy</a> • <a href="https://clicks.mozilla.org/f/a/4qUnpKPNXW0Kt8bsDwfhJg~~/AAQRxRA~/RLGY9omzIFqPNuykqcB1P1hp4UB7xsYFz9Qq_fo_kZlMZKU5Voydb75-FaBi0Cdt-QneqfYA4Suu9EbOfBEL0az-5NM9d9g4BIMuVVpSGGbdAcdf4Zzfg0ldLxHhrPz2" class="dm-white-text" style="font-size: 12px; font-weight: 400; color: #FFFFFF; text-decoration: underline;">Help Center</a>
+</td> </tr> <tr> <td width="90%" align="center" valign="middle" class="dm-white-text" style="font-size: 12px; font-weight: 400; color: #FFFFFF; line-height: 18px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 0px 0px;"> © 2026 Mozilla Corporation, 149 New Montgomery St, 4th Floor, San Francisco, CA 94105 </td> </tr> <tr> <td width="100%" height="40px" align="left" valign="top" class="empty" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0px; line-height: 0px;"> &nbsp; </td> </tr> </table> <!-- end: footer--> </td> </tr> </table> <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]--> </td> </tr> </table>  </body>
+</html>

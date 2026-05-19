@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+
+import { existsSync, writeFileSync } from "node:fs"
+import { resolve as _resolve, dirname } from "node:path"
+import { parseArgs } from "node:util"
+import { downloadImages } from "./image-downloader.ts"
+import {
+  articlesToMarkdown,
+  extractArticles,
+  extractLinksToMarkdown,
+  type IArticle,
+  searchWisereadsEmail,
+} from "./parse-email.node.ts"
+
+function printCliUsage() {
+  console.log(
+    "Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
+  )
+  console.log(
+    "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true] [--download-images]",
+  )
+  console.log(
+    "Example: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=6 --title-with-url=true",
+  )
+}
+
+function parseCliArg() {
+  try {
+    const { values } = parseArgs({
+      options: {
+        vol: {
+          type: "string",
+        },
+        help: {
+          type: "boolean",
+          default: false,
+        },
+        verbose: {
+          type: "boolean",
+          default: false,
+        },
+        "title-with-url": {
+          type: "string",
+        },
+        "download-images": {
+          type: "boolean",
+          default: false,
+        },
+      },
+    })
+
+    // console.log(values)
+
+    return values
+  } catch (parseError) {
+    // @ts-expect-error
+    console.error("❌ 参数校验失败:", parseError.message)
+    console.log("")
+    printCliUsage()
+    process.exit(1)
+  }
+}
+
+main()
+
+async function main() {
+  const { vol: volNum = "", help, "title-with-url": titleWithUrl, "download-images": shouldDownloadImages } = parseCliArg()
+
+  if (help) {
+    printCliUsage()
+    process.exit(0)
+  }
+
+  // if not a number string or less than 1, throw error
+  if (!/^\d+$/.test(volNum) || Number(volNum) < 1) {
+    console.error(
+      `Invalid volume number (${volNum}). Please provide a positive integer as the first argument.`,
+    )
+    console.log("")
+    printCliUsage()
+
+    process.exit(1)
+  }
+
+  try {
+    const html = await searchWisereadsEmail(Number(volNum))
+    const articles = extractArticles(html)
+
+    if (!articles?.length) {
+      throw new Error(`No article extracted for vol. ${volNum}`)
+    }
+
+    await saveArticles(volNum, articles, titleWithUrl !== "false", shouldDownloadImages ?? false)
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+    return
+  }
+}
+
+async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?: boolean, shouldDownloadImages?: boolean) {
+  const __dirname = import.meta.dirname
+  const outputPath = _resolve(
+    __dirname,
+    `../../../../readwise-weekly/generated/${volNum}.json`,
+  )
+  const dir = dirname(outputPath)
+  if (!existsSync(dir)) {
+    throw new Error(`dir (${dir}) not exits`)
+  }
+
+  // 1. save json
+  writeFileSync(outputPath, JSON.stringify({ articles }, null, 2))
+  console.log(`✅ articles json saved to ${outputPath}`)
+
+  // 2. save markdown
+  const md = articlesToMarkdown(articles, { titleWithUrl: titleWithUrl ?? true })
+  const mdPath = outputPath.replace(".json", ".md")
+  writeFileSync(mdPath, md)
+
+  const zhMdPath = outputPath.replace(".json", ".zh.md")
+  writeFileSync(zhMdPath, "等待翻译")
+  console.log(`✅ articles saved to ${zhMdPath}`)
+
+  // 3. save links (only when titleWithUrl is false, since true embeds URLs in titles)
+  if (!titleWithUrl) {
+    const linksPath = outputPath.replace(".json", ".links.md")
+    const linksMd = extractLinksToMarkdown(articles)
+
+    writeFileSync(linksPath, linksMd)
+    console.log(`✅ articles links saved to ${linksPath}`)
+  }
+
+  // 4. Save images (only when --download-images is true)
+  if (shouldDownloadImages) {
+    await downloadImages(Number(volNum), articles)
+  }
+}

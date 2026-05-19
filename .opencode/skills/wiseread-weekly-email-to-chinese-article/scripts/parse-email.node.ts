@@ -54,6 +54,16 @@ function getImapInstance(): Imap {
 }
 
 async function searchEmail(emailSubject: string): Promise<IHTML> {
+  const label = `searchEmail for subject: "${emailSubject}"` // 1.222s
+  console.time(label)
+  try {
+    return await searchEmailCore(emailSubject)
+  } finally {
+    console.timeEnd(label)
+  }
+}
+
+async function searchEmailCore(emailSubject: string): Promise<IHTML> {
   if (!emailSubject) {
     throw new RangeError(
       `emailSubject should not be empty but got (${emailSubject})`,
@@ -139,34 +149,57 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
 export function extractTenTabsArticles(html: string): IArticle[] {
   const $ = cheerio.load(html)
 
-  const $subArticles = $("img[src^='https://pocket-image-cache.com/']")
+  const $articles = $("img[src^='https://pocket-image-cache.com/']").map(
+    (_index, img) => $(img).closest("tr"),
+  )
 
-  console.log("Ten Tabs $articles count:", $subArticles.length)
+  console.log("Ten Tabs $articles count:", $articles.length)
 
-  const subs = [...$subArticles]
-    .map((img) => img.closest("tr"))
-    .map(($sub) => {
-      const $title = [...$sub.querySelectorAll("a")].find(
-        (x) => !!x.textContent,
-      )
-      const $summaryTr = $title.closest(`tr`).nextElementSibling
-      const $mediaAndAuthor = $summaryTr.nextElementSibling
-        .querySelector("td")
-        .innerText.split(/\n/)
-      return {
-        title: $title.textContent,
-        url: $title.href,
-        img: $sub.querySelector("img").src,
-        summary: $summaryTr.querySelector("a").textContent,
-        media: $mediaAndAuthor[0],
-        author: $mediaAndAuthor[1],
-      }
-    })
+  const subs = $articles.map((_index, $sub) => {
+    const $titleLink = $sub
+      .find("a")
+      .filter((i, el) => {
+        return $(el).text().trim() !== ""
+      })
+      .first()
+
+    if (!$titleLink) {
+      throw new Error(`Missing title node for article #${_index}`)
+    }
+
+    const title = $titleLink.text()
+    // console.log("title:", title)
+
+    if (!title) {
+      throw new Error(`Empty title text for article #${_index}`)
+    }
+
+    const $summaryTr = $titleLink.closest(`tr`).next()
+    // console.log("$summaryTr.text():", $summaryTr.find("a").first().text())
+    const $mediaAndAuthor = $summaryTr
+      .next()
+      .find("td")
+      .first()
+      .text()
+      .split(/\n/)
+      .map((s) => s.trim())
+      .filter(Boolean)
+
+    // console.log("$mediaAndAuthor:", $mediaAndAuthor)
+    return {
+      title,
+      url: $titleLink.attr("href"),
+      img: $sub.find("img").first().attr("src"),
+      summary: $summaryTr.find("a").first().text().trim(),
+      media: $mediaAndAuthor[0],
+      author: $mediaAndAuthor[1],
+    }
+  })
 
   return [
     {
-      category: "本周值得看的国外新闻",
-      subArticles: subs,
+      category: "还有哪些值得看的国外新闻",
+      subArticles: subs.get(),
     },
   ]
 }

@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
-import { existsSync, writeFileSync } from "node:fs"
-import { resolve as _resolve, dirname } from "node:path"
+import { existsSync } from "node:fs"
+import { readFile, writeFile } from "node:fs/promises"
+import { resolve as _resolve, dirname, join } from "node:path"
 import { parseArgs } from "node:util"
 import { downloadImages } from "./image-downloader.ts"
 import {
   articlesToMarkdown,
   extractArticles,
   extractLinksToMarkdown,
+  extractTenTabsArticles,
   type IArticle,
+  searchTenTabsEmail,
   searchWisereadsEmail,
 } from "./parse-email.node.ts"
 
@@ -46,6 +49,9 @@ function parseCliArg() {
           type: "boolean",
           default: false,
         },
+        "ten-tabs-subject": {
+          type: "string",
+        },
       },
     })
 
@@ -64,7 +70,13 @@ function parseCliArg() {
 main()
 
 async function main() {
-  const { vol: volNum = "", help, "title-with-url": titleWithUrl, "download-images": shouldDownloadImages } = parseCliArg()
+  const {
+    vol: volNum = "",
+    help,
+    "title-with-url": titleWithUrl,
+    "download-images": shouldDownloadImages,
+    "ten-tabs-subject": tenTabsSubject,
+  } = parseCliArg()
 
   if (help) {
     printCliUsage()
@@ -82,7 +94,11 @@ async function main() {
     process.exit(1)
   }
 
-  try {
+  if (!tenTabsSubject) {
+    throw new Error("No --ten-tabs-subject provided.")
+  }
+
+  async function processWisereads() {
     const html = await searchWisereadsEmail(Number(volNum))
     const articles = extractArticles(html)
 
@@ -90,7 +106,54 @@ async function main() {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
 
-    await saveArticles(volNum, articles, titleWithUrl !== "false", shouldDownloadImages ?? false)
+    return saveArticles(
+      volNum,
+      articles,
+      titleWithUrl !== "false",
+      shouldDownloadImages ?? false,
+    )
+  }
+
+  async function processTenTabs(subject: string) {
+    const html = await searchTenTabsEmail(subject)
+    const articles = extractTenTabsArticles(html)
+
+    if (!articles?.length) {
+      throw new Error(`No article extracted for subject. ${subject}`)
+    }
+
+    return saveTenTabsArticles({
+      subject: subject,
+      articles,
+    })
+  }
+
+  try {
+    const [wisereadsDir, tenTabsDir] = await Promise.all([
+      processWisereads(),
+      processTenTabs(tenTabsSubject),
+    ])
+    // join 2 md files write to readwise-weekly-and-tentabs/generated/{vol}-{subject}.md
+    const outputPath = join(
+      tenTabsDir,
+      `${volNum}-${toKebabCase(tenTabsSubject)}.md`,
+    )
+
+    const wisereadsMdPath = _resolve(wisereadsDir, `${volNum}.md`)
+    const tenTabsMdPath = _resolve(
+      tenTabsDir,
+      `${toKebabCase(tenTabsSubject)}.md`,
+    )
+
+    const [wisereadsMd, tenTabsMd] = await Promise.all([
+      readFile(wisereadsMdPath, "utf8"),
+      readFile(tenTabsMdPath, "utf8"),
+    ])
+
+    const combinedMd = `${wisereadsMd}\n\n${tenTabsMd}`
+
+    await writeFile(outputPath, combinedMd)
+    console.log(`✅ Combined markdown saved to ${outputPath}`)
   } catch (err) {
     console.error(err)
     process.exit(1)
@@ -98,7 +161,12 @@ async function main() {
   }
 }
 
-async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?: boolean, shouldDownloadImages?: boolean) {
+async function saveArticles(
+  volNum: string,
+  articles: IArticle[],
+  titleWithUrl?: boolean,
+  shouldDownloadImages?: boolean,
+): Promise<string> {
   const __dirname = import.meta.dirname
   const outputPath = _resolve(
     __dirname,
@@ -110,16 +178,18 @@ async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?:
   }
 
   // 1. save json
-  writeFileSync(outputPath, JSON.stringify({ articles }, null, 2))
+  await writeFile(outputPath, JSON.stringify({ articles }, null, 2))
   console.log(`✅ articles json saved to ${outputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles, { titleWithUrl: titleWithUrl ?? true })
+  const md = articlesToMarkdown(articles, {
+    titleWithUrl: titleWithUrl ?? true,
+  })
   const mdPath = outputPath.replace(".json", ".md")
-  writeFileSync(mdPath, md)
+  await writeFile(mdPath, md)
 
   const zhMdPath = outputPath.replace(".json", ".zh.md")
-  writeFileSync(zhMdPath, "等待翻译")
+  await writeFile(zhMdPath, "等待翻译")
   console.log(`✅ articles saved to ${zhMdPath}`)
 
   // 3. save links (only when titleWithUrl is false, since true embeds URLs in titles)
@@ -127,7 +197,7 @@ async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?:
     const linksPath = outputPath.replace(".json", ".links.md")
     const linksMd = extractLinksToMarkdown(articles)
 
-    writeFileSync(linksPath, linksMd)
+    await writeFile(linksPath, linksMd)
     console.log(`✅ articles links saved to ${linksPath}`)
   }
 
@@ -135,4 +205,53 @@ async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?:
   if (shouldDownloadImages) {
     await downloadImages(Number(volNum), articles)
   }
+
+  return dir
 }
+
+async function saveTenTabsArticles({
+  subject,
+  articles,
+}: {
+  subject: string
+  articles: IArticle[]
+}): Promise<string> {
+  const __dirname = import.meta.dirname
+  const fileName = toKebabCase(subject)
+  const outputPath = _resolve(
+    __dirname,
+    `../../../../readwise-weekly-and-tentabs/generated/${fileName}.json`,
+  )
+  const dir = dirname(outputPath)
+  if (!existsSync(dir)) {
+    throw new Error(`dir (${dir}) not exits`)
+  }
+
+  // 1. save json
+  await writeFile(outputPath, JSON.stringify({ articles }, null, 2))
+  console.log(`✅ articles json saved to ${outputPath}`)
+
+  // 2. save markdown
+  const md = articlesToMarkdown(articles, {
+    titleWithUrl: true,
+  })
+  const mdPath = outputPath.replace(".json", ".md")
+  await writeFile(mdPath, md)
+
+  console.log(`✅ articles saved to ${mdPath}`)
+
+  return dir
+}
+
+function toKebabCase(str: string): string {
+  return str
+    .trim() // 去除首尾空格
+    .toLowerCase() // 转小写
+    .replace(/[^a-z0-9\s]/g, "") // 只保留字母、数字、空格
+    .replace(/\s+/g, "-") // 空格转连字符
+    .replace(/-+/g, "-") // 防止多个连字符
+}
+
+// const text = "Why Are We Always Charging Our Phone Batteries? "
+// console.log(toKebabCase(text))
+// 输出: "why-are-we-always-charging-our-phone-batteries"
