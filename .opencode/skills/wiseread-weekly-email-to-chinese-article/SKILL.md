@@ -24,7 +24,7 @@ bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-w
 
 Options:
 - `--vol <volNum>`: Wisereads vol number (**required** and should be positive integer)
-- `--title-with-url <true|false>`: Whether to include article URLs in markdown titles (default: false)
+- `--title-with-url <true|false>`: Whether to include article URLs in markdown titles (default: true)
 - `--help`: Show cli usage (default: false)
 
 ### Step2: 生成中文文章

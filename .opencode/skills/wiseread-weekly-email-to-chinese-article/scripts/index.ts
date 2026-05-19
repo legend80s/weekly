@@ -41,7 +41,6 @@ function parseCliArg() {
         },
         "title-with-url": {
           type: "string",
-          default: "false",
         },
       },
     })
@@ -87,7 +86,7 @@ async function main() {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
 
-    await saveArticles(volNum, articles, titleWithUrl === "true")
+    await saveArticles(volNum, articles, titleWithUrl !== "false")
   } catch (err) {
     console.error(err)
     process.exit(1)
@@ -111,7 +110,7 @@ async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?:
   console.log(`✅ articles json saved to ${outputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles, { titleWithUrl: titleWithUrl ?? false })
+  const md = articlesToMarkdown(articles, { titleWithUrl: titleWithUrl ?? true })
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
 
@@ -119,12 +118,14 @@ async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?:
   writeFileSync(zhMdPath, "等待翻译")
   console.log(`✅ articles saved to ${zhMdPath}`)
 
-  // 3. save links
-  const linksPath = outputPath.replace(".json", ".links.md")
-  const linksMd = extractLinksToMarkdown(articles)
+  // 3. save links (only when titleWithUrl is false, since true embeds URLs in titles)
+  if (!titleWithUrl) {
+    const linksPath = outputPath.replace(".json", ".links.md")
+    const linksMd = extractLinksToMarkdown(articles)
 
-  writeFileSync(linksPath, linksMd)
-  console.log(`✅ articles links saved to ${linksPath}`)
+    writeFileSync(linksPath, linksMd)
+    console.log(`✅ articles links saved to ${linksPath}`)
+  }
 
   // 4. Save images
   await downloadImages(Number(volNum), articles)
