@@ -68,3 +68,7 @@ Options:
   - 记住导读只需推荐**<= 3 篇**读者最可能感兴趣的即可。
 
 2. 翻译后的文章头部增加标题：『# 国外技术周刊 #{volNum}：<请填充>』填充内容是最吸引人的**1 篇**文章
+
+3. 标题和导读之后，增加一个章节，介绍本文的一个观点或文章：
+  - 生成之前先列出你认为有趣发人深省的观点或文章，等我确认后再继续。行文风格参考：[brief-view-of-the-week.md](.opencode\skills\wiseread-weekly-email-to-chinese-article\references\brief-view-of-the-week.md)
+  - 字数 800 字以内。
