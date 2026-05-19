@@ -1,6 +1,6 @@
 ---
 name: wiseread-weekly-email-to-chinese-article
-description: Wiseread Weekly 每周推荐阅读中文文章生成工具。当让你生成 wisereads 某一期的中文文章时调用。
+description: Wiseread Weekly 每周推荐阅读中文文章生成工具。当让你生成或翻译 wisereads 某一期的中文文章时调用。
 metadata: email, imap, parsing, markdown, chinese, article
 ---
 
