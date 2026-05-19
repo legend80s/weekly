@@ -17,10 +17,10 @@ function printCliUsage() {
     "Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
   )
   console.log(
-    "Usage: node --env-file ../imap-smtp-email/.env scripts/extract-articles.ts --vol=<volNum>",
+    "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true]",
   )
   console.log(
-    "Example: node --env-file ../imap-smtp-email/.env scripts/extract-articles.ts --vol=6",
+    "Example: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=6 --title-with-url=true",
   )
 }
 
@@ -38,6 +38,10 @@ function parseCliArg() {
         verbose: {
           type: "boolean",
           default: false,
+        },
+        "title-with-url": {
+          type: "string",
+          default: "false",
         },
       },
     })
@@ -57,7 +61,7 @@ function parseCliArg() {
 main()
 
 async function main() {
-  const { vol: volNum = "", help } = parseCliArg()
+  const { vol: volNum = "", help, "title-with-url": titleWithUrl } = parseCliArg()
 
   if (help) {
     printCliUsage()
@@ -83,7 +87,7 @@ async function main() {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
 
-    await saveArticles(volNum, articles)
+    await saveArticles(volNum, articles, titleWithUrl === "true")
   } catch (err) {
     console.error(err)
     process.exit(1)
@@ -91,7 +95,7 @@ async function main() {
   }
 }
 
-async function saveArticles(volNum: string, articles: IArticle[]) {
+async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?: boolean) {
   const __dirname = import.meta.dirname
   const outputPath = _resolve(
     __dirname,
@@ -107,7 +111,7 @@ async function saveArticles(volNum: string, articles: IArticle[]) {
   console.log(`✅ articles json saved to ${outputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles, { titleWithUrl: false })
+  const md = articlesToMarkdown(articles, { titleWithUrl: titleWithUrl ?? false })
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
 

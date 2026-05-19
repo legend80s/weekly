@@ -19,11 +19,12 @@ metadata: email, imap, parsing, markdown, chinese, article
 根据期号搜索邮件并解析成 markdown 文章，脚本使用方式如下：
 
 ```bash
-bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts [--vol=volNum]
+bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --title-with-url=true [--vol=volNum]
 ```
 
 Options:
 - `--vol <volNum>`: Wisereads vol number (**required** and should be positive integer)
+- `--title-with-url <true|false>`: Whether to include article URLs in markdown titles (default: false)
 - `--help`: Show cli usage (default: false)
 
 ### Step2: 生成中文文章
