@@ -19,7 +19,7 @@ metadata: email, imap, parsing, markdown, chinese, article
 根据期号搜索邮件并解析成 markdown 文章，脚本使用方式如下：
 
 ```bash
-bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts [--vol=volNum]
+bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts [--vol=volNum]
 ```
 
 Options:
