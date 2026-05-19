@@ -15,7 +15,7 @@ metadata: email, imap, parsing, markdown, chinese, article
 如果已有 `[volNum].md` 则无需调用。根据期号搜索邮件并解析成 markdown 文章，脚本使用方式如下：
 
 ```bash
-node --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts [--vol=volNum]
+bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts [--vol=volNum]
 ```
 
 Options:

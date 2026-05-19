@@ -15,7 +15,7 @@ metadata: email, imap, parsing, markdown, chinese, article
 根据期号搜索邮件并解析成 markdown 文章，调用下面脚本：
 
 ```bash
-node --env-file ../imap-smtp-email/.env scripts/extract-articles.ts [--vol=132]
+bun --env-file ../imap-smtp-email/.env scripts/extract-articles.ts [--vol=132]
 ```
 
 Options:

@@ -180,13 +180,15 @@ export async function downloadImages(
   if (failedList.length) {
     console.log(`❌ Failed count ${failedList.length}:`)
     console.log(failedList)
-    console.log("You can open them in browser and save them yourself")
+    console.log("You can open links in your browser and save pics locally.")
     failedList.forEach((url) => {
       spawnSync("open", [url])
     })
   }
   const duration = `${((Date.now() - start) / 1000).toFixed(2)}s`
   console.log(`${result.length} images finished:`, duration)
+
+  Bun.$`open ${imgDir}`
 }
 
 export async function compress(destPath: string) {
