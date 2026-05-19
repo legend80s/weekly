@@ -2,10 +2,12 @@ import { strict as assert } from "node:assert"
 import { readFileSync, writeFileSync } from "node:fs"
 import test, { describe } from "node:test"
 import {
+  articlesToMarkdown,
   extractTenTabsArticles,
   type IArticle,
   searchTenTabsEmail,
 } from "./parse-email.node.ts"
+import { join } from "node:path"
 
 describe("html to markdown", () => {
   test("extractArticles", async (t) => {
@@ -13,9 +15,14 @@ describe("html to markdown", () => {
     //   "Why Are We Always Charging Our Phone Batteries?",
     // )
 
-    const html = readFileSync("../assets/test-ten-tabs-email.html", {
-      encoding: "utf-8",
-    })
+    const dirname = import.meta.dirname
+
+    const html = readFileSync(
+      join(dirname, `../assets/test-ten-tabs-email.html`),
+      {
+        encoding: "utf-8",
+      },
+    )
     // writeFileSync("./test-ten-tabs-email.html", html, { encoding: "utf-8" })
 
     const actual = extractTenTabsArticles(html)
@@ -122,5 +129,20 @@ describe("html to markdown", () => {
     ]
 
     assert.deepEqual(actual, expected)
+
+    // articlesToMarkdown
+    const markdown = articlesToMarkdown(actual, { titleWithUrl: true })
+
+    const expectedMarkdown = readFileSync(
+      join(
+        dirname,
+        "../../../../readwise-weekly-and-tentabs/generated/why-are-we-always-charging-our-phone-batteries.md",
+      ),
+      {
+        encoding: "utf-8",
+      },
+    )
+
+    assert.equal(markdown, expectedMarkdown)
   })
 })

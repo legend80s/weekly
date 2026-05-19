@@ -204,7 +204,7 @@ export function extractTenTabsArticles(html: string): IArticle[] {
   ]
 }
 
-export function extractArticles(html: string): IArticle[] {
+export function extractWiseReadArticles(html: string): IArticle[] {
   // const htmlPath = path.join(process.cwd(), "./readwise-weekly/src/vol-132.html")
   // console.log("htmlPath:", htmlPath)
   // const html = readFileSync(htmlPath, "utf-8")
@@ -226,12 +226,12 @@ export function extractArticles(html: string): IArticle[] {
     // console.log("group:", $group.text())
     const category = $group.find("span").first().text().trim()
 
-    console.log("category:", category)
+    // console.log("category:", category)
 
     const $subArticles = Array.from(
       $group.find("div[class*=mj-column-per]:has(img[src*=cover])"),
     )
-    console.log("$subArticles count:", $subArticles.length, "\n")
+    // console.log("$subArticles count:", $subArticles.length, "\n")
 
     const subArticles = $subArticles.map((article) => {
       const $subArticle = $(article)

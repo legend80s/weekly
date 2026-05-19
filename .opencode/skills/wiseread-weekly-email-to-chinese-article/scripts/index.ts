@@ -7,9 +7,9 @@ import { parseArgs } from "node:util"
 import { downloadImages } from "./image-downloader.ts"
 import {
   articlesToMarkdown,
-  extractArticles,
   extractLinksToMarkdown,
   extractTenTabsArticles,
+  extractWiseReadArticles,
   type IArticle,
   searchTenTabsEmail,
   searchWisereadsEmail,
@@ -100,7 +100,7 @@ async function main() {
 
   async function processWisereads() {
     const html = await searchWisereadsEmail(Number(volNum))
-    const articles = extractArticles(html)
+    const articles = extractWiseReadArticles(html)
 
     if (!articles?.length) {
       throw new Error(`No article extracted for vol. ${volNum}`)
