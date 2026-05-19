@@ -16,14 +16,12 @@ export type IArticle = {
 
 type IHTML = string
 
-export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
-  if (!volNum) {
-    throw new RangeError(
-      `volNum should be a positive integer but got (${volNum})`,
-    )
-  }
+// let imapSingleton: Imap | null = null
 
-  const emailSubject = `Wisereads Vol. ${volNum}`
+function getImapInstance(): Imap {
+  // if (imapSingleton) {
+  //   return imapSingleton
+  // }
 
   const { IMAP_USER, IMAP_PASS } = process.env
 
@@ -48,7 +46,21 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
 
   // throw new Error("Not implemented")
 
-  const imap = new Imap(imapConfig)
+  // imapSingleton = new Imap(imapConfig)
+
+  // return imapSingleton
+
+  return new Imap(imapConfig)
+}
+
+async function searchEmail(emailSubject: string): Promise<IHTML> {
+  if (!emailSubject) {
+    throw new RangeError(
+      `emailSubject should not be empty but got (${emailSubject})`,
+    )
+  }
+
+  const imap = getImapInstance()
 
   return new Promise((resolve, reject) => {
     imap.once("ready", () => {
@@ -102,6 +114,61 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
     imap.on("error", reject)
     imap.connect()
   })
+}
+
+export async function searchTenTabsEmail(subject: string): Promise<IHTML> {
+  if (!subject) {
+    throw new RangeError(`subject should not be empty but got (${subject})`)
+  }
+
+  return await searchEmail(subject.trim())
+}
+
+export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
+  if (!volNum) {
+    throw new RangeError(
+      `volNum should be a positive integer but got (${volNum})`,
+    )
+  }
+
+  const emailSubject = `Wisereads Vol. ${volNum}`
+
+  return await searchEmail(emailSubject)
+}
+
+export function extractTenTabsArticles(html: string): IArticle[] {
+  const $ = cheerio.load(html)
+
+  const $subArticles = $("img[src^='https://pocket-image-cache.com/']")
+
+  console.log("Ten Tabs $articles count:", $subArticles.length)
+
+  const subs = [...$subArticles]
+    .map((img) => img.closest("tr"))
+    .map(($sub) => {
+      const $title = [...$sub.querySelectorAll("a")].find(
+        (x) => !!x.textContent,
+      )
+      const $summaryTr = $title.closest(`tr`).nextElementSibling
+      const $mediaAndAuthor = $summaryTr.nextElementSibling
+        .querySelector("td")
+        .innerText.split(/\n/)
+      return {
+        title: $title.textContent,
+        url: $title.href,
+        img: $sub.querySelector("img").src,
+        summary: $summaryTr.querySelector("a").textContent,
+        media: $mediaAndAuthor[0],
+        author: $mediaAndAuthor[1],
+      }
+    })
+
+  return [
+    {
+      category: "本周值得看的国外新闻",
+      subArticles: subs,
+    },
+  ]
 }
 
 export function extractArticles(html: string): IArticle[] {
