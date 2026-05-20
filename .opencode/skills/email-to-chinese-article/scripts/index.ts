@@ -106,13 +106,14 @@ async function main() {
     dir: string
     articles: IArticle[]
   }> {
-    const mdPath = resolve(
+    const outputPath = resolve(
       __dirname,
       `../../../../readwise-weekly/generated/${volNum}.json`,
     )
-    if (existsSync(mdPath)) {
-      console.log(`[Wisereads] File (${mdPath}) already exists skipping...`)
-      return { dir: dirname(mdPath), articles: [] }
+    if (existsSync(outputPath)) {
+      console.log(`[Wisereads] File (${outputPath}) already exists return...`)
+      const articles = await importArticles(outputPath)
+      return { dir: dirname(outputPath), articles }
     }
 
     const html = await searchWisereadsEmail(Number(volNum))
@@ -142,8 +143,10 @@ async function main() {
       `../../../../readwise-weekly-and-tentabs/generated/${fileName}.json`,
     )
     if (existsSync(outputPath)) {
-      console.log(`[TenTabs] File (${outputPath}) already exists skipping...`)
-      return { dir: dirname(outputPath), articles: [] }
+      console.log(`[TenTabs] File (${outputPath}) already exists return...`)
+      const articles = await importArticles(outputPath)
+      // console.log("articles:", articles)
+      return { dir: dirname(outputPath), articles }
     }
 
     const html = await searchTenTabsEmail(subject)
@@ -275,3 +278,11 @@ function toKebabCase(str: string): string {
 // const text = "Why Are We Always Charging Our Phone Batteries? "
 // console.log(toKebabCase(text))
 // 输出: "why-are-we-always-charging-our-phone-batteries"
+
+async function importArticles(jsonPath: string): Promise<IArticle[]> {
+  const articles = await import(jsonPath).then(
+    (mod) => mod.default.articles as IArticle[],
+  )
+
+  return articles
+}

@@ -108,7 +108,11 @@ async function searchEmailCore(emailSubject: string): Promise<IHTML> {
 
                 // 如果 html 为空，则报错提醒
                 if (!html) {
-                  reject(new Error(`email vol ${volNum}'s html is empty`))
+                  reject(
+                    new Error(
+                      `Email with subject "${emailSubject}" has no HTML content.`,
+                    ),
+                  )
                   return
                 }
 
