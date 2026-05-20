@@ -2,7 +2,7 @@
 
 import { existsSync } from "node:fs"
 import { readFile, writeFile } from "node:fs/promises"
-import { resolve as _resolve, dirname, join } from "node:path"
+import { dirname, join, resolve } from "node:path"
 import { parseArgs } from "node:util"
 import { downloadImages } from "./image-downloader.ts"
 import {
@@ -14,6 +14,8 @@ import {
   searchTenTabsEmail,
   searchWisereadsEmail,
 } from "./parse-email.node.ts"
+
+const __dirname = import.meta.dirname
 
 function printCliUsage() {
   console.log(
@@ -98,7 +100,18 @@ async function main() {
     throw new Error("No --ten-tabs-subject provided.")
   }
 
-  async function processWisereads() {
+  async function processWisereads(): Promise<string> {
+    const mdPath = resolve(
+      __dirname,
+      `../../../../readwise-weekly/generated/${volNum}.md`,
+    )
+    if (existsSync(mdPath)) {
+      console.log(
+        `File (${mdPath}) already exists skipping Wisereads processing...`,
+      )
+      return dirname(mdPath)
+    }
+
     const html = await searchWisereadsEmail(Number(volNum))
     const articles = extractWiseReadArticles(html)
 
@@ -106,7 +119,7 @@ async function main() {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
 
-    return saveArticles(
+    return saveReadwiseArticles(
       volNum,
       articles,
       titleWithUrl !== "false",
@@ -115,6 +128,18 @@ async function main() {
   }
 
   async function processTenTabs(subject: string) {
+    const fileName = toKebabCase(subject)
+    const outputPath = resolve(
+      __dirname,
+      `../../../../readwise-weekly-and-tentabs/generated/${fileName}.md`,
+    )
+    if (existsSync(outputPath)) {
+      console.log(
+        `File (${outputPath}) already exists skipping Ten Tabs processing...`,
+      )
+      return dirname(outputPath)
+    }
+
     const html = await searchTenTabsEmail(subject)
     const articles = extractTenTabsArticles(html)
 
@@ -139,8 +164,8 @@ async function main() {
       `${volNum}-${toKebabCase(tenTabsSubject)}.md`,
     )
 
-    const wisereadsMdPath = _resolve(wisereadsDir, `${volNum}.md`)
-    const tenTabsMdPath = _resolve(
+    const wisereadsMdPath = resolve(wisereadsDir, `${volNum}.md`)
+    const tenTabsMdPath = resolve(
       tenTabsDir,
       `${toKebabCase(tenTabsSubject)}.md`,
     )
@@ -161,14 +186,13 @@ async function main() {
   }
 }
 
-async function saveArticles(
+async function saveReadwiseArticles(
   volNum: string,
   articles: IArticle[],
   titleWithUrl?: boolean,
   shouldDownloadImages?: boolean,
 ): Promise<string> {
-  const __dirname = import.meta.dirname
-  const outputPath = _resolve(
+  const outputPath = resolve(
     __dirname,
     `../../../../readwise-weekly/generated/${volNum}.json`,
   )
@@ -216,9 +240,8 @@ async function saveTenTabsArticles({
   subject: string
   articles: IArticle[]
 }): Promise<string> {
-  const __dirname = import.meta.dirname
   const fileName = toKebabCase(subject)
-  const outputPath = _resolve(
+  const outputPath = resolve(
     __dirname,
     `../../../../readwise-weekly-and-tentabs/generated/${fileName}.json`,
   )
