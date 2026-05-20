@@ -1,6 +1,6 @@
 ---
 name: email-to-chinese-article
-description: Wiseread Weekly 和 Ten Tabs 每周推荐阅读中文文章生成工具。当让你生成或翻译 readwise / wisereads vol 某一期以及 Ten Tabs 某个主题 subject 中文文章时调用。
+description: Wiseread Weekly 和 Ten Tabs 每周推荐阅读中文文章生成工具。当让你生成/整理/翻译 readwise / wisereads vol 某一期以及 Ten Tabs 某个主题 subject 中文文章时调用。
 metadata: readwise, vol, ten tabs, email, imap, parsing, markdown, chinese, article
 ---
 
@@ -52,7 +52,7 @@ Options:
 2. 涉及链接时，用『官方给了[迁移指南](url)』或『文章把过程讲得很细』这种自然的方式带出。
 3. 无需翻译作者名、媒体平台。
 4. `Twitter Thread` 翻译成 `Twitter` 即可。
-5. 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译。
+5. 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译。但是**图片请勿删除**，因为图片是文章的视觉元素，对理解文章内容至关重要。
 6. 需翻译 `link` 里面的 `text` 比如 `[This is an example](https://example.com)` 的 `This is an example` 需翻译。
 
 这套提示词的核心在于**节奏感**——像朋友聊天一样把技术干货抖出来。
