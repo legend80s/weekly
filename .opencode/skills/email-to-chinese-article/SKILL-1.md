@@ -1,5 +1,5 @@
 ---
-name: wiseread-weekly-email-to-chinese-article
+name: email-to-chinese-article-readwise
 description: Wiseread Weekly 中文文章生成工具。当让你生成 wisereads 某一期的中文文章时调用。
 metadata: email, imap, parsing, markdown, chinese, article
 ---
@@ -19,6 +19,7 @@ bun --env-file ../imap-smtp-email/.env scripts/extract-articles.ts [--vol=132]
 ```
 
 Options:
+
 - `--vol <volNum>`: Wisereads vol number (**required** and should be positive integer)
 - `--help`: Show cli usage (default: false)
 

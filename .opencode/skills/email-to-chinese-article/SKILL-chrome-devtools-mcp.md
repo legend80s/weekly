@@ -1,5 +1,5 @@
 ---
-name: wiseread-weekly-email-to-chinese-article
+name: email-to-chinese-article-mcp
 description: Wiseread Weekly 中文文章生成工具。当让你生成 wisereads 某一期的中文文章时调用。
 metadata: email, imap, parsing, markdown, chinese, article
 ---
@@ -15,10 +15,11 @@ metadata: email, imap, parsing, markdown, chinese, article
 如果已有 `[volNum].md` 则无需调用。根据期号搜索邮件并解析成 markdown 文章，脚本使用方式如下：
 
 ```bash
-bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts [--vol=volNum]
+bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/extract-articles.ts [--vol=volNum]
 ```
 
 Options:
+
 - `--vol <volNum>`: Wisereads vol number (**required** and should be positive integer)
 - `--help`: Show cli usage (default: false)
 
@@ -28,7 +29,7 @@ Options:
 
 > 因为 DeepSeek 网站的回复质量是所有 AI 中最好，比如它的英译中质量。
 
-1. 使用 Chrome Devtools MCP（如果没有请安装到本项目）打开网站 https://chat.deepseek.com/。
+1. 使用 Chrome Devtools MCP（如果没有请安装到本项目）打开网站 <https://chat.deepseek.com/。>
 2. 构建翻译 prompt：将 Step1 生成的 markdown 文件内容结合下面的翻译要求，生成 `content` 格式如下：
 
 ```md
@@ -81,7 +82,7 @@ Options:
 {**完整**的 `[volNum].md` 文件内容}
 ```
 
-3. 使用 chrome-devtools_evaluate_script 执行 JavaScript 代码（**须严格按照以下代码执行**），将 `content` 设置到 textarea 中，并触发 input 事件以及点击发送，代码如下：
+1. 使用 chrome-devtools_evaluate_script 执行 JavaScript 代码（**须严格按照以下代码执行**），将 `content` 设置到 textarea 中，并触发 input 事件以及点击发送，代码如下：
 
 ```js
 const textarea = document.querySelector('textarea');
@@ -103,14 +104,13 @@ setTimeout(() => {
 }, 32)
 ```
 
-6. 如果 console 没有输出 `send button clicked`，则需再次点击发送按钮：`[...document.querySelectorAll('[role="button"][aria-disabled=false]')].at(-1).click()`
-7. 等待回复完成（一般耗时 50s）：**每隔 10s 轮询截图一次**，当页面出现『This response is AI-generated, for reference only.』说明回复已完成
-8. 提取翻译结果并将**完整**的 markdown 回复存放到 `<root>/readwise-weekly/generated/` 目录下，文件名为 `<volNum>.zh.md`
+1. 如果 console 没有输出 `send button clicked`，则需再次点击发送按钮：`[...document.querySelectorAll('[role="button"][aria-disabled=false]')].at(-1).click()`
+2. 等待回复完成（一般耗时 50s）：**每隔 10s 轮询截图一次**，当页面出现『This response is AI-generated, for reference only.』说明回复已完成
+3. 提取翻译结果并将**完整**的 markdown 回复存放到 `<root>/readwise-weekly/generated/` 目录下，文件名为 `<volNum>.zh.md`
 
 ---
 
 来一个吸引读者兴趣继续阅读的导读：开头是『**欢迎打开本期国外技术周刊**：』，并且起个标题，开头『国外技术周刊 #7：』
-
 
 记住导读只需要做到推荐**三篇**读者最可能感兴趣的即可，无需『老规矩，PDF、RSS 源都给你备好了，翻着看。』
 

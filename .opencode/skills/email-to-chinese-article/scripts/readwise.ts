@@ -17,10 +17,10 @@ function printCliUsage() {
     "Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
   )
   console.log(
-    "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true] [--download-images]",
+    "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true] [--download-images]",
   )
   console.log(
-    "Example: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=6 --title-with-url=true",
+    "Example: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/index.ts --vol=6 --title-with-url=true",
   )
 }
 
@@ -64,7 +64,12 @@ function parseCliArg() {
 main()
 
 async function main() {
-  const { vol: volNum = "", help, "title-with-url": titleWithUrl, "download-images": shouldDownloadImages } = parseCliArg()
+  const {
+    vol: volNum = "",
+    help,
+    "title-with-url": titleWithUrl,
+    "download-images": shouldDownloadImages,
+  } = parseCliArg()
 
   if (help) {
     printCliUsage()
@@ -90,7 +95,12 @@ async function main() {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
 
-    await saveArticles(volNum, articles, titleWithUrl !== "false", shouldDownloadImages ?? false)
+    await saveArticles(
+      volNum,
+      articles,
+      titleWithUrl !== "false",
+      shouldDownloadImages ?? false,
+    )
   } catch (err) {
     console.error(err)
     process.exit(1)
@@ -98,7 +108,12 @@ async function main() {
   }
 }
 
-async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?: boolean, shouldDownloadImages?: boolean) {
+async function saveArticles(
+  volNum: string,
+  articles: IArticle[],
+  titleWithUrl?: boolean,
+  shouldDownloadImages?: boolean,
+) {
   const __dirname = import.meta.dirname
   const outputPath = _resolve(
     __dirname,
@@ -114,7 +129,9 @@ async function saveArticles(volNum: string, articles: IArticle[], titleWithUrl?:
   console.log(`✅ articles json saved to ${outputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles, { titleWithUrl: titleWithUrl ?? true })
+  const md = articlesToMarkdown(articles, {
+    titleWithUrl: titleWithUrl ?? true,
+  })
   const mdPath = outputPath.replace(".json", ".md")
   writeFileSync(mdPath, md)
 

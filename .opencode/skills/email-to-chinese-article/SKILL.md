@@ -6,27 +6,18 @@ metadata: readwise, vol, ten tabs, email, imap, parsing, markdown, chinese, arti
 
 # Wisereads Weekly and Ten Tabs Email to Chinese Article Tool
 
-```mermaid
-graph LR
-    A["Wisereads Weekly 邮件内容"] --> B["markdown"]
-    C["Ten Tabs 邮件内容"] --> B
-    B --> D["翻译成中文文章"]
-```
-
-```py
 merge `Wisereads Weekly` and `Ten Tabs` 邮件内容 into a markdown `→` 翻译成中文文章。
-```
 
 ## Instructions
 
 ### Step1: 邮件转 markdown
 
-假设用户输入”生成 readwise vol 132 以及 tentabs "Why Are We Always Charging Our Phone Batteries?" 中文文章“
+假设用户输入”生成 readwise vol 132 以及 tentabs 主题 "Why Are We Always Charging Our Phone Batteries?" 中文文章“
 
 则执行脚本：
 
 ```bash
-bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=132 --ten-tabs-subject="Why Are We Always Charging Our Phone Batteries?"
+bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/index.ts --vol=<volNum> --ten-tabs-subject="<subject>"
 ```
 
 Options:
@@ -37,11 +28,13 @@ Options:
 
 该脚本会自动将 readwise vol 132 和 ten tabs 主题“Why Are We Always Charging Our Phone Batteries?”两个邮件的内容合并成一个 markdown: `readwise-weekly-and-tentabs/generated/132-why-are-we-always-charging-our-phone-batteries.md`
 
-注意：执行脚本之前需询问是否下载文章内图片，如果肯定回答则增加 `--download-images`
+注意：
+1. 执行脚本之前需询问是否下载文章内图片，如果肯定回答则增加 `--download-images`
+2. 如果报错依赖不存在，执行 `pnpm install` 安装依赖
 
 ### Step2: 生成中文文章
 
-第一步生成的 markdown `readwise-weekly-and-tentabs/generated/<volNum>-<tentabs-subject>.md` 翻译成中文，存放到 `readwise-weekly-and-tentabs/generated/<volNum>-<tentabs-subject>.zh.md`
+第一步生成的 readwise 和 tentabs 合并后的 markdown 翻译成中文，存放到 `readwise-weekly-and-tentabs/generated/<volNum>-<tentabs-subject>.zh.md`
 
 #### 行文风格
 
@@ -82,5 +75,5 @@ Options:
 2. 翻译后的文章头部增加标题：『# 国外技术周刊 #{volNum}：<请填充>』填充内容是最吸引人的**1 篇**文章
 
 3. 标题和导读之后，增加一个章节，介绍本文的**1个**观点：
-  - 生成之前先列出所有趣发人深省的观点或文章，等我确认后再继续。行文风格参考：[brief-view-of-the-week.md](.opencode\skills\wiseread-weekly-email-to-chinese-article\references\brief-view-of-the-week.md)
-  - 字数 800 字以内。
+  - 生成之前先列出所有趣发人深省的观点或文章，等我确认后再继续。行文风格参考：[brief-view-of-the-week.md](./references/brief-view-of-the-week.md)
+  - 字数小于 800。

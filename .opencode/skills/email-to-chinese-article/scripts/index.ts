@@ -24,10 +24,10 @@ function printCliUsage() {
     "Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
   )
   console.log(
-    "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true] [--download-images]",
+    "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true] [--download-images]",
   )
   console.log(
-    "Example: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/index.ts --vol=6 --title-with-url=true",
+    "Example: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/index.ts --vol=6 --title-with-url=true",
   )
 }
 
@@ -204,15 +204,15 @@ async function saveReadwiseArticles(
   console.log(`✅ articles json saved to ${readwiseJsonOutputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles, {
-    titleWithUrl: titleWithUrl ?? true,
-  })
-  const mdPath = readwiseJsonOutputPath.replace(".json", ".md")
-  await writeFile(mdPath, md)
+  // const md = articlesToMarkdown(articles, {
+  //   titleWithUrl: titleWithUrl ?? true,
+  // })
+  // const mdPath = readwiseJsonOutputPath.replace(".json", ".md")
+  // await writeFile(mdPath, md)
 
-  const zhMdPath = readwiseJsonOutputPath.replace(".json", ".zh.md")
-  await writeFile(zhMdPath, "等待翻译")
-  console.log(`✅ articles saved to ${zhMdPath}`)
+  // const zhMdPath = readwiseJsonOutputPath.replace(".json", ".zh.md")
+  // await writeFile(zhMdPath, "等待翻译")
+  // console.log(`✅ articles saved to ${zhMdPath}`)
 
   // 3. save links (only when titleWithUrl is false, since true embeds URLs in titles)
   if (!titleWithUrl) {
@@ -253,13 +253,12 @@ async function saveTenTabsArticles({
   console.log(`✅ articles json saved to ${outputPath}`)
 
   // 2. save markdown
-  const md = articlesToMarkdown(articles, {
-    titleWithUrl: true,
-  })
-  const mdPath = outputPath.replace(".json", ".md")
-  await writeFile(mdPath, md)
-
-  console.log(`✅ articles saved to ${mdPath}`)
+  // const md = articlesToMarkdown(articles, {
+  //   titleWithUrl: true,
+  // })
+  // const mdPath = outputPath.replace(".json", ".md")
+  // await writeFile(mdPath, md)
+  // console.log(`✅ articles saved to ${mdPath}`)
 
   return dir
 }
