@@ -94,7 +94,7 @@ Charles Lindbergh
 
 进化生物学家 Rebecca Hooper 在苏格兰海岸边写作 between two seas——一个关于科学、生命和惊奇感的 Substack。关于太空中的藤壶：「从微小的幼虫开始，在开阔的海洋中随波逐流，被洋流带去任何地方——藤壶在岩石上爬行，寻找同伴，然后比基本需求所暗示的更紧密地挤在一起，建造它们永久的家。」
 
-### 七、还有哪些值得看的国外新闻
+### 七、还有哪些值得看的国际新闻
 
 #### 7.1 [WHO 宣布埃博拉疫情为全球卫生紧急事件，你需要知道什么](https://clicks.mozilla.org/f/a/0SI4v0HBIimtHZlZZlH6JQ~~/AAQRxRA~/WF0nvhUit4KHu1cUMB-7BHPwkxmZlTRlIabtatUWPsOEBdcyyypp-3EAuC8P4rgJpcDpEf4SmQVZfS0qTYoIpHLFnBbiAfA1wVJoVQxfeEBw7l3T1vwKU_3g_zUYnnAxkHHxN2YZAPXjgboBa4r45WLsPAdUA3CgmLbWAe1BobPnIgTB2JtzqOG1XeTFocJvJjCksEzR2wOkFkv0ta1K-Exy-j1FSf6SBiuU42MGulIoqF-ZQ2qigWx3aIxL6ae5l229shIY7dX7JQzFHajdZh3fjscO6K9M6SZ8OaUKHDMHOhmCLtaBMh1SC0MTFFnGuK-tYW4noi_AS13slaQnlFdhpHC08WInxcHsaf9k5Om9MPeXF6Cd0rpoCcaeXxeSVAzOgeQfmc2s6jgg8O0EoxqpDWpI4Q2Qtc4_W6ykQ7zElbjiZSI7n5jv66S9VhtVHt2tmYM6LlE3FDZ-p9NCAMtAGlJPI4-mCAwzGR3l_J0YpEZvNKOptKMzCjnYsEOuEZ0m9IEetIfsWq4R15sWpg~~)
 

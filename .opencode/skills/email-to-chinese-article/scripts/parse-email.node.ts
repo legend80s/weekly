@@ -206,7 +206,7 @@ export function extractTenTabsArticles(html: string): IArticle[] {
 
   return [
     {
-      category: "还有哪些值得看的国外新闻",
+      category: "还有哪些值得看的国际新闻",
       subArticles: subs.get(),
     },
   ]

@@ -1,5 +1,6 @@
 import { strict as assert } from "node:assert"
 import { readFileSync, writeFileSync } from "node:fs"
+import { join } from "node:path"
 import test, { describe } from "node:test"
 import {
   articlesToMarkdown,
@@ -7,7 +8,6 @@ import {
   type IArticle,
   searchTenTabsEmail,
 } from "./parse-email.node.ts"
-import { join } from "node:path"
 
 describe("html to markdown", () => {
   test("extractArticles", async (t) => {
@@ -29,7 +29,7 @@ describe("html to markdown", () => {
 
     const expected: IArticle[] = [
       {
-        category: "还有哪些值得看的国外新闻",
+        category: "还有哪些值得看的国际新闻",
         subArticles: [
           {
             title:
