@@ -189,7 +189,11 @@ export function extractTenTabsArticles(html: string): IArticle[] {
     return {
       title,
       url: $titleLink.attr("href"),
-      img: $sub.find("img").first().attr("src"),
+      img: $sub
+        .find("img")
+        .first()
+        .attr("src")
+        ?.replace(/\/\d+x\d+\//, "/600x600/"),
       summary: $summaryTr.find("a").first().text().trim(),
       media: $mediaAndAuthor[0],
       author: $mediaAndAuthor[1],
