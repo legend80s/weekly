@@ -108,7 +108,7 @@ async function main() {
   }> {
     const mdPath = resolve(
       __dirname,
-      `../../../../readwise-weekly/generated/${volNum}.md`,
+      `../../../../readwise-weekly/generated/${volNum}.json`,
     )
     if (existsSync(mdPath)) {
       console.log(`[Wisereads] File (${mdPath}) already exists skipping...`)
@@ -139,7 +139,7 @@ async function main() {
     const fileName = toKebabCase(subject)
     const outputPath = resolve(
       __dirname,
-      `../../../../readwise-weekly-and-tentabs/generated/${fileName}.md`,
+      `../../../../readwise-weekly-and-tentabs/generated/${fileName}.json`,
     )
     if (existsSync(outputPath)) {
       console.log(`[TenTabs] File (${outputPath}) already exists skipping...`)
