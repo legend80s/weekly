@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync } from "node:fs"
-import { readFile, writeFile } from "node:fs/promises"
+import { writeFile } from "node:fs/promises"
 import { dirname, join, resolve } from "node:path"
 import { parseArgs } from "node:util"
 import { downloadImages } from "./image-downloader.ts"
@@ -16,6 +16,8 @@ import {
 } from "./parse-email.node.ts"
 
 const __dirname = import.meta.dirname
+const getReadwiseJsonOutputPath = (volNum: string) =>
+  resolve(__dirname, `../../../../readwise-weekly/generated/${volNum}.json`)
 
 function printCliUsage() {
   console.log(
@@ -100,16 +102,17 @@ async function main() {
     throw new Error("No --ten-tabs-subject provided.")
   }
 
-  async function processWisereads(): Promise<string> {
+  async function processWisereads(): Promise<{
+    dir: string
+    articles: IArticle[]
+  }> {
     const mdPath = resolve(
       __dirname,
       `../../../../readwise-weekly/generated/${volNum}.md`,
     )
     if (existsSync(mdPath)) {
-      console.log(
-        `File (${mdPath}) already exists skipping Wisereads processing...`,
-      )
-      return dirname(mdPath)
+      console.log(`[Wisereads] File (${mdPath}) already exists skipping...`)
+      return { dir: dirname(mdPath), articles: [] }
     }
 
     const html = await searchWisereadsEmail(Number(volNum))
@@ -119,25 +122,28 @@ async function main() {
       throw new Error(`No article extracted for vol. ${volNum}`)
     }
 
-    return saveReadwiseArticles(
-      volNum,
+    return {
+      dir: await saveReadwiseArticles(
+        volNum,
+        articles,
+        titleWithUrl !== "false",
+        shouldDownloadImages ?? false,
+      ),
       articles,
-      titleWithUrl !== "false",
-      shouldDownloadImages ?? false,
-    )
+    }
   }
 
-  async function processTenTabs(subject: string) {
+  async function processTenTabs(
+    subject: string,
+  ): Promise<{ dir: string; articles: IArticle[] }> {
     const fileName = toKebabCase(subject)
     const outputPath = resolve(
       __dirname,
       `../../../../readwise-weekly-and-tentabs/generated/${fileName}.md`,
     )
     if (existsSync(outputPath)) {
-      console.log(
-        `File (${outputPath}) already exists skipping Ten Tabs processing...`,
-      )
-      return dirname(outputPath)
+      console.log(`[TenTabs] File (${outputPath}) already exists skipping...`)
+      return { dir: dirname(outputPath), articles: [] }
     }
 
     const html = await searchTenTabsEmail(subject)
@@ -147,35 +153,30 @@ async function main() {
       throw new Error(`No article extracted for subject. ${subject}`)
     }
 
-    return saveTenTabsArticles({
-      subject: subject,
+    return {
+      dir: await saveTenTabsArticles({
+        subject: subject,
+        articles,
+      }),
       articles,
-    })
+    }
   }
 
   try {
-    const [wisereadsDir, tenTabsDir] = await Promise.all([
-      processWisereads(),
-      processTenTabs(tenTabsSubject),
-    ])
+    const [
+      { articles: wisereadsArticles },
+      { dir: tenTabsDir, articles: tenTabsArticles },
+    ] = await Promise.all([processWisereads(), processTenTabs(tenTabsSubject)])
     // join 2 md files write to readwise-weekly-and-tentabs/generated/{vol}-{subject}.md
     const outputPath = join(
       tenTabsDir,
       `${volNum}-${toKebabCase(tenTabsSubject)}.md`,
     )
 
-    const wisereadsMdPath = resolve(wisereadsDir, `${volNum}.md`)
-    const tenTabsMdPath = resolve(
-      tenTabsDir,
-      `${toKebabCase(tenTabsSubject)}.md`,
-    )
-
-    const [wisereadsMd, tenTabsMd] = await Promise.all([
-      readFile(wisereadsMdPath, "utf8"),
-      readFile(tenTabsMdPath, "utf8"),
-    ])
-
-    const combinedMd = `${wisereadsMd}\n\n${tenTabsMd}`
+    const combinedArticles = [...wisereadsArticles, ...tenTabsArticles]
+    const combinedMd = articlesToMarkdown(combinedArticles, {
+      titleWithUrl: true,
+    })
 
     await writeFile(outputPath, combinedMd)
     console.log(`✅ Combined markdown saved to ${outputPath}`)
@@ -192,33 +193,30 @@ async function saveReadwiseArticles(
   titleWithUrl?: boolean,
   shouldDownloadImages?: boolean,
 ): Promise<string> {
-  const outputPath = resolve(
-    __dirname,
-    `../../../../readwise-weekly/generated/${volNum}.json`,
-  )
-  const dir = dirname(outputPath)
+  const readwiseJsonOutputPath = getReadwiseJsonOutputPath(volNum)
+  const dir = dirname(readwiseJsonOutputPath)
   if (!existsSync(dir)) {
     throw new Error(`dir (${dir}) not exits`)
   }
 
   // 1. save json
-  await writeFile(outputPath, JSON.stringify({ articles }, null, 2))
-  console.log(`✅ articles json saved to ${outputPath}`)
+  await writeFile(readwiseJsonOutputPath, JSON.stringify({ articles }, null, 2))
+  console.log(`✅ articles json saved to ${readwiseJsonOutputPath}`)
 
   // 2. save markdown
   const md = articlesToMarkdown(articles, {
     titleWithUrl: titleWithUrl ?? true,
   })
-  const mdPath = outputPath.replace(".json", ".md")
+  const mdPath = readwiseJsonOutputPath.replace(".json", ".md")
   await writeFile(mdPath, md)
 
-  const zhMdPath = outputPath.replace(".json", ".zh.md")
+  const zhMdPath = readwiseJsonOutputPath.replace(".json", ".zh.md")
   await writeFile(zhMdPath, "等待翻译")
   console.log(`✅ articles saved to ${zhMdPath}`)
 
   // 3. save links (only when titleWithUrl is false, since true embeds URLs in titles)
   if (!titleWithUrl) {
-    const linksPath = outputPath.replace(".json", ".links.md")
+    const linksPath = readwiseJsonOutputPath.replace(".json", ".links.md")
     const linksMd = extractLinksToMarkdown(articles)
 
     await writeFile(linksPath, linksMd)

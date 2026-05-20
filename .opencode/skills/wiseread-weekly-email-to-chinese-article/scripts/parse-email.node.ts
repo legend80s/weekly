@@ -298,8 +298,10 @@ export function articlesToMarkdown(
   articles: IArticle[],
   {
     titleWithUrl,
+    startIndex,
   }: {
     titleWithUrl: boolean
+    startIndex?: number
   },
 ): string {
   // console.log("articles:", JSON.stringify(articles, null, 2))
@@ -316,7 +318,10 @@ export function articlesToMarkdown(
             .join(" | ")
           const title =
             titleWithUrl && sub.url ? `[${sub.title}](${sub.url})` : sub.title
-          const indexPrefix = onlyOneArticle ? "" : `${i + 1}.${j + 1} `
+
+          const indexPrefix = onlyOneArticle
+            ? ""
+            : `${startIndex ? startIndex + i : i + 1}.${j + 1} `
 
           return `
 ### ${indexPrefix}${title}
@@ -325,12 +330,13 @@ export function articlesToMarkdown(
 
 ${sub.summary}
 
-${source}`.trim()
+${source}
+`.trimStart()
         })
         .join("\n")
 
       return `
-## ${indexToChinese(i + 1)}、${article.category}
+## ${indexToChinese(startIndex ? startIndex + i : i + 1)}、${article.category}
 
 ${articlesMd}`
     })
