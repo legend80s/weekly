@@ -1,7 +1,7 @@
 ---
-name: wiseread-weekly-email-to-chinese-article
-description: Wiseread Weekly 和 Ten Tabs 每周推荐阅读中文文章生成工具。当让你生成或翻译 readwise / wisereads 某一期以及 Ten Tabs 某个主题中文文章时调用。
-metadata: email, imap, parsing, markdown, chinese, article
+name: email-to-chinese-article
+description: Wiseread Weekly 和 Ten Tabs 每周推荐阅读中文文章生成工具。当让你生成或翻译 readwise / wisereads vol 某一期以及 Ten Tabs 某个主题 subject 中文文章时调用。
+metadata: readwise, vol, ten tabs, email, imap, parsing, markdown, chinese, article
 ---
 
 # Wisereads Weekly and Ten Tabs Email to Chinese Article Tool
@@ -41,7 +41,7 @@ Options:
 
 ### Step2: 生成中文文章
 
-第一步生成的 markdown 翻译成中文，存放到 `readwise-weekly-and-tentabs/generated/<volNum>-<tentabs-subject>.zh.md`
+第一步生成的 markdown `readwise-weekly-and-tentabs/generated/<volNum>-<tentabs-subject>.md` 翻译成中文，存放到 `readwise-weekly-and-tentabs/generated/<volNum>-<tentabs-subject>.zh.md`
 
 #### 行文风格
 
