@@ -179,7 +179,7 @@ export async function extractTenTabsArticles(
 }
 
 function resolveFinalUrl(url: string): Promise<string> {
-  const signal = AbortSignal.timeout(6 * 1000) // 3s 4/10 失败率 尝试 6s 看看失败率多少
+  const signal = AbortSignal.timeout(7 * 1000) // 3s 4/10 失败率 尝试 6s 看看失败率多少 1/10 改成 7s，因为 1/10 的失败率可以接受
   return fetch(url, {
     signal,
     redirect: "follow", // 自动跟随重定向
