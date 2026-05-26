@@ -179,7 +179,7 @@ export async function extractTenTabsArticles(
 }
 
 function resolveFinalUrl(url: string): Promise<string> {
-  const signal = AbortSignal.timeout(3 * 1000)
+  const signal = AbortSignal.timeout(6 * 1000) // 3s 4/10 失败率 尝试 6s 看看失败率多少
   return fetch(url, {
     signal,
     redirect: "follow", // 自动跟随重定向
@@ -190,11 +190,15 @@ function resolveFinalUrl(url: string): Promise<string> {
     // }
   })
     .then((resp) => {
-      console.log(`url`, resp.url)
+      // console.log(`url`, resp.url)
       return resp.url
     })
     .catch((err) => {
-      console.error("[resolveFinalUrl]", err)
+      console.error("[resolveFinalUrl]", {
+        url,
+        name: err.name,
+        message: err.message,
+      })
       return url
     })
 }
