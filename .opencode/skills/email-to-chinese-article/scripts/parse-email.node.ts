@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio"
 import Imap from "imap"
 import { simpleParser } from "mailparser"
+import pLimit from "p-limit"
 
 export type IArticle = {
   category: string
@@ -150,7 +151,55 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
   return await searchEmail(emailSubject)
 }
 
-export function extractTenTabsArticles(html: string): IArticle[] {
+// ❯ curl https://clicks.mozilla.org/f/a/A7H_VLC88oRgJ0LZRUPcRQ\~\~/AAQRxRA\~/QKMP-PZme5I1gJyD7QDockMTSFmxlDaWmTbL6C3tKqd4U_lXB6WVciW6NE46waSSpbLTkQK4eFgU--zR6pzqyrQgIqvF5GpMnwM-t0mFardH7bbyFcGo9qvMJiE-sS4MTGAOW8DwJSBcZt4bNbve8lgdu0xphENWdpvMm6sEiF3tumc0HC27zl1OSmh3ubhtemR-NzO1G04AAGNsdH2N_cCK5vePg5CgUmtFC1EtdemUl2JNm7CKKrLyprQrujDPXXA0VhEq35XgmklCY5hmnVLsklwYhSEMNh8hF3kZ8fIjCICxg8ZTEVh05SKiZxMlwJ3HA2zYdFsm8HhcRtuLoZB1JeB5La0OmAm1clfC7twsv9o2ejg3ou8Yi2iybrQvar3LMiZa0rnSpONkPfCXToguTn_vNFZ28JnZbJB_5SWtKF0pbdPrmKX1rYI2jefCwq_2FqXEV7tyYaM0gQr1kw\~\~
+// Found. Redirecting to https://www.thekitchn.com/butter-vs-oil-pastry-chefs-23783123?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=10&category=fascinating_stories&scheduled_corpus_item_id=eb5e54ee-ba3d-4209-99df-aabbc5cbf57e&url=https%3A%2F%2Fwww.thekitchn.com%2Fbutter-vs-oil-pastry-chefs-23783123%
+export async function extractTenTabsArticles(
+  html: string,
+): Promise<IArticle[]> {
+  const limit = pLimit(3)
+  const [{ subArticles, ...rest }] = extractTenTabsArticlesCore(html)
+
+  const input = subArticles.map(({ url, ...rest }) => {
+    return limit(async () => {
+      return {
+        ...rest,
+        url: url && (await resolveFinalUrl(url)),
+      }
+    })
+  })
+
+  const resolvedSubArticles = await Promise.all(input)
+
+  return [
+    {
+      ...rest,
+      subArticles: resolvedSubArticles,
+    },
+  ]
+}
+
+function resolveFinalUrl(url: string): Promise<string> {
+  const signal = AbortSignal.timeout(3 * 1000)
+  return fetch(url, {
+    signal,
+    redirect: "follow", // 自动跟随重定向
+    // headers: {
+    //   'Host': 'clicks.mozilla.org',
+    //   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    //    'User-Agent': `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36`
+    // }
+  })
+    .then((resp) => {
+      console.log(`url`, resp.url)
+      return resp.url
+    })
+    .catch((err) => {
+      console.error("[resolveFinalUrl]", err)
+      return url
+    })
+}
+
+function extractTenTabsArticlesCore(html: string): IArticle[] {
   const $ = cheerio.load(html)
 
   const $articles = $("img[src^='https://pocket-image-cache.com/']").map(
