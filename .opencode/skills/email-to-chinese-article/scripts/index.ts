@@ -150,7 +150,7 @@ async function main() {
     }
 
     const html = await searchTenTabsEmail(subject)
-    const articles = extractTenTabsArticles(html)
+    const articles = await extractTenTabsArticles(html)
 
     if (!articles?.length) {
       throw new Error(`No article extracted for subject. ${subject}`)
