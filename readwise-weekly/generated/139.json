@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "Mythos, Muse, and the Opportunity Cost of Compute",
+          "url": "https://stratechery.com/2026/mythos-muse-and-the-opportunity-cost-of-compute/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/mythos-muse-and-the-opportunit/cover_image.jpg",
+          "summary": "Stratechery’s Ben Thompson argues that the era of consumer tech growth driven by zero marginal costs is giving way to one shaped by opportunity cost. \"It’s opportunity costs, not marginal costs, that are the challenge facing hyperscalers. How much compute should go to customers, and which ones? How much should be reserved for internal workloads? Microsoft needs to balance Azure — both for its enterprise customers and OpenAI — and its software business; Amazon needs to balance its e-commerce business, AWS, and its strategic investments in both Anthropic and OpenAI. Google has to balance GCP, its own strategic investment in Anthropic, and its consumer businesses.\"",
+          "media": "Stratechery",
+          "author": "Ben Thompson · 12 mins"
+        },
+        {
+          "title": "The peril of laziness lost",
+          "url": "https://bcantrill.dtrace.org/2026/04/12/the-peril-of-laziness-lost/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-peril-of-laziness-lost/cover_image.jpg",
+          "summary": "Oxide Computer co-founder Bryan Cantrill warns that LLMs could erode one of the most important programmer virtues: principled laziness. \"LLMs inherently lack the virtue of laziness. Work costs nothing to an LLM. LLMs do not feel a need to optimize for their own (or anyone's) future time, and will happily dump more and more onto a layercake of garbage. Left unchecked, LLMs will make systems larger, not better.\"",
+          "media": "bcantrill.dtrace.org",
+          "author": "Bryan Cantrill · 4 mins"
+        },
+        {
+          "title": "Sam Altman",
+          "url": "https://blog.samaltman.com/2279512/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/sam-altman/cover_image.jpg",
+          "summary": "After an arson attempt at his home, OpenAI’s Sam Altman reflects on power and AGI while calling for healthy debate about what AI’s future should look like. \"While we have that debate, we should de-escalate the rhetoric and tactics and try to have fewer explosions in fewer homes, figuratively and literally.\"",
+          "media": "Sam Altman",
+          "author": "samaltman.com · 4 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "The Blueprint to Reset Your Life",
+          "url": "https://youtube.com/watch/?v=NNdrePfnVc4",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-blueprint-to-reset-your-li/cover_image.jpg",
+          "summary": "Turn mistakes into a blueprint for change with Bullet Journal creator Ryder Carroll. \"Punishment is not the same thing as accountability. It’s actually a lack thereof. Beating yourself up feels like you’re doing something, but it changes nothing. You’re just doubling down on an identity that you don’t want.\"",
+          "media": "",
+          "author": "Bullet Journal · 6 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "Thin Harness, Fat Skills",
+          "url": "https://x.com/garrytan/status/2042925773300908103/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/thin-harness-fat-skills/cover_image.jpg",
+          "summary": "Y Combinator president Garry Tan unpacks the architectural pattern behind the leap from 2x to 100x AI productivity: a robust, ever-evolving set of skills. \"Every skill you write is a permanent upgrade to your system. It never degrades. It never forgets. It runs at 3 AM while you sleep. And when the next model drops, every skill instantly gets better — the judgment in the latent steps improves while the deterministic steps stay perfectly reliable.\"",
+          "media": "",
+          "author": "Garry Tan · 7 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "System Card: Claude Mythos Preview",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/system-card-claude-mythos-prev/Claude_Mythos_Preview_System_Card.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/system-card-claude-mythos-prev/cover_image_VgJDHDq.png",
+          "summary": "Anthropic's system card for the unreleased Claude Mythos Preview explains why its most capable model stays off the market. \"Claude Mythos Preview demonstrated a striking leap in cyber capabilities relative to prior models, including the ability to autonomously discover and exploit zero-day vulnerabilities in major operating systems and web browsers.\"",
+          "media": "",
+          "author": "Anthropic · 4 hrs and 29 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "\"We\"",
+          "url": "https://readwise.io/reader/fd/445914361",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/we/cover_image.jpg",
+          "summary": "Charles Lindbergh’s autobiography traces his path from stunt-flying barnstormer to aviation legend, culminating in his historic 1927 solo transatlantic flight aboard the Spirit of St. Louis. In \"We\", Lindbergh recounts the discipline, endurance, and nerve that carried him alone across the Atlantic, offering a firsthand view of one of the most celebrated journeys in aviation history.\n \"Darkness set in about 8:15 and a thin, low fog formed over the sea through which the white bergs showed up with surprising clearness. For nearly two hours I flew entirely blind through the fog at an altitude of about 1,500 feet.\" \nThis edition of \"We\" is available through Standard Ebooks. You can explore their ever-expanding collection of high-quality, carefully formatted, and free public domain ebooks here.",
+          "media": "",
+          "author": "Charles Lindbergh"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "between two seas",
+          "url": "https://betweentwoseas.substack.com",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/between-two-seas/cover_image.webp",
+          "summary": "Evolutionary biologist Rebecca Hooper writes between two seas, a Substack from off the coast of Scotland about science, life, and wonder. From barnacles in space: \"From miniscule larvae, rudderless in the open ocean and swept to wherever the currents take them, barnacles crawl across rocks in search of others and there, tucking much closer to the group than their basic needs suggest they should, they build their permanent home.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}

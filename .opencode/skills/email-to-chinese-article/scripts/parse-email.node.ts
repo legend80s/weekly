@@ -16,14 +16,12 @@ export type IArticle = {
 
 type IHTML = string
 
-export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
-  if (!volNum) {
-    throw new RangeError(
-      `volNum should be a positive integer but got (${volNum})`,
-    )
-  }
+// let imapSingleton: Imap | null = null
 
-  const emailSubject = `Wisereads Vol. ${volNum}`
+function getImapInstance(): Imap {
+  // if (imapSingleton) {
+  //   return imapSingleton
+  // }
 
   const { IMAP_USER, IMAP_PASS } = process.env
 
@@ -48,7 +46,31 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
 
   // throw new Error("Not implemented")
 
-  const imap = new Imap(imapConfig)
+  // imapSingleton = new Imap(imapConfig)
+
+  // return imapSingleton
+
+  return new Imap(imapConfig)
+}
+
+async function searchEmail(emailSubject: string): Promise<IHTML> {
+  const label = `searchEmail for subject: "${emailSubject}"` // 1.222s
+  console.time(label)
+  try {
+    return await searchEmailCore(emailSubject)
+  } finally {
+    console.timeEnd(label)
+  }
+}
+
+async function searchEmailCore(emailSubject: string): Promise<IHTML> {
+  if (!emailSubject) {
+    throw new RangeError(
+      `emailSubject should not be empty but got (${emailSubject})`,
+    )
+  }
+
+  const imap = getImapInstance()
 
   return new Promise((resolve, reject) => {
     imap.once("ready", () => {
@@ -86,7 +108,11 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
 
                 // 如果 html 为空，则报错提醒
                 if (!html) {
-                  reject(new Error(`email vol ${volNum}'s html is empty`))
+                  reject(
+                    new Error(
+                      `Email with subject "${emailSubject}" has no HTML content.`,
+                    ),
+                  )
                   return
                 }
 
@@ -104,7 +130,89 @@ export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
   })
 }
 
-export function extractArticles(html: string): IArticle[] {
+export async function searchTenTabsEmail(subject: string): Promise<IHTML> {
+  if (!subject) {
+    throw new RangeError(`subject should not be empty but got (${subject})`)
+  }
+
+  return await searchEmail(subject.trim())
+}
+
+export async function searchWisereadsEmail(volNum: number): Promise<IHTML> {
+  if (!volNum) {
+    throw new RangeError(
+      `volNum should be a positive integer but got (${volNum})`,
+    )
+  }
+
+  const emailSubject = `Wisereads Vol. ${volNum}`
+
+  return await searchEmail(emailSubject)
+}
+
+export function extractTenTabsArticles(html: string): IArticle[] {
+  const $ = cheerio.load(html)
+
+  const $articles = $("img[src^='https://pocket-image-cache.com/']").map(
+    (_index, img) => $(img).closest("tr"),
+  )
+
+  console.log("Ten Tabs $articles count:", $articles.length)
+
+  const subs = $articles.map((_index, $sub) => {
+    const $titleLink = $sub
+      .find("a")
+      .filter((i, el) => {
+        return $(el).text().trim() !== ""
+      })
+      .first()
+
+    if (!$titleLink) {
+      throw new Error(`Missing title node for article #${_index}`)
+    }
+
+    const title = $titleLink.text()
+    // console.log("title:", title)
+
+    if (!title) {
+      throw new Error(`Empty title text for article #${_index}`)
+    }
+
+    const $summaryTr = $titleLink.closest(`tr`).next()
+    // console.log("$summaryTr.text():", $summaryTr.find("a").first().text())
+    const $mediaAndAuthor = $summaryTr
+      .next()
+      .find("td")
+      .first()
+      .text()
+      .split(/\n/)
+      .map((s) => s.trim())
+      .filter(Boolean)
+
+    // console.log("$mediaAndAuthor:", $mediaAndAuthor)
+    return {
+      title,
+      url: $titleLink.attr("href"),
+      img: $sub
+        .find("img")
+        .first()
+        .attr("src")
+        ?.replace(/\/\d+x\d+\//, "/600x600/"),
+      summary: $summaryTr.find("a").first().text().trim(),
+      media: $mediaAndAuthor[0],
+      author: $mediaAndAuthor[1],
+    }
+  })
+
+  return [
+    {
+      category: "还有哪些值得看的国际新闻",
+      subArticles: subs.get(),
+    },
+  ]
+}
+
+export function extractWiseReadArticles(html: string): IArticle[] {
   // const htmlPath = path.join(process.cwd(), "./readwise-weekly/src/vol-132.html")
   // console.log("htmlPath:", htmlPath)
   // const html = readFileSync(htmlPath, "utf-8")
@@ -126,12 +234,12 @@ export function extractArticles(html: string): IArticle[] {
     // console.log("group:", $group.text())
     const category = $group.find("span").first().text().trim()
 
-    console.log("category:", category)
+    // console.log("category:", category)
 
     const $subArticles = Array.from(
       $group.find("div[class*=mj-column-per]:has(img[src*=cover])"),
     )
-    console.log("$subArticles count:", $subArticles.length, "\n")
+    // console.log("$subArticles count:", $subArticles.length, "\n")
 
     const subArticles = $subArticles.map((article) => {
       const $subArticle = $(article)
@@ -198,8 +306,10 @@ export function articlesToMarkdown(
   articles: IArticle[],
   {
     titleWithUrl,
+    startIndex,
   }: {
     titleWithUrl: boolean
+    startIndex?: number
   },
 ): string {
   // console.log("articles:", JSON.stringify(articles, null, 2))
@@ -216,7 +326,10 @@ export function articlesToMarkdown(
             .join(" | ")
           const title =
             titleWithUrl && sub.url ? `[${sub.title}](${sub.url})` : sub.title
-          const indexPrefix = onlyOneArticle ? "" : `${i + 1}.${j + 1} `
+
+          const indexPrefix = onlyOneArticle
+            ? ""
+            : `${startIndex ? startIndex + i : i + 1}.${j + 1} `
 
           return `
 ### ${indexPrefix}${title}
@@ -225,12 +338,13 @@ export function articlesToMarkdown(
 
 ${sub.summary}
 
-${source}`.trim()
+${source}
+`.trimStart()
         })
         .join("\n")
 
       return `
-## ${indexToChinese(i + 1)}、${article.category}
+## ${indexToChinese(startIndex ? startIndex + i : i + 1)}、${article.category}
 
 ${articlesMd}`
     })

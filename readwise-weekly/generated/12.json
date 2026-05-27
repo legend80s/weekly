@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "The OpenAI Keynote",
+          "url": "https://stratechery.com/2023/the-openai-keynote/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-openai-keynote/cover_image.png",
+          "summary": "This week's buzz around the OpenAI conference has Stratechery’s Ben Thompson reminiscing on the electric atmosphere of iPhone launches from yesteryears. \"There is nothing more interesting in tech than a consumer product with product-market fit. And that, for me, is enough to bring back an old Stratechery standby: the keynote day-after.\"",
+          "media": "Stratechery",
+          "author": "Ben Thompson · 15 mins"
+        },
+        {
+          "title": "Did SEO experts ruin the internet or did Google?",
+          "url": "https://www.theverge.com/features/23931789/seo-search-engine-optimization-experts-google-results",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-people-who-ruined-the-inte/cover_image.png",
+          "summary": "The Verge investigates the ceaseless cat-and-mouse dynamics between Google's search algorithms and the SEO-crazed marketers littering the web. “Perhaps this is why nearly everyone hates SEO and the people who do it for a living: the practice seems to have successfully destroyed the illusion that the internet was ever about anything other than selling stuff.”",
+          "media": "The Verge",
+          "author": "Amanda Chicago Lewis · 33 mins"
+        },
+        {
+          "title": "A blog post is a very long and complex search query to find fascinating people and make them route interesting stuff to your inbox",
+          "url": "https://www.henrikkarlsson.xyz/p/search-query?utm_campaign=post&utm_medium=web",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/a-blog-post-is-a-very-long-and/cover_image.png",
+          "summary": "Essayist Henrik Karlsson doesn't shy away from exploring niches in his blog posts, instead seeing them as opportunties to shape himself and connect with others. \"By pursuing your interest, you will move toward complexity. The simple things do not surprise you anymore. So you turn your attention to more complicated things. This is an amazing algorithm: do interesting things and magically arrive at a complex understanding of the world.\"",
+          "media": "Escaping Flatland",
+          "author": "Henrik Karlsson · 13 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "Improve Your Baseline Dopamine for Motivation & Drive",
+          "url": "https://www.youtube.com/watch?v=35lS7gJVTyA",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/improve-your-baseline-dopamine/cover_image.jpeg",
+          "summary": "Andrew Huberman is known for his science-backed health podcast. His recent clip lists the pillars to building stable dopamine levels, and in turn, improving your day-to-day motivation. “Getting into a regular exercise program of, if not every day, at least five days a week (a mixture of cardiovascular and resistance exercise)...is known to elevate and maintain an elevated level of baseline dopamine.”",
+          "media": "",
+          "author": "Andrew Huberman · 8 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "It's always shocking to me how many people don't pay for GPT-4.",
+          "url": "https://twitter.com/rowancheung/status/1720072551601152497/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/it-s-always-shocking-to-me-how/cover_image.png",
+          "summary": "Back at it with OpenAI content, this time with Rowan Cheung. On his quest for Twitter stardom, Rowan's assembled 10 of his GPT-4 tutorials covering everything from how to “use parameters and seeds in DALL-E 3,” to how to “maximize GPT-4 Vision's Multimodality.”",
+          "media": "",
+          "author": "Rowan Cheung · 3 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "Large Language Models Understand and Can Be Enhanced by Emotional Stimuli",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/large-language-models-understa/2307.11760.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/large-language-models-understa/cover_image.png",
+          "summary": "Ask an LLM “are you sure?” and it’s likely to correct itself. Students at Beijing Normal University explored this phenomenon, crafting emotional prompts that startlingly prodded models to self-monitor. “Within the realm of decision-making, emotions emerge as powerful, ubiquitous, consistent influencers, wielding effects that can swing from beneficial to detrimental.”",
+          "media": "",
+          "author": "Cheng Li, Jindong Wang, Yixuan Zhang, et al. · 51 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Same as Ever",
+          "url": "https://readwise.io/reader/fd/108626440",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/same-as-ever/cover_image.png",
+          "summary": "Keeping up with AI developments, fluctuating financial markets, and what generally feels like constant change can be dizzying. In his book released Tuesday, author of The Psychology of Money Morgan Housel tells 23 stories about what stays the same: timeless principles to center our thinking.\nThe chapter ‘Wild Minds’ shows how extraordinary achievers often possess unlikeable idiosyncrasies.\n“John Boyd was probably the greatest fighter pilot to ever live. He revolutionized his field more than anyone before or since….Boyd is known as one of the most influential thinkers in military history. He’s also described, as the New York Times once wrote, as “A virtual nonperson … even in the Air Force. That’s because as smart as Boyd was, he was a maniac.”\nMorgan is graciously sharing a preview chapter with Readwise users. If you’re captivated by the ‘Wild Minds’ excerpt, we invite you to purchase a full copy of Same as Ever here. 🙏",
+          "media": "",
+          "author": "Morgan Housel"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "Collab Fund",
+          "url": "https://collabfund.com/blog/the-thin-line-between-bold-and-reckless/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/collab-fund/cover_image_0xC9M1H.jpeg",
+          "summary": "Morgan and his partners write regular think pieces for Collab Fund's blog, one of the most popular feeds in Readwise. They're generally thought-provoking yet easy to digest. From The Thin Line Between Bold and Reckless: “Big success requires bucking conventional wisdom, but conventional wisdom is usually right and worth following. We’re left with outcomes where winners are praised more than they should be, losers criticized more than they deserve.”",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}

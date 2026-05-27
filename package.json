@@ -8,10 +8,10 @@
     "// ❯ bun run .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/image-compress.ts ~/Downloads/a配图/10-2/the-essential-skills-for-being.png": "",
     "compress": "bun run .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/image-compress.ts",
     "// $ bun run download-imgs -- --vol 10": "",
-    "download-imgs": "bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/image-downloader.ts",
+    "download-imgs": "bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/image-downloader.ts",
     "// $ npm run readwise -- --vol=10": "",
     "// $ bun readwise --vol=10": "",
-    "readwise": "bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/wiseread-weekly-email-to-chinese-article/scripts/extract-articles.ts",
+    "readwise": "bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/extract-articles.ts",
     "test": "node --env-file .opencode/skills/imap-smtp-email/.env --test '.opencode/**/*.test.*' '**/*.test.ts' "
   },
   "keywords": [],

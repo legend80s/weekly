@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "What I Learned About Billionaires at Jeff Bezos’s Private Retreat",
+          "url": "https://theatlantic.com/magazine/2026/05/billionaire-consequence-free-reality/686588/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/what-i-learned-about-billionai/cover_image.avif",
+          "summary": "Noah Hawley, creator of the Fargo television series, reflects on his glimpse into the world of elites at Jeff Bezos's 2018 Campfire retreat. \"Sitting in the lecture hall, pencils out, listening to a famous chef explain his humanitarian work, it was easy to feel like the solution to the world’s problems lay within our grasp. And yet, looking around at faces I had only ever seen in a magazine or on-screen, I had an unsettling revelation: This is the hubris of accomplishment. To be declared a genius at one thing is to begin to believe you are a genius at everything.\"",
+          "media": "The Atlantic",
+          "author": "Noah Hawley · 10 mins"
+        },
+        {
+          "title": "Thoughts and Feelings around Claude Design",
+          "url": "https://samhenri.gold/blog/20260418-claude-design/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/thoughts-and-feelings-around-c/cover_image.webp",
+          "summary": "Claude Design's arrival and the shift back to code has Sam Henri Gold rooting for the underdogs. To him, Figma is \"a set of extremely rigid schemas with a free-form 'just vibes, man' costume over the top. Like a Type-A personality physically incapable of relaxing, forced to perform chill while internally screaming that your frames aren’t nested and your tokens are detached and nothing is on the grid. Claude Design, for all its roughness, is at least honest about what it is: HTML and JS all the way down.\"",
+          "media": "samhenri.gold",
+          "author": "Sam Henri Gold · 5 mins"
+        },
+        {
+          "title": "Inside Notion",
+          "url": "https://colossus.com/article/inside-notion/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/inside-notion/cover_image.png",
+          "summary": "Brie Wolfson and Camille Ricketts take an inside look at the culture and operations of the pre-AI software company they suspect is most likely to thrive in the new era: Notion. \"We did eventually find our way to a document titled '2026 Roadmap,' but it did not contain the list of things to ship we expected. Instead, it simply said: The thing to do is to be undeterred by trivial things, have conviction in our world view, and simultaneously be nimble enough to react to important changes around us.\"",
+          "media": "Colossus",
+          "author": "Brie Wolfson and Camille Ricketts · 32 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "How I Created OpenClaw, the Breakthrough AI Agent",
+          "url": "https://youtube.com/watch/?v=7rzYDM6vMtI",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-i-created-openclaw-the-bre/cover_image.jpg",
+          "summary": "Fresh off joining OpenAI, OpenClaw creator Peter Steinberger gives a talk on the thinking behind the agent he built to live inside chat apps like Telegram and WhatsApp. \"This was the moment where I thought this is something new. This is not a chatbot. Chatbots give up. Agents improvise.\"",
+          "media": "",
+          "author": "Peter Steinberger | TED · 18 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "Using Claude Code: Session Management & 1M Context",
+          "url": "https://x.com/trq212/status/2044548257058328723/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/using-claude-code-session-mana/cover_image.webp",
+          "summary": "Anthropic's Thariq Shihipar shares the single habit he thinks signals good context management: knowing when to rewind. \"In Claude Code, double-tapping Esc (or running /rewind) lets you jump back to any previous message and re-prompt from there... For example, Claude reads five files, tries an approach, and it doesn't work. Your instinct may be to type 'that didn't work, try X instead.' but the better move is to rewind to just after the file reads, and re-prompt with what you learned.\"",
+          "media": "",
+          "author": "Thariq · 5 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "The Future Of Everything Is Lies, I Guess",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-future-of-everything-is-li/the-future-of-everything-is-lies.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-future-of-everything-is-li/cover_image.webp",
+          "summary": "Kyle Kingsbury is not interested in nuance. The computer safety researcher would rather fill in the negative space the AI discourse keeps stepping around. \"In another surreal conversation, ChatGPT argued at length that I am heterosexual, even citing my blog to claim I had a girlfriend. I am, of course, gay as hell, and no girlfriend was mentioned in the post. After a while, we compromised on me being bisexual.\"",
+          "media": "",
+          "author": "Kyle Kingsbury · 1 hr and 39 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Decoding Greatness",
+          "url": "https://readwise.io/reader/fd/448114944",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/decoding-greatness/cover_image.jpg",
+          "summary": "Stephen King learned storytelling by copying comics. Claude Monet sharpened his painting by studying Eugène Delacroix's pieces. Even the pioneers of personal computing built directly on each other's work.\nIn Decoding Greatness, psychologist Ron Friedman draws on stories like these to show how reverse engineering drives success, an approach praised by Cal Newport and Daniel Pink.\n\"Both Jobs and Gates reaped enormous benefit from studying the works of their contemporaries, extracting crucial insights, and applying those lessons to develop new products. And they are not alone. The history of computing is not a history of independent acts of brilliance. It is the story of probing innovators learning from one another.\"\nIf you enjoy the preview, you can grab the full ebook wherever ebooks are sold in the US and Canada for $2.99 for a limited time.",
+          "media": "",
+          "author": "Ron Friedman"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "The Classical Mind",
+          "url": "https://andrewbharker.substack.com/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-classical-mind/cover_image.jpg",
+          "summary": "Andrew Harker's Substack is a cozy library in newsletter form, where a classical teacher writes about philosophy, slow reading, and the life of the mind. From How to Prioritize Your Intellectual Life: \"The intellectual does not confine themselves to a box. The intellectual understands that learning is to be enjoyed and that, in many cases, knowledge is interconnected in many ways. I’ve gathered just as much joy from reading a text on the nature of wood expansion and contraction due to moisture content in furniture design as I have from spending an afternoon reading The Lord of The Rings, and I could say the same for my time spent contemplating the wisdom of Longfellow.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}
