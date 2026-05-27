@@ -90,7 +90,7 @@ Ron Friedman
 
 Andrew Harker 的 Substack 是一个以 newsletter 形式呈现的舒适图书馆。这位古典教师书写哲学、慢阅读和心智生活。「知识分子不会把自己关在盒子里，他们明白学习是一种享受，知识在很多方面是相互关联的。我从阅读一本关于木材因含水率膨胀和收缩的家具设计书中获得的乐趣，与花一下午读《指环王》一样多，花时间思考朗费罗的智慧也是如此。」
 
-## 七、还有哪些值得看的国际新闻
+## 七、值得一看顶尖出版物精彩文章
 
 ### 7.1 [什么是修昔底德陷阱？习近平为何在与特朗普会晤时提到它](https://clicks.mozilla.org/f/a/V96xd3Od8qkDJ-qfA32tag~~/AAQRxRA~/_kEriv5MWIwx8Lexvg-D0qygfK-xBL2BHMEZrY6x1lDwq-wqJOnrF1mMLWiO7si-f9WB1UuhfIKD08e8En2ycN6J5tD8IZPLUebgk2rLtr5MpTH24fUTmjcX4t7F68wCYH1YkwCTgV8t09yvVRFFchGs-ptw9CTrcVjlNZMDMrojLxL6kzzg5XXv0_F3Ov-XfXlnsMLJtk_bUpamrFcQVOA1Kb3d9FX__anniW382_Q3fnM0_lgRkdaOlrTHH-bdY415ouZI_mj0jFbyrDJODzpEZXP-_9JkpqJcCcvVWlA0-eVanG6s1O_KCzFGoISwk_ksidm5iUc1oYSP4KY-7Ezji91ncY-bFvQ-BmWsimY3MeY5kjT_09kkgDTf85Flc2N6QNViJexy-GhCGJPiqxrQBXOex6Bu4ew0jk4Z2b5yGIkosmkSB93Gi18Nr0ay1sNY4hxyE4axKRN6BrFDu6wMGm0ZwX9VS0eQjO0y24O7AOdwbkI7LRoLB1JXMbxpWbsewI33bcUZ2_cJdyPBynRWdE5EdSq-9nlZhpiKctf7yMn-X72gatujQ8GMOh4ndRACXffV6tfCEFcRCq99-mCwU1qehPVlua-FxaUtgM8~)
 

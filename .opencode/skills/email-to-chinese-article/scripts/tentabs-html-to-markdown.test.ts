@@ -29,7 +29,7 @@ describe("html to markdown", () => {
 
     const expected: IArticle[] = [
       {
-        category: "还有哪些值得看的国际新闻",
+        category: "值得一看顶尖出版物精彩文章",
         subArticles: [
           {
             title:

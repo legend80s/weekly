@@ -106,7 +106,7 @@ Capri Lilly 写一份实用的肠道健康饮食 newsletter，提供无麸质食
 
 ---
 
-## 七、还有哪些值得看的国际新闻
+## 七、值得一看顶尖出版物精彩文章
 
 ### 7.1 [伊朗战争结束协议：已知和未知](https://apnews.com/article/iran-united-states-deal-explainer-war-b1659232611edc10808612e30647c17d?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=1&category=fascinating_stories&scheduled_corpus_item_id=83144ce6-9c6a-486b-b776-62efeaac751e&url=https%3A%2F%2Fapnews.com%2Farticle%2Firan-united-states-deal-explainer-war-b1659232611edc10808612e30647c17d)
 

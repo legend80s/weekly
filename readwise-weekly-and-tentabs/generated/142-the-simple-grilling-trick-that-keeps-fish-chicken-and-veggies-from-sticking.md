@@ -82,7 +82,7 @@ On her Substack illustrated by one of her kids, engineer and mom Juliette Ryan e
 
 
 
-## 七、还有哪些值得看的国际新闻
+## 七、值得一看顶尖出版物精彩文章
 
 ### 7.1 [The House got close to voting to end the Iran war. Republicans canceled the vote.](https://www.usatoday.com/story/news/politics/2026/05/21/iran-war-powers-vote-house-congress-trump/90200741007/?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=1&category=fascinating_stories&scheduled_corpus_item_id=2a2f09e9-1729-4cd9-9a53-817b00e5efb5&url=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fnews%2Fpolitics%2F2026%2F05%2F21%2Firan-war-powers-vote-house-congress-trump%2F90200741007%2F)
 

@@ -83,7 +83,7 @@ Andrew Harker's Substack is a cozy library in newsletter form, where a classical
 
 
 
-## 七、还有哪些值得看的国际新闻
+## 七、值得一看顶尖出版物精彩文章
 
 ### 7.1 [What is the Thucydides Trap and why did Xi Jinping mention it in his meeting with Donald Trump?](https://clicks.mozilla.org/f/a/V96xd3Od8qkDJ-qfA32tag~~/AAQRxRA~/_kEriv5MWIwx8Lexvg-D0qygfK-xBL2BHMEZrY6x1lDwq-wqJOnrF1mMLWiO7si-f9WB1UuhfIKD08e8En2ycN6J5tD8IZPLUebgk2rLtr5MpTH24fUTmjcX4t7F68wCYH1YkwCTgV8t09yvVRFFchGs-ptw9CTrcVjlNZMDMrojLxL6kzzg5XXv0_F3Ov-XfXlnsMLJtk_bUpamrFcQVOA1Kb3d9FX__anniW382_Q3fnM0_lgRkdaOlrTHH-bdY415ouZI_mj0jFbyrDJODzpEZXP-_9JkpqJcCcvVWlA0-eVanG6s1O_KCzFGoISwk_ksidm5iUc1oYSP4KY-7Ezji91ncY-bFvQ-BmWsimY3MeY5kjT_09kkgDTf85Flc2N6QNViJexy-GhCGJPiqxrQBXOex6Bu4ew0jk4Z2b5yGIkosmkSB93Gi18Nr0ay1sNY4hxyE4axKRN6BrFDu6wMGm0ZwX9VS0eQjO0y24O7AOdwbkI7LRoLB1JXMbxpWbsewI33bcUZ2_cJdyPBynRWdE5EdSq-9nlZhpiKctf7yMn-X72gatujQ8GMOh4ndRACXffV6tfCEFcRCq99-mCwU1qehPVlua-FxaUtgM8~)
 

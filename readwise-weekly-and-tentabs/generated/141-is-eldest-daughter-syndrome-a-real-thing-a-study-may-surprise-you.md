@@ -81,7 +81,7 @@ Capri Lilly writes a practical, gut-health-focused food newsletter with gluten-f
 
 
 
-## 七、还有哪些值得看的国际新闻
+## 七、值得一看顶尖出版物精彩文章
 
 ### 7.1 [What we know and don’t know about the emerging deal to end the Iran war](https://apnews.com/article/iran-united-states-deal-explainer-war-b1659232611edc10808612e30647c17d?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=1&category=fascinating_stories&scheduled_corpus_item_id=83144ce6-9c6a-486b-b776-62efeaac751e&url=https%3A%2F%2Fapnews.com%2Farticle%2Firan-united-states-deal-explainer-war-b1659232611edc10808612e30647c17d)
 

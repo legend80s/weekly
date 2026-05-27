@@ -90,7 +90,7 @@ Louisa May Alcott
 
 工程师兼妈妈 Juliette Ryan 在她由孩子插画的 Substack 上探讨多巴胺、注意力和习惯如何塑造我们的日常生活。摘自《你没有自己想的那么专注》：「我们大脑在意识层面之下不断过滤着隐藏的刺激，每一个都在消耗我们的认知电池——就像一个耗电的后台应用一直在运行。」
 
-### 七、还有哪些值得看的国际新闻
+### 七、值得一看顶尖出版物精彩文章
 
 #### 7.1 [众议院差点投票结束伊朗战争，共和党取消了投票](https://www.usatoday.com/story/news/politics/2026/05/21/iran-war-powers-vote-house-congress-trump/90200741007/?utm_medium=email&utm_source=ten_tabs&utm_campaign=&position=1&category=fascinating_stories&scheduled_corpus_item_id=2a2f09e9-1729-4cd9-9a53-817b00e5efb5&url=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fnews%2Fpolitics%2F2026%2F05%2F21%2Firan-war-powers-vote-house-congress-trump%2F90200741007%2F)
 

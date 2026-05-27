@@ -82,7 +82,7 @@ Dennis Nehrenheim M.Sc., author of Scale-Smart, writes practical systems guides 
 
 
 
-## 七、还有哪些值得看的国际新闻
+## 七、值得一看顶尖出版物精彩文章
 
 ### 7.1 [What to know about the Ebola outbreak that the WHO has declared a global health emergency](https://clicks.mozilla.org/f/a/0SI4v0HBIimtHZlZZlH6JQ~~/AAQRxRA~/WF0nvhUit4KHu1cUMB-7BHPwkxmZlTRlIabtatUWPsOEBdcyyypp-3EAuC8P4rgJpcDpEf4SmQVZfS0qTYoIpHLFnBbiAfA1wVJoVQxfeEBw7l3T1vwKU_3g_zUYnnAxkHHxN2YZAPXjgboBa4r45WLsPAdUA3CgmLbWAe1BobPnIgTB2JtzqOG1XeTFocJvJjCksEzR2wOkFkv0ta1K-Exy-j1FSf6SBiuU42MGulIoqF-ZQ2qigWx3aIxL6ae5l229shIY7dX7JQzFHajdZh3fjscO6K9M6SZ8OaUKHDMHOhmCLtaBMh1SC0MTFFnGuK-tYW4noi_AS13slaQnlFdhpHC08WInxcHsaf9k5Om9MPeXF6Cd0rpoCcaeXxeSVAzOgeQfmc2s6jgg8O0EoxqpDWpI4Q2Qtc4_W6ykQ7zElbjiZSI7n5jv66S9VhtVHt2tmYM6LlE3FDZ-p9NCAMtAGlJPI4-mCAwzGR3l_J0YpEZvNKOptKMzCjnYsEOuEZ0m9IEetIfsWq4R15sWpg~~)
 
