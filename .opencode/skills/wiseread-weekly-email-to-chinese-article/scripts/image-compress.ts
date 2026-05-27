@@ -48,13 +48,15 @@ export async function compress(destPath: string) {
 }
 
 if (import.meta.main) {
-  const imgPath = process.argv[2]
+  const imgPaths = process.argv.slice(2)
 
-  if (!imgPath) {
-    console.error("bun run image-compress.ts <img-path>")
+  if (!imgPaths.length) {
+    console.error("bun run image-compress.ts <img-path2> [img-path2]")
     process.exit(1)
   }
 
-  // console.log("imgPath:", imgPath)
-  compress(imgPath)
+  for (const imgPath of imgPaths) {
+    // console.log("imgPath:", imgPath)
+    compress(imgPath)
+  }
 }

@@ -2,12 +2,12 @@ import { spawnSync } from "node:child_process"
 import { existsSync, mkdirSync, statSync } from "node:fs"
 import { basename, resolve } from "node:path"
 import { parseArgs } from "node:util"
+import { compress } from "./image-compress"
 import type { IArticle } from "./parse-email.node"
-import { compress } from './image-compress'
 
 // const SIZE_THRESHOLD = 300 * 1024 // 2MB
 const SIZE_THRESHOLD = 2 * 1024 * 1024 // 2MB
-const TIMEOUT_MS = 30_000 // 30s
+const TIMEOUT_MS = 60_000 // 30s
 
 const debugging = false
 
