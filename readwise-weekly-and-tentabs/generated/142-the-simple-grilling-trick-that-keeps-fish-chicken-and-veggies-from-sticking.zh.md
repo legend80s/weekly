@@ -1,6 +1,11 @@
+---
+theme: v-green
+---
+
+
 # 国外技术周刊 #142：Naval 预警软件正在归零
 
-**欢迎打开本期国外技术周刊**：Every 的 Marcus Moretti 单人用 Claude Code 管理整个产品，不再写 ticket，对话即工作；David Epstein 新书揭示「单任务」才是成功的秘诀；Naval Ravikant 则预警 SaaS 只剩 18 个月，软件本身正在变成 commodity。
+大家好，我是**俯仰可拾™**，欢迎打开本期国外技术周刊。
 
 ## 本周观点：软件正在归零，你的护城河在哪？
 
@@ -169,3 +174,7 @@ Brandee Gruener | **Southern Living**
 厌倦了食物从烤架上撕破或粘住？一把不起眼的餐叉可能就是你一直需要的秘密武器。
 
 Daniel Gritzer | **Serious Eats**
+
+---
+
+我是**俯仰可拾™**，如果本期对你有启发不妨点赞支持周刊。
