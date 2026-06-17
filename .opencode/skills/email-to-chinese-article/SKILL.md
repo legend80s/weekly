@@ -53,7 +53,7 @@ Options:
 3. 无需翻译作者名、媒体平台。
 4. `Twitter Thread` 翻译成 `Twitter` 即可。
 5. 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译。但是**图片请勿删除**，因为图片是文章的视觉元素，对理解文章内容至关重要。
-6. 需翻译 `link` 里面的 `text` 比如 `[This is an example](https://example.com)` 的 `This is an example` 需翻译。
+6. 但需翻译 `link` 里面的 `text` 比如 `### [This is an example](https://example.com)` 的 `This is an example` 需翻译成中文。
 
 这套提示词的核心在于**节奏感**——像朋友聊天一样把技术干货抖出来。
 

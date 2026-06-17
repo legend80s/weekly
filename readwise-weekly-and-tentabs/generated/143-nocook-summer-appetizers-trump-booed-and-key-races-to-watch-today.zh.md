@@ -24,11 +24,9 @@ Anthropic 的方案是 Skills：一种文件夹式的技能系统。你把特定
 
 如果你在用 Claude 写代码，这份 19 分钟的 PDF 值得认真看一下。它不是一个功能介绍，而是一个关于「如何让 AI 真正对齐你的工作流」的方法论。官方给了[完整 PDF 文档](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-complete-guide-to-building/1277.pdf)，文章把过程讲得很细。
 
----
-
 ## 一、本周最多高亮文章
 
-### 1.1 [The Inference Shift](https://stratechery.com/2026/the-inference-shift/)
+### 1.1 [推理的转向](https://stratechery.com/2026/the-inference-shift/)
 
 ![The Inference Shift](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-inference-shift/cover_image.png)
 
@@ -36,7 +34,7 @@ Cerebras 上市前夕，Stratechery 的 Ben Thompson 提出了一个观点：AI 
 
 Ben Thompson · 9 分钟 | **Stratechery**
 
-### 1.2 [Agentic Coding is a Trap](https://larsfaye.com/articles/agentic-coding-is-a-trap)
+### 1.2 [Agent 编程是个陷阱](https://larsfaye.com/articles/agentic-coding-is-a-trap)
 
 ![Agentic Coding is a Trap](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/agentic-coding-is-a-trap/cover_image.png)
 
@@ -44,7 +42,7 @@ Ben Thompson · 9 分钟 | **Stratechery**
 
 Lars Faye · 9 分钟 | **larsfaye.com**
 
-### 1.3 [You Need AI That Reduces Maintenance Costs](https://jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs/)
+### 1.3 [你需要的是能降低维护成本的 AI](https://jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs/)
 
 ![You Need AI That Reduces Maintenance Costs](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/you-need-ai-that-reduces-maint/cover_image.png)
 
@@ -184,4 +182,5 @@ Mark Travers | **CNBC**
 Debbie Wolfe | **Popular Science**
 
 ---
+
 我是**俯仰可拾™**，如果本期对你有启发不妨点赞支持周刊。
