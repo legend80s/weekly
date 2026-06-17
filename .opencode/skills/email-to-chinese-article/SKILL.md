@@ -41,7 +41,7 @@ Options:
 **核心指令** 请按照以下要求撰写技术资讯：
 
 一、语言风格
-1.  **短句为主**：句子要短，多用冒号、分号连接，制造快节奏的阅读体验。例如：『数据变更有了专门的 action()，还支持乐观更新。』
+1.  **简单的短句为主**：句子要短，多用冒号、分号连接，制造快节奏的阅读体验。例如：『数据变更有了专门的 action()，还支持乐观更新。』
 
 二、内容结构（模仿示例）
 2.  功能点罗列：用冒号或分号快速罗列关键更新或核心观点。
@@ -54,6 +54,7 @@ Options:
 4. `Twitter Thread` 翻译成 `Twitter` 即可。
 5. 无需翻译 `img` 的 `alt` 比如 `![This is Water](https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/this-is-water/cover_image.jpg)` 的 `This is Water` 无需翻译。但是**图片请勿删除**，因为图片是文章的视觉元素，对理解文章内容至关重要。
 6. 但需翻译 `link` 里面的 `text` 比如 `### [This is an example](https://example.com)` 的 `This is an example` 需翻译成中文。
+7. 不要破折号，多换行。
 
 这套提示词的核心在于**节奏感**——像朋友聊天一样把技术干货抖出来。
 
