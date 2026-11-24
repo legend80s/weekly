@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "The Feed Is Fake",
+          "url": "https://www.vulture.com/article/social-media-feeds-chaotic-good-projects-clipping.html",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-feed-is-fake/cover_image.jpg",
+          "summary": "\"Clipping\" campaigns have quietly replaced organic buzz in the music industry with manufactured hype, Lane Brown reports for Vulture. \"We’ve locked ourselves in the stupidest possible version of Plato’s cave, where what looks like the spontaneous consensus of the hive mind is often just shadows on the wall, put there by marketers, political operatives, foreign-influence campaigns, or anyone else with a few hundred bucks and something to sell.\"",
+          "media": "Vulture",
+          "author": "Lane Brown · 19 mins"
+        },
+        {
+          "title": "The old world of tech is dying and the new cannot be born",
+          "url": "https://baldurbjarnason.com/2026/the-old-world-of-tech-is-dying/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-old-world-of-tech-is-dying/cover_image.png",
+          "summary": "The software industry's foundations are crumbling, argues tech writer Baldur Bjarnason, though he's unclear on what comes next. \"The software industry has shifted its entire value proposition from 'we make tools that help you make or save money' to using political clout and the dollar hegemony to capture, control, and loot entire sectors of the various economies of the world.\"",
+          "media": "baldurbjarnason.com",
+          "author": "baldurbjarnason.com · 16 mins"
+        },
+        {
+          "title": "The quiet grief of adult friendship",
+          "url": "https://timesofindia.indiatimes.com/blogs/civil-irony/the-quiet-grief-of-adult-friendship/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-quiet-grief-of-adult-frien/cover_image.jpg",
+          "summary": "Columnist Pranav Jain hit a nerve with his essay on the invisible loss of adult friendships, even in an era of more ways to connect than ever before. \"Romantic heartbreak has an elaborate infrastructure. There are films for it. Songs for it... Friendship grief, however, remains oddly invisible. Nobody teaches you how painful it feels to slowly lose access to someone who once knew your inner life intimately.\"",
+          "media": "The Times of India",
+          "author": "Pranav Jain · 4 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "How to Rest So Well You Never Feel Exhausted Again",
+          "url": "https://youtube.com/watch/?v=Re5MZ9pwbC8",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-to-rest-so-well-you-never-/cover_image_WWcRQLa.jpg",
+          "summary": "Former doctor Justin Sung felt exhausted no matter how much rest he scheduled, until he realized rest and recovery aren't the same thing. \"Sleep did not really cure my cognitive fatigue. And what studies have shown is that while physical exhaustion recovers really well with sufficient sleep, cognitive, mental, or emotional exhaustion does not. Cognitive exhaustion can permeate through into your dreams. It can reduce the quality of your sleep and it can persist for weeks.\"",
+          "media": "",
+          "author": "Justin Sung · 23 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "The Fast Lane to Mediocrity",
+          "url": "https://x.com/adityaag/status/2054976557702066520/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-fast-lane-to-mediocrity/cover_image.jpg",
+          "summary": "South Park Commons founder Aditya Agarwal on why Silicon Valley's obsession with speed is producing an ecosystem of perpetual beginnings and no breakthroughs. \"Bad speed is impatience that pretends to be ambition. It optimizes for novelty over depth and doesn’t let you sit long enough inside the unglamorous stretch where the real edge is formed.\"",
+          "media": "",
+          "author": "Aditya Agarwal · 3 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "AI Eats The World",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/ai-eats-the-world/1285.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/ai-eats-the-world/cover_image_bpx82FL.png",
+          "summary": "In his latest presentation, tech analyst Benedict Evans maps AI’s unprecedented capital surge and the widening gap between investment and daily use. \"Consumer use is a mile wide and an inch deep. Less than 1,000 prompts in a year means it isn’t a daily essential for at least 80% of users, so far.\"",
+          "media": "",
+          "author": "Benedict Evans · 10 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "The Way of Excellence",
+          "url": "https://readwise.io/reader/fd/457957634",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-way-of-excellence/cover_image.jpg",
+          "summary": "Excellence is not a far-off goal to chase but a daily practice, the natural result of pursuing mastery in something that matters. It’s terrain Brad Stulberg has been exploring for years, most recently in his new book, The Way of Excellence. Part theory and part practice, it begins with a diagnosis of why excellence is so hard to sustain.\n\"We commonly feel distracted, overloaded, lonely, and exhausted, if not on the edge of burnout. The result is that we are pulled away from the states of mind and being that we yearn for and, eventually, from the people we aspire to become. Alienation describes the disconnect people experience from their own lives, and it is a defining problem of our time. When we lose the ability to pursue what matters to us with integrity, we lose a sense of who we are.\"\nWe're excited to share both the introduction and first chapter of Brad's new book with Wisereads readers. If it strikes a chord, you can purchase a copy wherever you buy your books.",
+          "media": "",
+          "author": "Brad Stulberg"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "The Courage to Live it",
+          "url": "https://shawnsmucker.substack.com/feed/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-courage-to-live-it/cover_image.png",
+          "summary": "On his Substack, The Courage to Live it, novelist and bookstore owner Shawn Smucker writes about family, creativity, and impermanence. From Please use AI: \"Who the hell has time to work at something, to give time to craft, to create with their own minds, to spend years being mediocre. Why do that when mastery, or at least competency is so simple, only a good prompt away?\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}

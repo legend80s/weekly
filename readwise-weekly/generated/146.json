@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "Domain Expertise Has Always Been the Real Moat",
+          "url": "https://brethorsting.com/blog/2026/05/domain-expertise-has-always-been-the-real-moat/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/domain-expertise-has-always-be/cover_image.jpeg",
+          "summary": "Engineer and photographer Bret Horsting notes that AI can give domain experts the coding skills they never had time to learn, but it can’t give engineers the years of ground truth they lack. \"The engineer's advantage, the ability to translate a domain model into working code, is now cheap. The domain expert's advantage, knowing what right looks like, is not. You can't prompt your way to it.\"",
+          "media": "brethorsting.com",
+          "author": "Aaron Brethorst · 3 mins"
+        },
+        {
+          "title": "the solution might be cancelling my AI subscription",
+          "url": "https://thoughts.hmmz.org/2026-05-31.html",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-solution-might-be-cancelli/cover_image.png",
+          "summary": "Despite building dozens of projects with AI, one anonymous developer makes the case for curtailing their use. \"Almost none of this is useful and I don't want to maintain any of it. I accidentally run a news outlet which is surely a liability. Sure, it has helped me 'learn AI tooling' and I use many of these tools, but I didn't need them. I can't afford to maintain any of them, not in terms of time, commitment, belief, attention or willingness to spend on tokens.\"",
+          "media": "hmmz",
+          "author": "David Wilson · 4 mins"
+        },
+        {
+          "title": "Three Ways to Get Paid",
+          "url": "https://jasonzweig.com/three-ways-to-get-paid/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/three-ways-to-get-paid/cover_image_j4rCbCY.png",
+          "summary": "WSJ finance columnist Jason Zweig shares his late father's three-part rule on how people earn a living. \"1) Lie to people who want to be lied to, and you'll get rich. 2) Tell the truth to those who want the truth, and you'll make a living. 3) Tell the truth to those who want to be lied to, and you'll go broke.\"",
+          "media": "Jason Zweig",
+          "author": "jasonzweig · 1 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "Conan O’Brien Delivers the Commencement Address | Harvard Commencement 2026",
+          "url": "https://youtube.com/watch/?v=F3fCktnkBbc",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/conan-obrien-delivers-the-comm/cover_image_X43kGpT.jpg",
+          "summary": "Comedian Conan O'Brien's Harvard commencement address blends roasts of the Ivy League schools with wisdom on success and humility. \"I endeavor to always remind myself that I have done absolutely nothing alone. Walt Whitman wrote 'I contain multitudes.' Well, I contain a breakfast sandwich and a nice coffee from Tatte. But whatever I have achieved has been with the help of an infinitely packed clown car of multitudes.\"",
+          "media": "",
+          "author": "Harvard University · 25 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "The Orchestration Tax",
+          "url": "https://x.com/addyosmani/status/2059844244907696186/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-orchestration-tax/cover_image.jpg",
+          "summary": "Running more parallel agents won't solve the real bottleneck, explains Google's Addy Osmani. \"There is this hidden asymmetry in agentic workflows. Starting an agent is very cheap. It is just a keystroke or a sentence prompt. But closing the loop on the agent is not cheap at all. Someone has to check if what came back is correct and reconcile it with whatever the other agents touched. That someone is you. And there is exactly one of you.\"",
+          "media": "",
+          "author": "Addy Osmani · 6 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "The Founder’s Playbook: Building An AI-Native Startup",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-founders-playbook-building/1301.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-founders-playbook-building/cover_image.png",
+          "summary": "Anthropic's playbook lays out how the speed of AI-native startups reshapes the founder's role. \"Validation cycles that used to take months now take afternoons. A working prototype no longer requires a co-founder with the right stack; it requires a clear problem and a few focused sessions with a coding agent. The bottlenecks are no longer what you can build, but what you choose to build.\"",
+          "media": "",
+          "author": "Claude · 46 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Trust and Inspire",
+          "url": "https://readwise.io/reader/fd/463453191",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/trust-and-inspire/cover_image_5TpI1m5.jpg",
+          "summary": "Commanding and controlling might have gotten results in the past, but it never inspired loyalty or growth. In Trust and Inspire, Stephen M. R. Covey, author of The Speed of Trust, makes the case for the opposite: leading by extending trust and believing in people’s potential. Whether you lead a company, a community, or a family, he argues trust is what brings out people’s best work.\n\"Authenticity is critical to building a relationship of trust. And that means you need to 'declare your intent.' Declaring your intent involves opening your agenda, giving the why behind the what.\"\nIf you enjoy the preview, you can grab the full ebook wherever ebooks are sold in the US and Canada for $1.99 through the end of June.",
+          "media": "",
+          "author": "Stephen M. R. Covey"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "The Power of Us",
+          "url": "https://www.powerofusnewsletter.com/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-power-of-us/cover_image.webp",
+          "summary": "Social psychologists Jay Van Bavel and Dominic Packer co-write The Power of Us on group identity and dynamics. From Why are we suckers for Astrology, the Myers-Briggs, and other shaky psychology tests?: \"All these tests operate a bit like the Sorting Hat from Harry Potter, slotting us into different groups. People crave self-definition and social identities provide this for us. We are attracted to group memberships that provide both a sense of connection to people just like us and distinction from others—what Marilynn Brewer termed 'Optimal Distinctiveness.'\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}

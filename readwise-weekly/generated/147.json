@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "When AI builds itself",
+          "url": "https://anthropic.com/institute/recursive-self-improvement/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/when-ai-builds-itself/cover_image.png",
+          "summary": "Anthropic makes the case that recursive self-improvement is imminent, pointing to its own codebase as evidence: \"As of May 2026, more than 80% of the code we merge into Anthropic's codebase was authored by Claude. Before Claude Code launched in research preview in February 2025, this number was in the low single digits.\"",
+          "media": "Anthropic",
+          "author": "Marina Favaro and Jack Clark · 20 mins"
+        },
+        {
+          "title": "How LLMs Actually Work",
+          "url": "https://0xkato.xyz/how-llms-actually-work/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-llms-actually-work/cover_image.png",
+          "summary": "0xkato skips the math in this beginner-friendly guide to transformer-based LLMs, starting with tokenization: \"The classic example: ask an LLM how many R’s are in 'strawberry.' LLMs used to get it wrong. That’s not the model failing at counting. It’s the model not operating on letters directly, only token IDs that happen to spell out a word a human would split letter by letter.\"",
+          "media": "0xkato",
+          "author": "0xkato · 17 mins"
+        },
+        {
+          "title": "No, Artificial Intelligence Is Not Conscious",
+          "url": "https://theatlantic.com/philosophy/2026/06/no-artificial-intelligence-is-not-conscious/687378/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/no-artificial-intelligence-is-/cover_image.jpg",
+          "summary": "Ted Chiang, the sci-fi author whose story inspired Arrival, thinks the question of whether LLMs are conscious is a waste of time. \"Being open to the possibility that LLMs are conscious is the same as being open to the possibility that Microsoft Word is conscious, or, more precisely, that multiple distinct consciousnesses are dormant in every Word document containing a conversational transcript, and that they are awakened every time the document is loaded.\"",
+          "media": "The Atlantic",
+          "author": "Ted Chiang · 22 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "How I Use Obsidian + Claude Cowork to Run My Life",
+          "url": "https://youtube.com/watch/?v=rRa9td4oe7k",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/how-i-use-obsidian-claude-cowo/cover_image_34CiDxv.jpg",
+          "summary": "Linking Your Thinking founder Nick Milo walks through his portable Obsidian + Claude workflow, designed to avoid tool lock-in. \"The real goal is that you want to own your ideas and thinking and your AI workflows, and then you just want to rent the actual AI tool itself. ChatGPT was the default not long ago. Today it's Claude. Will it be either of those in two years?\"",
+          "media": "",
+          "author": "Linking Your Thinking with Nick Milo · 19 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "WTF Is a Loop? Peter Steinberger vs. Boris Cherny",
+          "url": "https://x.com/mvanhorn/status/2063865685558903149/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/wtf-is-a-loop-peter-steinberge/cover_image.jpeg",
+          "summary": "Matt Van Horn untangles this week's viral debate over what AI coding \"loops\" really mean. \"The honest framing is not that loops are new magic and not that loops are just cron. It is that loops are cron plus a decision-maker in the body, and the interesting engineering is everything you wrap around that decision so it does not run off a cliff.\"",
+          "media": "",
+          "author": "Matt Van Horn · 9 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "If LLMs Have Human-Like Attributes, Then So Does Age of Empires II",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/if-llms-have-human-like-attrib/1309.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/if-llms-have-human-like-attrib/cover_image.png",
+          "summary": "On the topic of consciousness, Microsoft researcher Adrian de Wynter explains how the case for LLM consciousness applies equally to a strategy videogame. \"We build and train a simple neural network on the videogame Age of Empires II, and note that any entity in a sufficiently-powerful substrate, such as LEGO or the Greater Boston Area, could also present such attributes. Hence, the purported anthropomorphic attributes of LLMs are empirically non-unique.\"",
+          "media": "",
+          "author": "Adrian de Wynter · 58 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "Grit",
+          "url": "https://readwise.io/reader/fd/465402890",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/grit/cover_image_ttApC7a.jpg",
+          "summary": "Angela Duckworth, MacArthur Fellow and University of Pennsylvania psychologist, zeroes in on the mindset that separates exceptional achievers from the rest. In Grit, she debunks the talent myth and shows that sustained effort is what compounds toward mastery.\n\"Talent x effort = skill. Skill x effort = achievement. Without effort, your talent is nothing more than your unmet potential. Without effort, your skill is nothing more than what you could have done but didn't.\"\nIf you enjoy the preview, you can grab the full ebook for $2.99 wherever ebooks are sold in the US and Canada for a limited time.",
+          "media": "",
+          "author": "Angela Duckworth"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "beware, the german!",
+          "url": "https://igerman.cc/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/beware-the-german/cover_image.jpeg",
+          "summary": "German's blog covers everything from privacy and LLMs to culture and media. His latest went viral and almost made the top three articles. From Dopamine Fracking: \"It's a metaphor, because just like in actual fracking, it is immensely harmful to the long-term health and sustainability of anything it is applied to, but in the short term, it can yield a very intense and concentrated hit of dopamine (or oil).\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}

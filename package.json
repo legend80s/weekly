@@ -20,7 +20,11 @@
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
     "cheerio": "^1.2.0",
-    "chrome-devtools-mcp": "^0.20.0"
+    "chrome-devtools-mcp": "^0.20.0",
+    "imap": "^0.8.19",
+    "mailparser": "^3.9.10",
+    "p-limit": "^7.3.0",
+    "sharp": "^0.35.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",

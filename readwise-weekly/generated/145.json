@@ -1,0 +1,97 @@
+{
+  "articles": [
+    {
+      "category": "Most highlighted Articles of the week",
+      "subArticles": [
+        {
+          "title": "Riding the Leopard",
+          "url": "https://www.notboring.co/p/riding-the-leopard",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/riding-the-leopard/cover_image.jpg",
+          "summary": "Packy McCormick of Not Boring searches for meaning in the age of AI, drawing on the world's major religions and thinkers from Frankl to an acid-tripping researcher. \"You are a piece of the universe experiencing itself. And every one of them is saying, in different words, that this imposes an obligation on you: to be the fullest, strangest, most irreducible version of yourself... In other words, differentiation is a moral obligation.\"",
+          "media": "notboring.co",
+          "author": "Packy McCormick · 13 mins"
+        },
+        {
+          "title": "MAGNIFICA HUMANITAS",
+          "url": "https://vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/magnifica-humanitas/cover_image.png",
+          "summary": "In his first encyclical, Pope Leo XIV turns the Church's attention to AI. \"Technology is never neutral, because it takes on the characteristics of those who devise, finance, regulate and use it. Therefore, the primary choice is not between a 'yes' or 'no' to technology, but rather between constructing Babel or rebuilding Jerusalem; between a power that claims to dominate the heavens and a people who work together in the presence of God to rebuild the walls of fraternal coexistence.\"",
+          "media": "vatican.va",
+          "author": "Pope Leo XIV · 2 hrs and 34 mins"
+        },
+        {
+          "title": "If you let AI do your writing, I will come to your house and kill you",
+          "url": "https://samkriss.substack.com/p/if-you-let-ai-do-your-writing-i-will/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/if-you-let-ai-do-your-writing-/cover_image.webp",
+          "summary": "The internet is filling up with prose no human actually wrote, and Sam Kriss has declared war on it. He does not make his case gently: \"I hate it. I find it viscerally disgusting; a cold shudder like someone’s poured jelly down the back of my neck. I hate that it’s everywhere; I hate that when I read basically anything now I’m constantly on alert.\"",
+          "media": "Numb at the Lodge",
+          "author": "Sam Kriss · 16 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted YouTube Video of the week",
+      "subArticles": [
+        {
+          "title": "The AI paradox: More automation, more humans, more work | Dan Shipper",
+          "url": "https://youtube.com/watch/?v=4D3hDmGhFhA",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-ai-paradox-more-automation/cover_image_EIy2cKU.jpg",
+          "summary": "Dan Shipper, cofounder of AI-native startup Every, explains on Lenny’s Podcast why more AI means more human work. \"Automation is a lie... every time you automate something, in order to make sure the automation is working well, you need a human on top of it making sure that it's working well.\"",
+          "media": "",
+          "author": "Lenny's Podcast · 1 hr and 34 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted Twitter Thread of the week",
+      "subArticles": [
+        {
+          "title": "Forward Deployed Engineering 101",
+          "url": "https://x.com/vasuman/status/2057177266984226892/?rw_tt_thread=True",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/forward-deployed-engineering-1/cover_image.jpg",
+          "summary": "Vas explains how tech's hottest role combines audit, evals, and deployment, plus a 30-day plan to upskill product managers and engineers for it. \"The FDE is a highly skilled engineer who can understand the customer's problems very deeply, write code into a code base they've potentially never seen before, and communicate the business impact to a non-technical decision maker to close the deal. This is a million-dollar hire.\"",
+          "media": "",
+          "author": "vas · 8 mins"
+        }
+      ]
+    },
+    {
+      "category": "Most highlighted PDF of the week",
+      "subArticles": [
+        {
+          "title": "Skillopt: Executive Strategy For Self-Evolving Agent Skills",
+          "url": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/skillopt-executive-strategy-fo/1293.pdf",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/skillopt-executive-strategy-fo/cover_image_9OPlq8R.png",
+          "summary": "Microsoft researchers introduce SkillOpt, which trains an agent's plain-text skill file like model weights, while the model itself stays frozen. \"On GPT-5.5 it lifts the average no-skill accuracy by 23.5 points in direct chat, by 24.8 inside the Codex agentic loop, and by 19.1 inside Claude Code.\"",
+          "media": "",
+          "author": "Yifan Yang, Ziyang Gong, Weiquan Huang, et al. · 55 mins"
+        }
+      ]
+    },
+    {
+      "category": "Hand-picked book of the week",
+      "subArticles": [
+        {
+          "title": "The Library Book",
+          "url": "https://readwise.io/reader/fd/460732813",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/the-library-book/cover_image.jpg",
+          "summary": "Growing up, a trip to the library was a magical foray into new stories and a first taste of independence. But somewhere along the way, journalist Susan Orlean started buying books and stopped going, until her son's school project pulled her back into the mylar covers of her childhood and the unsolved mystery of the 1986 Los Angeles Public Library fire. In The Library Book, she chronicles the devastating blaze and turns it into a love letter to libraries.\n\"In Senegal, the polite expression for saying someone died is to say his or her library has burned. When I first heard the phrase, I didn’t understand it, but over time I came to realize it was perfect. Our minds and souls contain volumes inscribed by our experiences and emotions; each individual’s consciousness is a collection of memories we’ve cataloged and stored inside us, a private library of a life lived. It is something that no one else can entirely share, one that burns down and disappears when we die. But if you can take something from that internal collection and share it—with one person or with the larger world, on the page or in a story recited—it takes on a life of its own.\"\nIf you enjoy the preview, you can grab the full ebook for $2.99 in the US and Canada for a limited time.",
+          "media": "",
+          "author": "Susan Orlean"
+        }
+      ]
+    },
+    {
+      "category": "Handpicked RSS feed of the week",
+      "subArticles": [
+        {
+          "title": "Philosophize This!",
+          "url": "https://philosophizethis.substack.com/",
+          "img": "https://readwise-assets.s3.amazonaws.com/media/wisereads/articles/philosophize-this/cover_image.webp",
+          "summary": "Stephen West seeks to make dense philosophy accessible on Philosophize This!, his podcast and Substack. From Kafka’s Warning About a World Run by Nobody: \"In a sense, in the modern world we are all people trapped in little Kafka novels of our own creation.\"",
+          "media": ""
+        }
+      ]
+    }
+  ]
+}
