@@ -3,7 +3,7 @@
 import { existsSync } from "node:fs"
 import { writeFile } from "node:fs/promises"
 import { dirname, join, resolve } from "node:path"
-import { parseArgs } from "node:util"
+import { parseArgs, styleText } from "node:util"
 import { downloadImages } from "./image-downloader.ts"
 import {
   articlesToMarkdown,
@@ -20,8 +20,9 @@ const getReadwiseJsonOutputPath = (volNum: string) =>
   resolve(__dirname, `../../../../readwise-weekly/generated/${volNum}.json`)
 
 function printCliUsage() {
+  console.log(styleText("green", "---\n# wisereads-weekly-parser\n---\n"))
   console.log(
-    "Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
+    "> Extract and save articles json and parse to markdown from Wisereads weekly email.\n",
   )
   console.log(
     "Usage: bun --env-file .opencode/skills/imap-smtp-email/.env .opencode/skills/email-to-chinese-article/scripts/index.ts --vol=<volNum> [--title-with-url=true] [--download-images]",
@@ -71,6 +72,8 @@ function parseCliArg() {
   }
 }
 
+const isTenTabsRequired = false
+
 main()
 
 async function main() {
@@ -98,7 +101,7 @@ async function main() {
     process.exit(1)
   }
 
-  if (!tenTabsSubject) {
+  if (isTenTabsRequired && !tenTabsSubject) {
     throw new Error("No --ten-tabs-subject provided.")
   }
 
@@ -135,8 +138,18 @@ async function main() {
   }
 
   async function processTenTabs(
-    subject: string,
+    subject?: string,
   ): Promise<{ dir: string; articles: IArticle[] }> {
+    if (!subject) {
+      const outputPath = resolve(
+        __dirname,
+        `../../../../readwise-weekly-and-tentabs/generated/${"I_DON_T_CARE"}.json`,
+      )
+      const dir = dirname(outputPath)
+
+      return { dir, articles: [] }
+    }
+
     const fileName = toKebabCase(subject)
     const outputPath = resolve(
       __dirname,
@@ -170,10 +183,11 @@ async function main() {
       { articles: wisereadsArticles },
       { dir: tenTabsDir, articles: tenTabsArticles },
     ] = await Promise.all([processWisereads(), processTenTabs(tenTabsSubject)])
+
     // join 2 md files write to readwise-weekly-and-tentabs/generated/{vol}-{subject}.md
     const outputPath = join(
       tenTabsDir,
-      `${volNum}-${toKebabCase(tenTabsSubject)}.md`,
+      `${volNum}-${tenTabsSubject ? toKebabCase(tenTabsSubject) : "no-ten-tabs"}.md`,
     )
 
     const combinedArticles = [...wisereadsArticles, ...tenTabsArticles]
@@ -182,10 +196,12 @@ async function main() {
     })
 
     await writeFile(outputPath, combinedMd)
-    console.log(`✅ Combined markdown saved to ${outputPath}`)
+    console.log(
+      `✅ ${tenTabsSubject ? "Combined" : "wisereads only"} markdown saved to ${outputPath}`,
+    )
   } catch (err) {
     console.error(err)
-    process.exit(1)
+    process.exitCode = 1
     return
   }
 }
